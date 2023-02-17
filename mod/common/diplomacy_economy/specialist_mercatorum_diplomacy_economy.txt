@@ -1,0 +1,18 @@
+per_relation = {
+	# this is applied for each such relation with another country
+	# scope: this = current country, FROM : other country in the relation
+	commercial_pact = {
+		trigger = {
+			has_commercial_pact = from
+			NOT = { has_ascension_perk = ap_universal_transactions }
+			# TODO: free treaties to/from a mercatorum if Overlord or has same overlord
+		}
+
+		resources = {
+			category = commercial_pacts
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+}

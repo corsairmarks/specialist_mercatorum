@@ -1,0 +1,138 @@
+#########################
+# MERCATORUM SPECIALIST #
+#########################
+
+mercatorum_1_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_society_research_produces_mult = 0.2
+		country_physics_research_produces_mult = 0.2
+		country_engineering_research_produces_mult = 0.2
+		num_tech_alternatives_add = 1
+		description = mercatorum_1_modifier_desc
+	}
+
+	# For setting the room background
+	activate_effect = {
+		target = {
+			store_country_backup_data = {
+				room = yes
+			}
+			room_name_override = ""
+		}
+	}
+
+	# Restore room background back to normal
+	deactivate_effect = {
+		target = {
+			restore_country_backup_data = yes
+		}
+	}
+}
+
+mercatorum_1_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.3
+		ship_military_cost_mult = 0.3
+		ship_military_upkeep_mult = 0.3
+	}
+}
+
+mercatorum_1_overlord_modifier = {
+	icon = "GFX_specialist_perk_mercatorum_1_overlord_modifier"
+	overlord_modifier = {
+		country_society_research_produces_mult = 0.1
+		country_physics_research_produces_mult = 0.1
+		country_engineering_research_produces_mult = 0.1
+		description = mercatorum_1_overlord_modifier_desc
+	}
+}
+
+mercatorum_1_neighbor_bonuses = {
+	icon = "GFX_specialist_perk_mercatorum_1_neighbor_bonuses"
+
+	overlord_relay_network_modifier = {
+		specialist_mercatorum_neighbor = 1
+	}
+
+	desc = {
+		description = mercatorum_1_neighbor_bonuses_desc
+	}
+}
+
+mercatorum_2_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_society_research_produces_mult = 0.3
+		country_physics_research_produces_mult = 0.3
+		country_engineering_research_produces_mult = 0.3
+		num_tech_alternatives_add = 1
+		description = mercatorum_2_modifier_desc
+	}
+}
+
+mercatorum_2_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.4
+		ship_military_cost_mult = 0.4
+		ship_military_upkeep_mult = 0.4
+	}
+}
+
+mercatorum_2_leaders = {
+	icon = "GFX_specialist_perk_mercatorum_2_leaders"
+	subject_modifier = {
+		governor_skill_levels = 2
+	}
+
+	activate_effect = {
+		target = {
+			add_specialist_leaders = {
+				TYPE = mercatorum
+				CLASS = governor
+			}
+		}
+	}
+
+	deactivate_effect = {
+		target = {
+			remove_specialist_leaders = {
+				TYPE = mercatorum
+				CLASS = governor
+			}
+		}
+	}
+
+	desc = {
+		description = mercatorum_2_leaders_desc
+	}
+}
+
+mercatorum_2_traits = {
+	icon = "GFX_specialist_perk_mercatorum_2_traits"
+	desc = {
+		description = mercatorum_2_traits_desc
+	}
+}
+
+mercatorum_3_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_society_research_produces_mult = 0.4
+		country_physics_research_produces_mult = 0.4
+		country_engineering_research_produces_mult = 0.4
+		num_tech_alternatives_add = 1
+		description = mercatorum_3_modifier_desc
+	}
+}
+
+mercatorum_3_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.5
+		ship_military_cost_mult = 0.5
+		ship_military_upkeep_mult = 0.5
+	}
+}
