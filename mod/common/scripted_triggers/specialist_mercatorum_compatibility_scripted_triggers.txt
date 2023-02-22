@@ -1,0 +1,35 @@
+# this = leader
+has_specialist_subject_bulwark_leader_trait = {
+	OR = {
+		has_trait = leader_trait_bulwark_watcher
+		has_trait = leader_trait_bulwark_retaliator
+		has_trait = leader_trait_bulwark_sentinel
+	}
+}
+
+# this = leader
+has_specialist_subject_scholarium_leader_trait = {
+	OR = {
+		has_trait = leader_trait_scholarium_investigator
+		has_trait = leader_trait_scholarium_explorer
+		has_trait = leader_trait_scholarium_observer
+	}
+}
+
+# this = leader
+has_specialist_subject_prospectorium_leader_trait = {
+	OR = {
+		has_trait = leader_trait_prospectorium_extractor
+		has_trait = leader_trait_prospectorium_optimizer
+		has_trait = leader_trait_prospectorium_refiner
+	}
+}
+
+# this = leader
+has_specialist_subject_mercatorum_leader_trait = {
+	OR = {
+		has_trait = leader_trait_mercatorum_trader
+		has_trait = leader_trait_mercatorum_economist
+		has_trait = leader_trait_mercatorum_industrialist
+	}
+}

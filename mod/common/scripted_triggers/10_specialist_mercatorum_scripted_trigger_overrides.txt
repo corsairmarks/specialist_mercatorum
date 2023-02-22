@@ -1,0 +1,10 @@
+# Modified: use sub-triggers, including for a mercatorum
+# this = leader
+has_specialist_subject_leader_trait = {
+	OR = {
+		has_specialist_subject_bulwark_leader_trait = yes
+		has_specialist_subject_scholarium_leader_trait = yes
+		has_specialist_subject_prospectorium_leader_trait = yes
+		has_specialist_subject_mercatorum_leader_trait = yes
+	}
+}
