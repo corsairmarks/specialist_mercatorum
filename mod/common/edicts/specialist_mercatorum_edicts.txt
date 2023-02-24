@@ -1,0 +1,126 @@
+# these variable match values defined in common/edicts/00_edicts.txt
+@Edict1Cost = 10
+@EdictPerpetual = -1
+
+relay_network_trade_routes = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		has_overlord_dlc = yes
+		is_gestalt = no
+		has_technology = tech_hyper_relays
+	}
+	allow = {
+		NOT = { has_deficit = rare_crystals }
+		exists = capital_scope
+		capital_scope = { solar_system = { has_megastructure = hyper_relay } }
+	}
+	prerequisites = {
+		"tech_galactic_markets"
+	}
+	modifier = {
+		megastructures_hyper_relay_rare_crystals_upkeep_add = 0.1
+	}
+	relay_network_modifier = {
+		relay_network_trade_edict_modifier = 1
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = {
+				resource = rare_crystals
+				value > 5
+			}
+		}
+	}
+}
+
+relay_network_customs_patrols = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		has_overlord_dlc = yes
+		is_gestalt = no
+		has_technology = tech_hyper_relays
+	}
+	allow = {
+		NOT = { has_deficit = exotic_gases }
+		exists = capital_scope
+		capital_scope = { solar_system = { has_megastructure = hyper_relay } }
+	}
+	prerequisites = {
+		"tech_strike_craft_1"
+	}
+	modifier = {
+		megastructures_hyper_relay_exotic_gases_upkeep_add = 0.1
+	}
+	relay_network_modifier = {
+		relay_network_trade_protection_range_modifier = 1
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = {
+				resource = exotic_gases
+				value > 5
+			}
+		}
+	}
+}
+
+relay_network_customs_checkpoints = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		has_overlord_dlc = yes
+		is_gestalt = no
+		has_technology = tech_hyper_relays
+	}
+	allow = {
+		NOT = { has_deficit = volatile_motes }
+		exists = capital_scope
+		capital_scope = { solar_system = { has_megastructure = hyper_relay } }
+	}
+	prerequisites = {
+		"tech_interstellar_economics"
+	}
+	modifier = {
+		megastructures_hyper_relay_volatile_motes_upkeep_add = 0.1
+	}
+	relay_network_modifier = {
+		relay_network_trade_protection_modifier = 1
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = {
+				resource = volatile_motes
+				value > 5
+			}
+		}
+	}
+}
