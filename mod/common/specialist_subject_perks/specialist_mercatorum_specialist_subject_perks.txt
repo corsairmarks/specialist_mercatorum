@@ -36,6 +36,7 @@ mercatorum_1_penalties = {
 		ship_military_cost_mult = 0.1
 		ship_military_upkeep_mult = 0.1
 		country_physics_research_produces_mult = -0.3
+		country_society_research_produces_mult = -0.3
 		country_engineering_research_produces_mult = -0.3
 	}
 }
@@ -58,6 +59,19 @@ mercatorum_1_neighbor_bonuses = {
 	}
 }
 
+mercatorum_1_econ_tech = {
+	icon = "GFX_specialist_perk_prospectorium_1_mining_tech"
+	activate_effect = {
+		target = {
+			append_technology = { TECH = tech_space_trading }
+			append_technology = { TECH = tech_strike_craft_1 }
+		}
+	}
+	desc = {
+		description = mercatorum_1_econ_tech_desc
+	}
+}
+
 mercatorum_2_modifier = {
 	main_perk = yes
 	subject_modifier = {
@@ -77,6 +91,7 @@ mercatorum_2_penalties = {
 		ship_military_cost_mult = 0.2
 		ship_military_upkeep_mult = 0.2
 		country_physics_research_produces_mult = -0.4
+		country_society_research_produces_mult = -0.4
 		country_engineering_research_produces_mult = -0.4
 	}
 }
@@ -122,6 +137,18 @@ mercatorum_2_traits = {
 	}
 }
 
+mercatorum_2_econ_tech = {
+	icon = "GFX_specialist_perk_prospectorium_2_mining_tech"
+	activate_effect = {
+		target = {
+			append_technology = { TECH = tech_interstellar_economics }
+		}
+	}
+	desc = {
+		description = mercatorum_2_econ_tech_desc
+	}
+}
+
 mercatorum_3_modifier = {
 	main_perk = yes
 	subject_modifier = {
@@ -142,6 +169,7 @@ mercatorum_3_penalties = {
 		ship_military_cost_mult = 0.3
 		ship_military_upkeep_mult = 0.3
 		country_physics_research_produces_mult = -0.5
+		country_society_research_produces_mult = -0.5
 		country_engineering_research_produces_mult = -0.5
 	}
 }
@@ -152,5 +180,17 @@ mercatorum_3_overlord_modifier = {
 		pop_lifestyle_trade_mult = 0.15
 		local_trade_protection = 15
 		country_trade_fee = -0.05
+	}
+}
+
+mercatorum_3_econ_tech = {
+	icon = "GFX_specialist_perk_prospectorium_3_mining_tech"
+	activate_effect = {
+		target = {
+			append_technology = { TECH = tech_galactic_markets }
+		}
+	}
+	desc = {
+		description = mercatorum_3_econ_tech_desc
 	}
 }
