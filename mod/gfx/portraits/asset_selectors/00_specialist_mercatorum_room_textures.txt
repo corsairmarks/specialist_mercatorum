@@ -1,0 +1,12 @@
+room_selector = {
+	default = "default_room"	# points to textures that end with "_room.dds" but remove the file ending
+
+	# will run with a limited country scope. species and government is set but the country does not actually exist
+	# game_setup = {
+	# }
+
+	# leader scope
+	ruler = {
+		"specialist_mercatorum_room" = { exists = owner owner = { is_specialist_subject_type = { TYPE = mercatorum } } }
+	}
+}
