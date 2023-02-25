@@ -32,6 +32,7 @@ specialist_mercatorum = {
 			perks = {
 				mercatorum_2_modifier
 				mercatorum_2_penalties
+				mercatorum_2_overlord_modifier
 				mercatorum_2_traits
 				mercatorum_2_leaders
 			}
@@ -41,6 +42,7 @@ specialist_mercatorum = {
 			perks = {
 				mercatorum_3_modifier
 				mercatorum_3_penalties
+				mercatorum_3_overlord_modifier
 			}
 		}
 	}
