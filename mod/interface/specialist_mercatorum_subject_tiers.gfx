@@ -1,0 +1,31 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_1_off"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_1_off.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_1_on"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_1_on.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_2_off"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_2_off.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_2_on"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_2_on.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_3_off"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_3_off.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_tier_specialist_mercatorum_3_on"
+		textureFile = "gfx/interface/subjugation/specialist_tiers/specialist_tier_mercatorum_3_on.dds"
+	}
+}
