@@ -8,7 +8,6 @@ subject_can_be_integrated = {
 	target_modifier = {
 		monthly_loyalty = -4
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_bulwark

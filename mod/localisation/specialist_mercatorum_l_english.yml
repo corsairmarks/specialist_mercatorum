@@ -47,3 +47,5 @@
  edict_relay_network_customs_checkpoints: "Networked Customs Checkpoints"
  edict_relay_network_customs_checkpoints_desc: "Trade flowing through the Relay Network is easier to monitor for contraband and limits pilferage."
  relay_network_trade_protection_modifier: "$edict_relay_network_customs_checkpoints$"
+
+ not_allowed_for_mercatorum: "$TRIGGER_FAIL$Not allowed for §Y$specialist_mercatorum$§! preset."
