@@ -148,7 +148,7 @@ mercatorum_2_traits = {
 }
 
 mercatorum_2_econ_tech = {
-	icon = "GFX_specialist_perk_prospectorium_2_mining_tech"
+	icon = "GFX_specialist_perk_mercatorum_2_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = tech_interstellar_economics }
@@ -189,7 +189,7 @@ mercatorum_3_penalties = {
 }
 
 mercatorum_3_econ_tech = {
-	icon = "GFX_specialist_perk_prospectorium_3_mining_tech"
+	icon = "GFX_specialist_perk_mercatorum_3_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = tech_galactic_markets }
