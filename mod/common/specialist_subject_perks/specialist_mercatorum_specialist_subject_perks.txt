@@ -45,6 +45,9 @@ mercatorum_1_overlord_modifier = {
 		pop_lifestyle_trade_mult = 0.1
 		local_trade_protection = 15
 	}
+	desc = {
+		description = mercatorum_1_overlord_modifier_desc
+	}
 }
 
 # mercatorum_1_overlord_dividends = {
