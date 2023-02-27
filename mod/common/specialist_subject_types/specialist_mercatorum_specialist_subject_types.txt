@@ -23,7 +23,9 @@ specialist_mercatorum = {
 				mercatorum_1_modifier
 				mercatorum_1_penalties
 				mercatorum_1_overlord_modifier
+				# mercatorum_1_overlord_dividends
 				mercatorum_1_neighbor_bonuses
+				mercatorum_1_branch_office_bonuses
 				mercatorum_1_econ_tech
 			}
 		}
@@ -33,10 +35,9 @@ specialist_mercatorum = {
 			perks = {
 				mercatorum_2_modifier
 				mercatorum_2_penalties
-				mercatorum_2_overlord_modifier
+				mercatorum_2_econ_tech
 				mercatorum_2_traits
 				mercatorum_2_leaders
-				mercatorum_2_econ_tech
 			}
 		}
 		# Level 3
@@ -44,7 +45,6 @@ specialist_mercatorum = {
 			perks = {
 				mercatorum_3_modifier
 				mercatorum_3_penalties
-				mercatorum_3_overlord_modifier
 				mercatorum_3_econ_tech
 			}
 		}

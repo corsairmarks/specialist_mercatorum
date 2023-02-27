@@ -10,7 +10,6 @@ mercatorum_1_modifier = {
 		country_consumer_goods_produces_mult = 0.1
 		starbase_trade_protection_add = 5
 	}
-
 	# For setting the room background
 	activate_effect = {
 		target = {
@@ -20,7 +19,6 @@ mercatorum_1_modifier = {
 			room_name_override = ""
 		}
 	}
-
 	# Restore room background back to normal
 	deactivate_effect = {
 		target = {
@@ -44,10 +42,17 @@ mercatorum_1_penalties = {
 mercatorum_1_overlord_modifier = {
 	icon = "GFX_specialist_perk_mercatorum_1_overlord_modifier"
 	overlord_modifier = {
-		pop_lifestyle_trade_mult = 0.05
-		local_trade_protection = 5
+		pop_lifestyle_trade_mult = 0.1
+		local_trade_protection = 15
 	}
 }
+
+# mercatorum_1_overlord_dividends = {
+# 	icon = "GFX_specialist_perk_mercatorum_1_overlord_dividends"
+# 	desc = {
+# 		description = mercatorum_1_overlord_dividends_desc
+# 	}
+# }
 
 mercatorum_1_neighbor_bonuses = {
 	icon = "GFX_specialist_perk_mercatorum_1_neighbor_bonuses"
@@ -59,8 +64,18 @@ mercatorum_1_neighbor_bonuses = {
 	}
 }
 
+mercatorum_1_branch_office_bonuses = {
+	icon = "GFX_specialist_perk_mercatorum_1_branch_office_bonuses"
+	subject_modifier = {
+		planet_branch_offices_unity_produces_add = 3
+	}
+	desc = {
+		description = mercatorum_1_branch_office_bonuses_desc
+	}
+}
+
 mercatorum_1_econ_tech = {
-	icon = "GFX_specialist_perk_prospectorium_1_mining_tech"
+	icon = "GFX_specialist_perk_mercatorum_1_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = tech_space_trading }
@@ -93,14 +108,6 @@ mercatorum_2_penalties = {
 		country_physics_research_produces_mult = -0.4
 		country_society_research_produces_mult = -0.4
 		country_engineering_research_produces_mult = -0.4
-	}
-}
-
-mercatorum_2_overlord_modifier = {
-	icon = "GFX_specialist_perk_mercatorum_2_overlord_modifier"
-	overlord_modifier = {
-		pop_lifestyle_trade_mult = 0.1
-		local_trade_protection = 10
 	}
 }
 
@@ -159,6 +166,10 @@ mercatorum_3_modifier = {
 		starbase_trade_collection_range_add = 2
 		starbase_trade_protection_range_add = 2
 		max_trade_piracy_add = -5
+		country_trade_fee = -0.05
+	}
+	overlord_modifier = {
+		country_trade_fee = -0.05
 	}
 }
 
@@ -171,15 +182,6 @@ mercatorum_3_penalties = {
 		country_physics_research_produces_mult = -0.5
 		country_society_research_produces_mult = -0.5
 		country_engineering_research_produces_mult = -0.5
-	}
-}
-
-mercatorum_3_overlord_modifier = {
-	icon = "GFX_specialist_perk_mercatorum_3_overlord_modifier"
-	overlord_modifier = {
-		pop_lifestyle_trade_mult = 0.15
-		local_trade_protection = 15
-		country_trade_fee = -0.05
 	}
 }
 

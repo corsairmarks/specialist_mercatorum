@@ -23,3 +23,30 @@ relay_network_trade_protection_modifier = {
 relay_network_trade_protection_range_modifier = {
 	starbase_trade_protection_range_add = 1
 }
+
+##########################
+# NEIGHBOR COLONY BONUSES
+##########################
+
+specialist_mercatorum_neighbor = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_specialist_bulwark_neighbor.dds" # TODO: pick a graphic
+	pop_job_trade_mult = 0.1
+}
+
+##########################
+# TRADE ACTION MODIFIERS #
+##########################
+
+# TODO: what trade action(s) are appropriate for a mercatorum?
+
+# bulwark_prefabs_overlord = {
+# 	icon = "gfx/interface/icons/modifiers/mod_ship_military_station_small_cost_mult_positive.dds"
+# 	ship_military_station_small_cost_mult = -0.25
+# 	ship_military_station_small_upkeep_mult = -0.25
+# }
+
+# bulwark_prefabs_subject = {
+# 	icon = "gfx/interface/icons/modifiers/mod_ship_military_station_small_cost_mult_negative.dds"
+# 	ship_military_station_small_cost_mult = 0.25
+# 	ship_military_station_small_upkeep_mult = 0.25
+# }
