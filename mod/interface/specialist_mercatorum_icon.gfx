@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_message_mercatorum_level_up"
+		texturefile = "gfx/interface/icons/message/message_mercatorum_level_up.dds"
+	}
+}
