@@ -3,11 +3,33 @@ per_relation = {
 	# scope: this = current country, FROM : other country in the relation
 	commercial_pact = {
 		trigger = {
+			hidden_trigger = { exists = from }
 			has_commercial_pact = from
-			NOT = { has_ascension_perk = ap_universal_transactions }
-			# TODO: free treaties to/from a mercatorum if Overlord or has same overlord
+			OR = {
+				NOT = { has_ascension_perk = ap_universal_transactions }
+				AND = { # same overlord, one subject is a mercatorum
+					is_subject = yes
+					from = {
+						is_subject = yes
+						has_overlord = prev.overlord
+						OR = {
+							is_specialist_subject_type = { TYPE = mercatorum }
+							prev = { is_specialist_subject_type = { TYPE = mercatorum } }
+						}
+					}
+				}
+				from = { # overlord of mercatorum
+					is_subject = yes
+					has_overlord = prev
+					is_specialist_subject_type = { TYPE = mercatorum }
+				}
+				AND = { # mercatorum to overlord
+					is_subject = yes
+					has_overlord = from
+					is_specialist_subject_type = { TYPE = mercatorum }
+				}
+			}
 		}
-
 		resources = {
 			category = commercial_pacts
 			upkeep = {
