@@ -20,11 +20,12 @@ refresh_subject_count_loyalty_penalty = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = subjects_minus_one
-					value > 0
+				any_subject = {
+					any_agreement = {
+						has_active_specialization = specialist_mercatorum
+						has_specialist_perk = mercatorum_1_branch_office_bonuses
+					}
 				}
-				any_subject = { is_specialist_subject_type = { TYPE = mercatorum } }
 			}
 			subtract_variable = {
 				which = subjects_minus_one
