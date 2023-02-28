@@ -81,8 +81,8 @@ mercatorum_1_econ_tech = {
 	icon = "GFX_specialist_perk_mercatorum_1_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
-			append_technology = { TECH = tech_space_trading }
-			append_technology = { TECH = tech_strike_craft_1 }
+			append_technology = { TECH = space_trading }
+			append_technology = { TECH = strike_craft_1 }
 		}
 	}
 	desc = {
@@ -151,7 +151,7 @@ mercatorum_2_econ_tech = {
 	icon = "GFX_specialist_perk_mercatorum_2_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
-			append_technology = { TECH = tech_interstellar_economics }
+			append_technology = { TECH = interstellar_economics }
 		}
 	}
 	desc = {
@@ -192,7 +192,7 @@ mercatorum_3_econ_tech = {
 	icon = "GFX_specialist_perk_mercatorum_3_mercatorum_econ_tech"
 	activate_effect = {
 		target = {
-			append_technology = { TECH = tech_galactic_markets }
+			append_technology = { TECH = galactic_markets }
 		}
 	}
 	desc = {
