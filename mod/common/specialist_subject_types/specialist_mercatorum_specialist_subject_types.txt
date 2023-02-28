@@ -4,15 +4,14 @@
 @specialist_base_conversion_time = 30
 
 specialist_mercatorum = {
-	icon = "GFX_diplomacy_specialist_subject_scholarium"
-	icon_large = "GFX_diplomacy_specialist_subject_scholarium_large"
+	icon = "GFX_diplomacy_specialist_subject_mercatorum"
+	icon_large = "GFX_diplomacy_specialist_subject_mercatorum_large"
 	preferred_ethic = ethic_xenophile
 	base_conversion_time = @specialist_base_conversion_time
-
 	on_progress_complete = {
 		# TODO: convert to megacorp w/o criminal heritage
+		print_scope_effect = yes
 	}
-
 	levels = {
 		# Level 1
 		{
