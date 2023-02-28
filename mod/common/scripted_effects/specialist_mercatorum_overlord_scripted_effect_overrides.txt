@@ -1,4 +1,4 @@
-# Modified: Mercatorums do not count against subject limits
+# Modified: Mercatora do not count against subject limits
 refresh_subject_count_loyalty_penalty = {
 	every_subject = { erase_modifier = { MOD = divided_patronage } }
 	if = {

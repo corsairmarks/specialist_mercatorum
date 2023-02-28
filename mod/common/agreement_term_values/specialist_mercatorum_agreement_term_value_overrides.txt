@@ -1,4 +1,4 @@
-# Modified: Mercatorums can't be integrated
+# Modified: Mercatora can't be integrated
 subject_can_be_integrated = {
 	term = subject_integration
 	loyalty_change = -50
@@ -48,7 +48,7 @@ subject_can_be_integrated = {
 	}
 }
 
-# Modified: Mercatorums must be allowed diplomacy
+# Modified: Mercatora must be allowed diplomacy
 subject_can_not_do_diplomacy = {
 	term = subject_diplomacy
 	loyalty_change = -15
