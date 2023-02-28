@@ -140,6 +140,7 @@ action_form_commercial_pact = {
 		base = 0
 		modifier = { # same overlord, one subject is a mercatorum
 			add = 100
+			desc = action_form_commercial_pact_mercatorum_acceptance_subject_to_subject
 			is_subject = yes
 			exists = from
 			from = {
@@ -152,7 +153,8 @@ action_form_commercial_pact = {
 			}
 		}
 		modifier = { # overlord of mercatorum
-			add = 200
+			add = 100
+			desc = action_form_commercial_pact_mercatorum_acceptance_overlord_to_subject
 			exists = from
 			from = {
 				is_subject = yes
@@ -161,7 +163,8 @@ action_form_commercial_pact = {
 			}
 		}
 		modifier = { # mercatorum to overlord
-			add = 200
+			add = 100
+			desc = action_form_commercial_pact_mercatorum_acceptance_subject_to_overlord
 			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
@@ -171,7 +174,7 @@ action_form_commercial_pact = {
 	should_ai_propose = {
 		base = 1
 		modifier = { # same overlord, one subject is a mercatorum
-			add = 10
+			add = 100
 			is_subject = yes
 			exists = from
 			from = {
@@ -213,6 +216,7 @@ action_break_commercial_pact = {
 		base = 0
 		modifier = { # same overlord, one subject is a mercatorum
 			subtract = 100
+			desc = action_break_commercial_pact_mercatorum_acceptance_subject_to_subject
 			is_subject = yes
 			exists = from
 			from = {
@@ -225,7 +229,8 @@ action_break_commercial_pact = {
 			}
 		}
 		modifier = { # overlord of mercatorum
-			subtract = 200
+			subtract = 100
+			desc = action_break_commercial_pact_mercatorum_acceptance_overlord_to_subject
 			exists = from
 			from = {
 				is_subject = yes
@@ -234,7 +239,8 @@ action_break_commercial_pact = {
 			}
 		}
 		modifier = { # mercatorum to overlord
-			subtract = 200
+			subtract = 100
+			desc = action_break_commercial_pact_mercatorum_acceptance_subject_to_overlord
 			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
@@ -244,7 +250,7 @@ action_break_commercial_pact = {
 	should_ai_propose = {
 		base = 1
 		modifier = { # same overlord, one subject is a mercatorum
-			subtract = 10
+			subtract = 100
 			is_subject = yes
 			exists = from
 			from = {
