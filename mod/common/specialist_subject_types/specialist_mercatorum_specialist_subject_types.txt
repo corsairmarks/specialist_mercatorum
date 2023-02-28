@@ -9,8 +9,24 @@ specialist_mercatorum = {
 	preferred_ethic = ethic_xenophile
 	base_conversion_time = @specialist_base_conversion_time
 	on_progress_complete = {
-		# TODO: convert to megacorp w/o criminal heritage
 		print_scope_effect = yes
+		target = {
+			if = {
+				limit = { is_megacorp = no }
+				change_government = {
+					authority = auth_corporate
+					civics = {
+						civic = civic_free_traders
+					}
+					cooldown = yes
+					remove_invalid_civics = yes
+				}
+			}
+			if = {
+				limit = { is_criminal_syndicate = yes }
+				force_remove_civic = civic_criminal_heritage
+			}
+		}
 	}
 	levels = {
 		# Level 1
