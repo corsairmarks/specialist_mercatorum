@@ -52,3 +52,5 @@
  relay_network_trade_protection_modifier: "$edict_relay_network_customs_checkpoints$"
 
  not_allowed_for_mercatorum: "$TRIGGER_FAIL$Not allowed for §Y$specialist_mercatorum$§! preset."
+
+ mod_planet_branch_offices_unity_produces_add: "£unity£ $BRANCH_OFFICE$ Income"
