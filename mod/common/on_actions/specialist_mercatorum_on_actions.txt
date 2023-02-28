@@ -1,0 +1,8 @@
+# fired when a new leader is generated for an empire, to be available for recruitment
+# thi = country, owner of the leader
+# from = leader, newly-spawned
+on_leader_spawned = {
+	events = {
+		specialist_mercatorum.400
+	}
+}
