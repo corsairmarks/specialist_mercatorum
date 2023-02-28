@@ -1,3 +1,16 @@
+# Trade-related modifiers:
+# - starbase_trade_collection_range_add, Category: Starbases, Trade
+# - starbase_trade_protection_range_add, Category: Starbases, Trade
+# - starbase_trade_protection_add, Category: Starbases, Trade
+# - local_trade_protection_add, Category: Countries, Trade
+# - country_trade_fee, Category: Countries
+# - trade_value_add, Category: Planets, Megastructures, Starbases
+# - trade_value_mult, Category: Planets, Megastructures, Starbases
+# - max_trade_piracy_add, Category: Star Systems
+# - max_trade_piracy_mult, Category: Star Systems
+# - pop_job_trade_mult, Category: Pops
+# - pop_lifestyle_trade_mult, Category: Pops
+
 ## Modifiers related to hyper relay network
 relay_network_trade_edict_modifier = {
 	trade_value_mult = 0.05
@@ -16,7 +29,8 @@ relay_network_trade_protection_range_modifier = {
 ##########################
 
 specialist_mercatorum_neighbor = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_specialist_mercatorum_neighbor.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_specialist_mercatorum_neighbor.dds" # TODO
+	icon_frame = 1
 	pop_job_trade_mult = 0.1
 }
 
