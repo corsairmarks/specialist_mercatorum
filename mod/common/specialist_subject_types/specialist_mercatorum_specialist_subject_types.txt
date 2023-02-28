@@ -3,8 +3,6 @@
 @level_3_xp_cost = 3600 # 30 years at 100 Loyalty.
 @specialist_base_conversion_time = 30
 
-# If you add any new types or change the keys of the existing ones, make sure to change the level-up message_types for them and their loc keys
-
 specialist_mercatorum = {
 	icon = "GFX_diplomacy_specialist_subject_scholarium"
 	icon_large = "GFX_diplomacy_specialist_subject_scholarium_large"
