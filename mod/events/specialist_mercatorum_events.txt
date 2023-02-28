@@ -8,7 +8,10 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		is_specialist_subject = { TYPE = mercatorum }
+		is_specialist_subject_tier = {
+			TYPE = mercatorum
+			TIER = 2
+		}
 		exists = from
 		from = { leader_class = governor }
 	}
