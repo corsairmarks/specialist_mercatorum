@@ -9,6 +9,10 @@ specialist_mercatorum = {
 		loyalty_change = 5
 	}
 	triggered_loyalty_change = {
+		trigger = { target = { is_oligarchy = yes } }
+		loyalty_change = 5
+	}
+	triggered_loyalty_change = {
 		trigger = { target = { is_xenophobe = yes } }
 		loyalty_change = -20
 	}
@@ -17,5 +21,12 @@ specialist_mercatorum = {
 	}
 	potential = {
 		agreement_preset = preset_mercatorum
+	}
+	possible = {
+		owner = { NOT = { has_specialist_subject_type = { TYPE = mercatorum } } }
+		target = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 	}
 }
