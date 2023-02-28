@@ -60,7 +60,7 @@ preset_mercatorum = {
 			is_xenophobe = no
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			has_specialist_subject_type = { TYPE = mercatorum }
 			NOT = { from = { is_specialist_subject_type = { TYPE = mercatorum } } }
 		}
