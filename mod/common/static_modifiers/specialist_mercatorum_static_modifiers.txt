@@ -29,7 +29,7 @@ relay_network_trade_protection_range_modifier = {
 ##########################
 
 specialist_mercatorum_neighbor = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_specialist_mercatorum_neighbor.dds" # TODO
+	icon = "gfx/interface/icons/planet_modifiers/pm_specialist_mercatorum_neighbor.dds"
 	icon_frame = 1
 	pop_job_trade_mult = 0.1
 }
