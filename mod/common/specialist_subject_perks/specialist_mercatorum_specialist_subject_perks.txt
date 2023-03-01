@@ -42,11 +42,7 @@ mercatorum_1_penalties = {
 mercatorum_1_overlord_modifier = {
 	icon = "GFX_specialist_perk_mercatorum_1_overlord_modifier"
 	overlord_modifier = {
-		pop_lifestyle_trade_mult = 0.1
-		local_trade_protection_add = 15
-	}
-	desc = {
-		description = mercatorum_1_overlord_modifier_desc
+		pop_job_trade_mult = 0.1
 	}
 }
 
