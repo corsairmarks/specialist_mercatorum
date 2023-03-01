@@ -118,11 +118,7 @@ preset_mercatorum_nice_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
-				value = -0.3
-			}
-			{
-				key = resource_subsidies_research
+				key = resource_subsidies_infrastructure
 				value = -0.3
 			}
 		}
@@ -234,10 +230,9 @@ preset_mercatorum_mean_01 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		# TODO: make custom resource terms? If so, 0.3 of energy/consumer goods
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_commercial
 				value = 0.3
 			}
 		}
@@ -349,10 +344,9 @@ preset_mercatorum_mean_02 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		# TODO: make custom resource terms? If so, 0.3 of energy/consumer goods
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_commercial
 				value = 0.45
 			}
 		}
@@ -464,10 +458,9 @@ preset_mercatorum_mean_03 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		# TODO: make custom resource terms? If so, 0.3 of energy/consumer goods
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_commercial
 				value = 0.6
 			}
 		}

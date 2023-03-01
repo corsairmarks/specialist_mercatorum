@@ -8,6 +8,12 @@
 preset_mercatorum = {
 	specialist_type = specialist_mercatorum
 	term_data = {
+		resource_terms = {
+			{
+				key = resource_subsidies_infrastructure
+				value = -0.3
+			}
+		}
 		discrete_terms = {
 			{
 				key = specialist_type
