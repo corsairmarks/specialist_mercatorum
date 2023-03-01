@@ -29,7 +29,7 @@
  specialist_mercatorum_neighbor: "Mercatorum Economics"
  specialist_mercatorum_neighbor_desc: "Direct connection to the shipping lanes of a nearby Mercatorum specialist yields a boost to the local economy."
  mercatorum_1_branch_office_bonuses: "$BRANCH_OFFICE$ Special Trade Status"
- mercatorum_1_branch_office_bonuses_desc: "Mercatorum subjects have a special status to promote internal trade within their overlord and any fellow subjects of the same overlord.\n\n$t$§Y$commercial_pacts$§! between a Mercatorum and their overlord or a fellow subject of the same overlord waive the £influence£ §Y$influence$§! cost for both parties\n$t$§Y$BRANCH_OFFICES$§! owned by a Mercatorum on planets owned by their overlord or a fellow subject of the same overlord generate £unity£ §Y$unity$§! §G+3§!\n$t$Mercatorum subjects do not count for purposes of §Y$divided_patronage$§!"
+ mercatorum_1_branch_office_bonuses_desc: "Mercatorum subjects have a special status to promote internal trade within their overlord and any fellow subjects of the same overlord.\n\n- §Y$commercial_pacts$§! between a Mercatorum and their overlord or a fellow subject of the same overlord waive the £influence£ §Y$influence$§! cost for both parties\n- §Y$BRANCH_OFFICES$§! owned by a Mercatorum on planets owned by their overlord or a fellow subject of the same overlord generate £unity£ §Y$unity$§! §G+3§!\n- Mercatorum subjects do not count for purposes of §Y$divided_patronage$§!"
  mercatorum_1_modifier: "Mercatorum Bonuses I"
  mercatorum_1_penalties: "Mercatorum Penalties I"
  mercatorum_1_overlord_modifier: "Mercatorum Advisory"
