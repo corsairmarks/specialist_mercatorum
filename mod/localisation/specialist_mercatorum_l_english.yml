@@ -2,7 +2,7 @@
  MESSAGE_SUBJECT_LEVEL_UP_specialist_mercatorum_TITLE: "$MESSAGE_SUBJECT_LEVEL_UP_TITLE$"
  MESSAGE_WE_LEVEL_UP_specialist_mercatorum_TITLE: "$MESSAGE_WE_LEVEL_UP_TITLE$"
  preset_mercatorum: "Mercatorum"
- preset_mercatorum_desc: "A Mercatorum is a Specialist Subject type focused on trade output at the cost of reduced military capacity and reduced research output."
+ preset_mercatorum_desc: "A Mercatorum is a Specialist Subject type focused on trade output at the cost of reduced military capacity and reduced infrastructure resource output (£minerals££food££alloys£)."
  preset_mercatorum_flavor_desc: "This subject specializes in commerce and trade. Ruled by a megacorporation chartered and majority-owned by their overlord, specialists of this type are tasked with facilitating internal commerce between their overlord and its subjects. Their duty to provide trade route security and customs enforcement limits their ability to field naval fleets and their focus trade goods and shipping weakens their infrastructure resource production (£minerals££food££alloys£)."
  preset_mercatorum_nice_01: "$preset_mercatorum$"
  preset_mercatorum_nice_01_desc: "$preset_mercatorum_desc$"
