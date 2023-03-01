@@ -1,0 +1,62 @@
+# These values match those defines in common/agreement_term_values/00_agreement_term_values.txt
+# When changing the maximum and minimum values here the following should also be updated:
+# In agreement_negotiation_view.gui
+#	maxValue =
+#	minValue =
+# In 00_defines.txt:
+#	AGREEMENT_RESOURCE_SUBSIDIES_MIN
+#	AGREEMENT_RESOURCE_SUBSIDIES_MAX
+@subsidy_minimum = -0.75
+@subsidy_maximum = 0.75
+
+# these values are specific to these agreement_term_values, but are based on the _basic and _advanced values (which are equal as of 3.6 "Orion")
+@subsidy_multiplier_mercatorum = 0.5
+@subsidy_monthly_multiplier_mercatorum = 5
+
+resource_subsidies_commercial = {
+	term = resource_subsidies
+	resources = {
+		energy
+		consumer_goods
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_mercatorum
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_mercatorum
+
+	resource_min = {
+		base = @subsidy_minimum
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+	}
+
+	potential = {
+		agreement_preset = preset_mercatorum
+	}
+}
+
+resource_subsidies_infrastructure = {
+	term = resource_subsidies
+
+	resources = {
+		minerals
+		food
+		alloys
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_mercatorum
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_mercatorum
+
+	resource_min = {
+		base = @subsidy_minimum
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+	}
+
+	potential = {
+		agreement_preset = preset_mercatorum
+	}
+}
