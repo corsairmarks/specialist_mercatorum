@@ -152,6 +152,7 @@ mercatorum_2_econ_tech = {
 	activate_effect = {
 		target = {
 			append_technology = { TECH = interstellar_economics }
+			append_technology = { TECH = strike_craft_2 }
 		}
 	}
 	desc = {
@@ -193,6 +194,7 @@ mercatorum_3_econ_tech = {
 	activate_effect = {
 		target = {
 			append_technology = { TECH = galactic_markets }
+			append_technology = { TECH = strike_craft_3 }
 		}
 	}
 	desc = {
