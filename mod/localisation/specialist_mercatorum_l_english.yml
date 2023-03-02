@@ -27,6 +27,7 @@
  specialist_mercatorum_subject_modifier: "Mercatorum"
  specialist_mercatorum: "Mercatorum"
  specialist_mercatorum_desc: "The Subject will specialize in trade and economics, in exchange for weaker military capabilities and weaker infrastructure resource production (£minerals£ £food£ £alloys£). Maximum §Y1§! specialist subject of this type."
+ specialist_mercatorum_maximum_met: "Cannot have more than §Y1§! subject with the Mercatorum specialization."
  specialist_mercatorum_neighbor: "Mercatorum Economics"
  specialist_mercatorum_neighbor_desc: "Direct connections to the shipping lanes and patrol routes of a nearby Mercatorum specialist yields a boost to the local economy and more secure interstellar trade."
  mercatorum_1_branch_office_bonuses: "$BRANCH_OFFICE$ Special Trade Status"

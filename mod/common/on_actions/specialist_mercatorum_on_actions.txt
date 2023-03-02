@@ -6,3 +6,45 @@ on_leader_spawned = {
 		specialist_mercatorum.400
 	}
 }
+
+# fired when a country is destroyed
+# this = country, destroyed
+# from = country, destroyer (optional)
+on_country_destroyed = {
+	events = {
+		specialist_mercatorum.5
+	}
+}
+
+# fired when a subject has started converting to a specialist type
+# this = agreement
+# owner = country, overlord
+# target = country, subject
+on_specialist_subject_conversion_started = {
+	events = {
+		specialist_mercatorum.1
+		specialist_mercatorum.2
+	}
+}
+
+# fired when a subject has finished converting to a specialist type
+# this = agreement
+# owner = country, overlord
+# target = country, subject
+on_specialist_subject_conversion_finished = {
+	events = {
+		specialist_mercatorum.3
+		specialist_mercatorum.4
+	}
+}
+
+# fired when a subject specialist conversion has been aborted
+# this = agreement
+# owner = country, overlord
+# target = country, subject
+on_specialist_subject_conversion_aborted = {
+	events = {
+		specialist_mercatorum.3
+		specialist_mercatorum.4
+	}
+}

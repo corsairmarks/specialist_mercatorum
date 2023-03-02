@@ -1,5 +1,110 @@
 namespace = specialist_mercatorum
 
+# triggered by on_specialist_subject_conversion_started
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		agreement_preset = preset_mercatorum
+		NOT = { has_active_specialization = specialist_mercatorum }
+	}
+	immediate = {
+		set_agreement_flag = convert_to_specialist_mercatorum
+		owner = {
+			if = {
+				limit = { NOT = { is_variable_set = num_specialist_mercatorum } }
+				set_variable = {
+					which = num_specialist_mercatorum
+					value = 0
+				}
+			}
+			change_variable = {
+				which = num_specialist_mercatorum
+				value = 1
+			}
+		}
+	}
+}
+
+# triggered by on_specialist_subject_conversion_started
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { agreement_preset = preset_mercatorum }
+		has_active_specialization = specialist_mercatorum
+	}
+	immediate = {
+		set_agreement_flag = convert_from_specialist_mercatorum
+	}
+}
+
+# triggered by on_specialist_subject_conversion_finished
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_agreement_flag = convert_to_specialist_mercatorum }
+	immediate = {
+		remove_agreement_flag = convert_to_specialist_mercatorum
+	}
+}
+
+# triggered by on_specialist_subject_conversion_finished
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_agreement_flag = convert_from_specialist_mercatorum }
+	immediate = {
+		remove_agreement_flag = convert_from_specialist_mercatorum
+		owner = {
+			if = {
+				limit = { is_variable_set = num_specialist_mercatorum }
+				change_variable = {
+					which = num_specialist_mercatorum
+					value = -1
+				}
+			}
+		}
+	}
+}
+
+# triggered by on_country_destroyed
+# root = country, destroyed
+# from = country, destroyer (optional)
+country_event = {
+	id = specialist_mercatorum.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { is_specialist_subject_type = { TYPE = mercatorum } }
+	immediate = {
+		overlord = {
+			if = {
+				limit = { is_variable_set = num_specialist_mercatorum }
+				change_variable = {
+					which = num_specialist_mercatorum
+					value = -1
+				}
+			}
+		}
+	}
+}
+
 # triggered by on_leader_spawned
 # root = country
 # from = leader
