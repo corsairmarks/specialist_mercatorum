@@ -95,21 +95,44 @@ preset_mercatorum = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
-		is_criminal_syndicate = no
+		is_machine_empire = no
+		is_hive_empire = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
 		}
 		OR = {
-			from = { has_origin = origin_imperial_vassal_overlord }
-			is_specialist_subject_type = { TYPE = mercatorum }
-			has_country_flag = specialistion_subject_conversion_flag
-			tech_unlocked_ratio = {
-				who = from
-				ratio >= @protectorate_tech_threshold
+			AND = {
+				is_subject = yes
+				any_agreement = {
+					owner = { is_country = from }
+					OR = {
+						has_active_specialization = specialist_mercatorum
+						has_agreement_flag = convert_to_specialist_mercatorum
+						# has_agreement_flag = convert_from_specialist_mercatorum
+					}
+				}
+			}
+			AND = {
+				from = {
+					NAND = {
+						is_variable_set = num_specialist_mercatorum
+						check_variable = {
+							which = num_specialist_mercatorum
+							value > 0
+						}
+					}
+				}
+				OR = {
+					from = { has_origin = origin_imperial_vassal_overlord }
+					has_country_flag = specialistion_subject_conversion_flag
+					tech_unlocked_ratio = {
+						who = from
+						ratio >= @protectorate_tech_threshold
+					}
+				}
 			}
 		}
 	}

@@ -22,23 +22,4 @@ specialist_mercatorum = {
 	potential = {
 		agreement_preset = preset_mercatorum
 	}
-	possible = {
-		owner = {
-			NOT = { has_specialist_subject_type = { TYPE = mercatorum } }
-			custom_tooltip = {
-				text = specialist_mercatorum_maximum_met
-				NAND = {
-					is_variable_set = num_specialist_mercatorum
-					check_variable = {
-						which = num_specialist_mercatorum
-						value > 0
-					}
-				}
-			}
-		}
-		target = {
-			is_machine_empire = no
-			is_hive_empire = no
-		}
-	}
 }
