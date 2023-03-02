@@ -8,6 +8,16 @@ preset_mercatorum_nice_01 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
+		resource_terms = {
+			{
+				key = resource_subsidies_commercial
+				value = 0.15
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = -0.3
+			}
+		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -47,7 +57,6 @@ preset_mercatorum_nice_01 = {
 			}
 		}
 	}
-
 	overlord_weight = {
 		base = 75
 		modifier = {
@@ -73,7 +82,6 @@ preset_mercatorum_nice_01 = {
 			is_xenophobe = yes
 		}
 	}
-
 	subject_weight = {
 		base = 50
 		modifier = {
@@ -93,7 +101,6 @@ preset_mercatorum_nice_01 = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		NOR = {
@@ -161,7 +168,6 @@ preset_mercatorum_nice_02 = {
 			}
 		}
 	}
-
 	overlord_weight = {
 		base = 50
 		modifier = {
@@ -187,7 +193,6 @@ preset_mercatorum_nice_02 = {
 			is_xenophobe = yes
 		}
 	}
-
 	subject_weight = {
 		base = 100
 		modifier = {
@@ -207,7 +212,6 @@ preset_mercatorum_nice_02 = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		NOR = {
@@ -275,7 +279,6 @@ preset_mercatorum_mean_01 = {
 			}
 		}
 	}
-
 	overlord_weight = {
 		base = 125
 		modifier = {
@@ -301,7 +304,6 @@ preset_mercatorum_mean_01 = {
 			is_xenophobe = yes
 		}
 	}
-
 	subject_weight = {
 		base = -100
 		modifier = {
@@ -321,7 +323,6 @@ preset_mercatorum_mean_01 = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		NOR = {
@@ -389,7 +390,6 @@ preset_mercatorum_mean_02 = {
 			}
 		}
 	}
-
 	overlord_weight = {
 		base = 150
 		modifier = {
@@ -415,7 +415,6 @@ preset_mercatorum_mean_02 = {
 			is_xenophobe = yes
 		}
 	}
-
 	subject_weight = {
 		base = -250
 		modifier = {
@@ -435,7 +434,6 @@ preset_mercatorum_mean_02 = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		NOR = {
@@ -499,7 +497,6 @@ preset_mercatorum_mean_03 = {
 			}
 		}
 	}
-
 	overlord_weight = {
 		base = 175
 		modifier = {
@@ -525,7 +522,6 @@ preset_mercatorum_mean_03 = {
 			is_xenophobe = yes
 		}
 	}
-
 	subject_weight = {
 		base = -500
 		modifier = {
@@ -545,7 +541,6 @@ preset_mercatorum_mean_03 = {
 			is_xenophobe = yes
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		NOR = {
