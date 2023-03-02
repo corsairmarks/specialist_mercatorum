@@ -1,5 +1,3 @@
-# TODO: compat with Organic Zealots
-
 # Form a commercial pact with another empire, increases value of both trade networks
 # Usable by regular empires only. Raises trust over time.
 action_form_commercial_pact = {
@@ -138,66 +136,54 @@ action_form_commercial_pact = {
 	}
 	ai_acceptance = {
 		base = 0
-		modifier = { # same overlord, one subject is a mercatorum
-			add = 100
+		modifier = { # same overlord, other subject is a mercatorum
+			add = 200
 			desc = action_form_commercial_pact_mercatorum_acceptance_subject_to_subject
 			is_subject = yes
 			exists = from
 			from = {
-				is_subject = yes
+				is_specialist_subject_type = { TYPE = mercatorum }
 				has_overlord = prev.overlord
-				OR = {
-					is_specialist_subject_type = { TYPE = mercatorum }
-					prev = { is_specialist_subject_type = { TYPE = mercatorum } }
-				}
 			}
 		}
-		modifier = { # overlord of mercatorum
-			add = 100
+		modifier = { # overlord to mercatorum
+			add = 200
 			desc = action_form_commercial_pact_mercatorum_acceptance_overlord_to_subject
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev
 				is_specialist_subject_type = { TYPE = mercatorum }
+				has_overlord = prev
 			}
 		}
 		modifier = { # mercatorum to overlord
-			add = 100
+			add = 200
 			desc = action_form_commercial_pact_mercatorum_acceptance_subject_to_overlord
-			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
 			has_overlord = from
 		}
 	}
 	should_ai_propose = {
-		base = 1
-		modifier = { # same overlord, one subject is a mercatorum
+		base = 0
+		modifier = { # same overlord, this subject is a mercatorum
 			add = 100
-			is_subject = yes
+			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
 			from = {
 				is_subject = yes
 				has_overlord = prev.overlord
-				OR = {
-					is_specialist_subject_type = { TYPE = mercatorum }
-					prev = { is_specialist_subject_type = { TYPE = mercatorum } }
-				}
 			}
 		}
-		modifier = { # overlord of mercatorum
+		modifier = { # overlord to mercatorum
 			add = 100
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev
 				is_specialist_subject_type = { TYPE = mercatorum }
+				has_overlord = prev
 			}
 		}
 		modifier = { # mercatorum to overlord
 			add = 100
-			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
 			has_overlord = from
@@ -214,66 +200,60 @@ action_break_commercial_pact = {
 	action_type = negative
 	ai_acceptance = {
 		base = 0
-		modifier = { # same overlord, one subject is a mercatorum
-			subtract = 100
+		modifier = { # same overlord, either subject is a mercatorum
+			subtract = 200
 			desc = action_break_commercial_pact_mercatorum_acceptance_subject_to_subject
 			is_subject = yes
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev.overlord
 				OR = {
 					is_specialist_subject_type = { TYPE = mercatorum }
 					prev = { is_specialist_subject_type = { TYPE = mercatorum } }
 				}
+				has_overlord = prev.overlord
 			}
 		}
-		modifier = { # overlord of mercatorum
-			subtract = 100
+		modifier = { # overlord to mercatorum
+			subtract = 200
 			desc = action_break_commercial_pact_mercatorum_acceptance_overlord_to_subject
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev
 				is_specialist_subject_type = { TYPE = mercatorum }
+				has_overlord = prev
 			}
 		}
 		modifier = { # mercatorum to overlord
-			subtract = 100
+			subtract = 200
 			desc = action_break_commercial_pact_mercatorum_acceptance_subject_to_overlord
-			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
 			has_overlord = from
 		}
 	}
 	should_ai_propose = {
-		base = 1
-		modifier = { # same overlord, one subject is a mercatorum
+		base = 0
+		modifier = { # same overlord, either subject is a mercatorum
 			subtract = 100
 			is_subject = yes
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev.overlord
 				OR = {
 					is_specialist_subject_type = { TYPE = mercatorum }
 					prev = { is_specialist_subject_type = { TYPE = mercatorum } }
 				}
+				has_overlord = prev.overlord
 			}
 		}
-		modifier = { # overlord of mercatorum
+		modifier = { # overlord to mercatorum
 			subtract = 100
 			exists = from
 			from = {
-				is_subject = yes
-				has_overlord = prev
 				is_specialist_subject_type = { TYPE = mercatorum }
+				has_overlord = prev
 			}
 		}
 		modifier = { # mercatorum to overlord
 			subtract = 100
-			is_subject = yes
 			is_specialist_subject_type = { TYPE = mercatorum }
 			exists = from
 			has_overlord = from
