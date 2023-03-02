@@ -7,7 +7,7 @@ per_relation = {
 			has_commercial_pact = from
 			OR = {
 				NOT = { has_ascension_perk = ap_universal_transactions }
-				AND = { # same overlord, one subject is a mercatorum
+				AND = { # same overlord, either subject is a mercatorum
 					is_subject = yes
 					from = {
 						is_subject = yes
@@ -19,14 +19,12 @@ per_relation = {
 					}
 				}
 				from = { # overlord of mercatorum
-					is_subject = yes
-					has_overlord = prev
 					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = prev
 				}
 				AND = { # mercatorum to overlord
-					is_subject = yes
-					has_overlord = from
 					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = from
 				}
 			}
 		}
