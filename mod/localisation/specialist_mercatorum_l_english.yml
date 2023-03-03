@@ -64,7 +64,10 @@
  leader_trait_mercatorum_industrialist: "Mercatorum Industrialist"
  leader_trait_mercatorum_industrialist_desc: "Energy credits are the ultimate currency and consumer good the fuel for empire's wider economy - Industrialists take a direct approach to bolstering both."
  leader_trait_mercatorum_industrialist_tooltip: "$t$§L$leader_trait_mercatorum_industrialist$§!\n$tt$$mod_planet_jobs_energy_produces_mult$: §G+20%§!\n$tt$$mod_planet_jobs_consumer_goods_produces_mult$: §G+20%§!\n$tt$$MOD_TRADE_VALUE_MULT$: §G+5%§!"
-
+ personality_specialist_meractorum_personality: "Commercial Facilitators"
+ personality_specialist_meractorum_personality_desc: "Mercatorum specialist subjects are chartered to promote trade within their overlord and their fellow subjects; their corporate boards are largely uninterested in the high costs of military conflict."
+ personality_specialist_meractorum_personality_slaver: "$personality_specialist_meractorum_personality$"
+ personality_specialist_meractorum_personality_slaver_desc: "$personality_specialist_meractorum_personality_desc$"
  edict_relay_network_trade_routes: "Networked Trade Routes"
  edict_relay_network_trade_routes_desc: "The Relay Network enables civilian trade to flow more quickly between worlds."
  relay_network_trade_edict_modifier: "$edict_relay_network_trade_routes$"
