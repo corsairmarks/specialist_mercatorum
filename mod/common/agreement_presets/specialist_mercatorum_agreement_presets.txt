@@ -98,6 +98,7 @@ preset_mercatorum = {
 		}
 	}
 	potential = {
+		has_megacorp = yes
 		has_overlord_dlc = yes
 		is_machine_empire = no
 		is_hive_empire = no
