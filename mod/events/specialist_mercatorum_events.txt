@@ -115,6 +115,7 @@ agreement_event = {
 					add_modifier = { modifier = specialist_mercatorum_branch_office }
 				}
 			}
+			refresh_subject_count_loyalty_penalty = yes
 		}
 	}
 }
@@ -150,6 +151,7 @@ agreement_event = {
 					remove_modifier = specialist_mercatorum_branch_office
 				}
 			}
+			refresh_subject_count_loyalty_penalty = yes
 		}
 	}
 }
@@ -171,6 +173,7 @@ country_event = {
 					value = -1
 				}
 			}
+			refresh_subject_count_loyalty_penalty = yes
 		}
 	}
 }
