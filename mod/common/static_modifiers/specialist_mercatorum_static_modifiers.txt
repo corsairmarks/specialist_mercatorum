@@ -24,9 +24,9 @@ relay_network_trade_protection_range_modifier = {
 	starbase_trade_protection_range_add = 1
 }
 
-##########################
-# NEIGHBOR COLONY BONUSES
-##########################
+###########################
+# NEIGHBOR COLONY BONUSES #
+###########################
 
 specialist_mercatorum_neighbor = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
@@ -52,3 +52,13 @@ specialist_mercatorum_neighbor = {
 # 	ship_military_station_small_cost_mult = 0.25
 # 	ship_military_station_small_upkeep_mult = 0.25
 # }
+
+###########################
+# BRANCH OFFICE MODIFIERS #
+###########################
+
+specialist_mercatorum_branch_office = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 2
+	planet_branch_offices_unity_produces_add = 3
+}

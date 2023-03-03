@@ -47,7 +47,7 @@ agreement_event = {
 	}
 }
 
-# triggered by on_specialist_subject_conversion_finished
+# triggered by on_specialist_subject_conversion_finished and on_specialist_subject_conversion_aborted
 # root = agreement
 # owner = country, overlord
 # target = country, subject
@@ -61,7 +61,7 @@ agreement_event = {
 	}
 }
 
-# triggered by on_specialist_subject_conversion_finished
+# triggered by on_specialist_subject_conversion_finished and on_specialist_subject_conversion_aborted
 # root = agreement
 # owner = country, overlord
 # target = country, subject
@@ -84,11 +84,81 @@ agreement_event = {
 	}
 }
 
+# triggered by on_specialist_subject_conversion_finished
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_agreement_flag = convert_to_specialist_mercatorum }
+	immediate = {
+		target = { save_event_target_as = new_specialist_mercatorum }
+		owner = {
+			every_owned_planet = {
+				limit = {
+					has_branch_office = yes
+					branch_office_owner = { is_country = event_target:new_specialist_mercatorum }
+					NOT = { has_modifier = specialist_mercatorum_branch_office }
+				}
+				add_modifier = { modifier = specialist_mercatorum_branch_office }
+			}
+			every_subject = {
+				limit = { NOT = { is_country = event_target:new_specialist_mercatorum } }
+				every_owned_planet = {
+					limit = {
+						has_branch_office = yes
+						branch_office_owner = { is_country = event_target:new_specialist_mercatorum }
+						NOT = { has_modifier = specialist_mercatorum_branch_office }
+					}
+					add_modifier = { modifier = specialist_mercatorum_branch_office }
+				}
+			}
+		}
+	}
+}
+
+# triggered by on_specialist_subject_conversion_finished
+# root = agreement
+# owner = country, overlord
+# target = country, subject
+agreement_event = {
+	id = specialist_mercatorum.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_agreement_flag = convert_from_specialist_mercatorum }
+	immediate = {
+		target = { save_event_target_as = former_specialist_mercatorum }
+		owner = {
+			every_owned_planet = {
+				limit = {
+					has_branch_office = yes
+					branch_office_owner = { is_country = event_target:former_specialist_mercatorum }
+					has_modifier = specialist_mercatorum_branch_office
+				}
+				remove_modifier = specialist_mercatorum_branch_office
+			}
+			every_subject = {
+				limit = { NOT = { is_country = event_target:former_specialist_mercatorum } }
+				every_owned_planet = {
+					limit = {
+						has_branch_office = yes
+						branch_office_owner = { is_country = event_target:former_specialist_mercatorum }
+						has_modifier = specialist_mercatorum_branch_office
+					}
+					remove_modifier = specialist_mercatorum_branch_office
+				}
+			}
+		}
+	}
+}
+
 # triggered by on_country_destroyed
 # root = country, destroyed
 # from = country, destroyer (optional)
 country_event = {
-	id = specialist_mercatorum.5
+	id = specialist_mercatorum.7
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = { is_specialist_subject_type = { TYPE = mercatorum } }
@@ -102,6 +172,47 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+# triggered by on_branch_office_established
+# this = planet, branch office location
+# from = country, branch office owner
+planet_event = {
+	id = specialist_mercatorum.8
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = { has_owner = yes }
+	trigger = {
+		NOT = { has_modifier = specialist_mercatorum_branch_office }
+		exists = from
+		from = {
+			is_specialist_subject_type = { TYPE = mercatorum }
+			OR = {
+				has_overlord = prev.owner
+				prev.owner = {
+					is_subject = yes
+					has_overlord = prev.overlord
+				}
+			}
+		}
+	}
+	immediate = {
+		add_modifier = { modifier = specialist_mercatorum_branch_office }
+	}
+}
+
+# triggered by on_branch_office_closed
+# this = planet, branch office location
+# from = country, branch office owner
+planet_event = {
+	id = specialist_mercatorum.9
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = { has_owner = yes }
+	trigger = { has_modifier = specialist_mercatorum_branch_office }
+	immediate = {
+		remove_modifier = specialist_mercatorum_branch_office
 	}
 }
 

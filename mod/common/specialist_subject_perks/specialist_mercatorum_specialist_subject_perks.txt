@@ -65,9 +65,6 @@ mercatorum_1_neighbor_bonuses = {
 
 mercatorum_1_branch_office_bonuses = {
 	icon = "GFX_specialist_perk_mercatorum_1_branch_office_bonuses"
-	subject_modifier = {
-		planet_branch_offices_unity_produces_add = 3
-	}
 	desc = {
 		description = mercatorum_1_branch_office_bonuses_desc
 	}
