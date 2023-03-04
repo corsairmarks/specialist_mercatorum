@@ -16,13 +16,19 @@ mercatorum_1_modifier = {
 			store_country_backup_data = {
 				room = yes
 			}
-			room_name_override = ""
+			set_country_flag = mercatorum_country_backup_data
+			# explicit name because it is more compatible than needing to duplicate all of the ruler = { } -scoped room selectors
+			room_name_override = "specialist_mercatorum_room"
 		}
 	}
 	# Restore room background back to normal
 	deactivate_effect = {
 		target = {
-			restore_country_backup_data = yes
+			if = {
+				limit = { has_country_flag = mercatorum_country_backup_data }
+				restore_country_backup_data = yes
+				remove_country_flag = mercatorum_country_backup_data
+			}
 		}
 	}
 }
