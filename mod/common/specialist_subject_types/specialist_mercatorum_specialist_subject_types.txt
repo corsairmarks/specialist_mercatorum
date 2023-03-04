@@ -206,6 +206,7 @@ specialist_mercatorum = {
 				}
 				force_add_civic = civic_corporate_catalytic_processing_alternate
 			}
+			clear_variable = num_civics_to_add
 		}
 	}
 	levels = {
