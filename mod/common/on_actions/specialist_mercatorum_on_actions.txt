@@ -68,3 +68,11 @@ on_branch_office_closed = {
 		specialist_mercatorum.9
 	}
 }
+
+# fired just as country is changing its government, after the new one is applied
+# this = country
+on_post_government_changed = {
+	events = {
+		specialist_mercatorum.10
+	}
+}

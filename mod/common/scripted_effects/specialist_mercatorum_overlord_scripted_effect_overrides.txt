@@ -1,5 +1,6 @@
 # Modified: Mercatora do not count against subject limits
 refresh_subject_count_loyalty_penalty = {
+	optimize_memory
 	every_subject = { erase_modifier = { MOD = divided_patronage } }
 	if = {
 		limit = {

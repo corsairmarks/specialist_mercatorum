@@ -1,5 +1,6 @@
 # this = leader
 has_specialist_subject_bulwark_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = leader_trait_bulwark_watcher
 		has_trait = leader_trait_bulwark_retaliator
@@ -9,6 +10,7 @@ has_specialist_subject_bulwark_leader_trait = {
 
 # this = leader
 has_specialist_subject_scholarium_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = leader_trait_scholarium_investigator
 		has_trait = leader_trait_scholarium_explorer
@@ -18,6 +20,7 @@ has_specialist_subject_scholarium_leader_trait = {
 
 # this = leader
 has_specialist_subject_prospectorium_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = leader_trait_prospectorium_extractor
 		has_trait = leader_trait_prospectorium_optimizer
@@ -27,6 +30,7 @@ has_specialist_subject_prospectorium_leader_trait = {
 
 # this = leader
 has_specialist_subject_mercatorum_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = leader_trait_mercatorum_trader
 		has_trait = leader_trait_mercatorum_economist

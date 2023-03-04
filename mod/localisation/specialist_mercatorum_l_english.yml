@@ -22,7 +22,8 @@
  preset_mercatorum_mean_03_flavor_desc: "$preset_mercatorum_flavor_desc$"
  resource_subsidies_commercial: "Commercial"
  resource_subsidies_infrastructure: "Infrastructure"
-
+ specialist_mercatorum.11.title: "Corporate Authority §RRequired§!"
+ specialist_mercatorum.11.desc: "£mercatorum£ §YMercatorum§! specialist subjects must have a §Y$auth_corporate$§! authority. Due to game modding limitations, reforming into other authorities cannot be prevented. Instead, you have been refunded §G+[This.government_change_cost]§! £unity£ §Y$unity$§! and your authority swapped back to §Y$auth_corporate$§!.\n\nAfter the government reform cooldown has elapsed, you may reform your civics as long as your authority remains $auth_corporate$."
  specialist_mercatorum_overlord_modifier: "$mercatorum_1_overlord_modifier$"
  specialist_mercatorum_overlord_modifier_desc: "§LAdvisors from our Mercatorum specialist improve the efficiency of our civilian trade.§!"
  specialist_mercatorum_subject_modifier: "Mercatorum"

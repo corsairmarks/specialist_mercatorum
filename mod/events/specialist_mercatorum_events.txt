@@ -179,7 +179,7 @@ country_event = {
 }
 
 # triggered by on_branch_office_established
-# this = planet, branch office location
+# root = planet, branch office location
 # from = country, branch office owner
 planet_event = {
 	id = specialist_mercatorum.8
@@ -206,7 +206,7 @@ planet_event = {
 }
 
 # triggered by on_branch_office_closed
-# this = planet, branch office location
+# root = planet, branch office location
 # from = country, branch office owner
 planet_event = {
 	id = specialist_mercatorum.9
@@ -216,6 +216,60 @@ planet_event = {
 	trigger = { has_modifier = specialist_mercatorum_branch_office }
 	immediate = {
 		remove_modifier = specialist_mercatorum_branch_office
+	}
+}
+
+# meratorum specialist subjects must be megacorps - change it back and refund the unity
+# triggered by on_post_government_changed
+# root = country
+country_event = {
+	id = specialist_mercatorum.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_specialist_subject_type = { TYPE = mercatorum }
+		is_megacorp = no
+	}
+	immediate = {
+		# from 00_defines.txt: it costs (Empire Size) * X Unity to change Government Type
+		# GOVERNMENT_CHANGE_EMPIRE_SIZE_MULT = 10.0
+		export_trigger_value_to_variable = {
+			trigger = empire_size
+			variable = government_change_cost
+		}
+		multiply_variable = {
+			which = government_change_cost
+			value = 10
+		}
+		try_convert_to_mercatorum_megacorp = yes
+		add_resource = {
+			unity = 1
+			multiplier = government_change_cost
+		}
+		if = {
+			limit = { is_ai = yes }
+			clear_variable = government_change_cost
+		}
+		else = {
+			country_event = {
+				id = specialist_mercatorum.11
+			}
+		}
+	}
+}
+
+# triggered explicitly by specialist_mercatorum.10
+country_event = {
+	id = specialist_mercatorum.11
+	is_triggered_only = yes
+	title = specialist_mercatorum.11.title
+	desc = specialist_mercatorum.11.desc
+	picture = GFX_evt_unity_symbol
+	option = {
+		name = UNFORTUNATE
+	}
+	after = {
+		clear_variable = government_change_cost
 	}
 }
 
