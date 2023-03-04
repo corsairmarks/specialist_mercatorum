@@ -3,4 +3,9 @@ spriteTypes = {
 		name = "GFX_text_mercatorum"
 		texturefile = "gfx/interface/icons/text_icons/text_icon_mercatorum.dds"
 	}
+
+	spriteType = {
+		name = "GFX_text_infrastructure_resources"
+		texturefile = "gfx/interface/icons/text_icons/text_icon_infrastructure_resources.dds"
+	}
 }
