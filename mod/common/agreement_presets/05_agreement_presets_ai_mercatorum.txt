@@ -103,6 +103,10 @@ preset_mercatorum_nice_01 = {
 	}
 	potential = {
 		has_overlord_dlc = yes
+		has_megacorp = yes
+		is_machine_empire = no
+		is_hive_empire = no
+		is_homicidal = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
@@ -214,6 +218,10 @@ preset_mercatorum_nice_02 = {
 	}
 	potential = {
 		has_overlord_dlc = yes
+		has_megacorp = yes
+		is_machine_empire = no
+		is_hive_empire = no
+		is_homicidal = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
@@ -325,6 +333,10 @@ preset_mercatorum_mean_01 = {
 	}
 	potential = {
 		has_overlord_dlc = yes
+		has_megacorp = yes
+		is_machine_empire = no
+		is_hive_empire = no
+		is_homicidal = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
@@ -436,6 +448,10 @@ preset_mercatorum_mean_02 = {
 	}
 	potential = {
 		has_overlord_dlc = yes
+		has_megacorp = yes
+		is_machine_empire = no
+		is_hive_empire = no
+		is_homicidal = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
@@ -543,6 +559,10 @@ preset_mercatorum_mean_03 = {
 	}
 	potential = {
 		has_overlord_dlc = yes
+		has_megacorp = yes
+		is_machine_empire = no
+		is_hive_empire = no
+		is_homicidal = no
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
