@@ -1,6 +1,0 @@
-# supports features from my mod Corsair's Custom Empires: Halcyon Realms of the Marian Polity
-# this = any
-has_halcyon_realms_of_the_marian_polity_active = {
-	optimize_memory
-	always = no
-}

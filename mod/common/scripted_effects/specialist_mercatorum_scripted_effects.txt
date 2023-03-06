@@ -119,10 +119,6 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_exalted_priesthood }
 		set_civic_flag_if_present = { CIVIC = civic_ascensionists }
 		set_civic_flag_if_present = { CIVIC = civic_feudal_realm }
-		if = {
-			limit = { has_halcyon_realms_of_the_marian_polity_active = yes }
-			set_civic_flag_if_present = { CIVIC = civic_catalytic_processing_alternate }
-		}
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
 		if = {
 			limit = { has_ethic = ethic_fanatic_authoritarian }
@@ -275,14 +271,6 @@ try_convert_to_mercatorum_megacorp = {
 		add_civic_if_not_present = { CIVIC = civic_corporate_crafters } # only available with Humanoids Species Pack
 		add_civic_if_not_present = { CIVIC = civic_public_relations_specialists }
 		add_civic_if_not_present = { CIVIC = civic_trading_posts }
-		# handle the special early catalytic bonus civic lat, because it has a net 0 cost
-		if = {
-			limit = {
-				has_halcyon_realms_of_the_marian_polity_active = yes
-				has_country_flag = civic_catalytic_processing_alternate
-			}
-			force_add_civic = civic_corporate_catalytic_processing_alternate
-		}
 		clear_variable = num_civics_to_add
 	}
 }

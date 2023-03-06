@@ -89,10 +89,3 @@
  action_break_commercial_pact_mercatorum_acceptance_subject_to_subject: "$action_form_commercial_pact_mercatorum_acceptance_subject_to_subject$"
  action_break_commercial_pact_mercatorum_acceptance_overlord_to_subject: "$action_form_commercial_pact_mercatorum_acceptance_overlord_to_subject$"
  action_break_commercial_pact_mercatorum_acceptance_subject_to_overlord: "$action_form_commercial_pact_mercatorum_acceptance_subject_to_overlord$"
-
- # localisation to make the game happy with the conditional content
- # matches localisation from Corsair's Custom Empires: Halcyon Realms of the Marian Polity so that it won't matter which mod loads first
- civic_catalytic_processing_alternate: "Early $civic_catalytic_processing$"
- civic_catalytic_processing_alternate_desc: "$civic_catalytic_processing_desc$"
- civic_corporate_catalytic_processing_alternate: "Early $civic_corporate_catalytic_processing$"
- civic_corporate_catalytic_processing_alternate_desc: "$civic_corporate_catalytic_processing_desc$"
