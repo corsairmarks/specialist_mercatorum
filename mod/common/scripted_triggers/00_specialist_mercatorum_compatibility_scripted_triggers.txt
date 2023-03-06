@@ -2,7 +2,7 @@
 # this = any
 has_civic_organic_zealots_active = {
 	optimize_memory
-	always = yes
+	always = no
 }
 
 ### Civic: Organic Zealots ###
