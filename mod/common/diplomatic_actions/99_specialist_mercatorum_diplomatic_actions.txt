@@ -1,5 +1,6 @@
-# Form a commercial pact with another empire, increases value of both trade networks
-# Usable by regular empires only. Raises trust over time.
+# Modified:
+# * compatibility with Civic: Organic Zealots
+# * AI acceptance and AI proposal chances increased between mercatorum subjects, their overlord, and their fellow subjects
 action_form_commercial_pact = {
 	icon = "GFX_diplomacy_status_commercial_pact"
 	diplo_view_acceptance_icon = yes
@@ -9,19 +10,25 @@ action_form_commercial_pact = {
 	AI_acceptance_base_value = -50
 	action_type = positive
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_actor_not_fanatic_purifiers"
-			OR = {
-				is_same_species = from
-				NOT = { has_valid_civic = civic_fanatic_purifiers	}
+		if = {
+			limit = { has_civic_organic_zealots_active = no }
+			custom_tooltip = {
+				fail_text = "requires_actor_not_fanatic_purifiers"
+				OR = {
+					is_same_species = from
+					NOT = { has_valid_civic = civic_fanatic_purifiers	}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_recipient_not_fanatic_purifiers"
+				OR = {
+					is_same_species = from
+					from = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
+				}
 			}
 		}
-		custom_tooltip = {
-			fail_text = "requires_recipient_not_fanatic_purifiers"
-			OR = {
-				is_same_species = from
-				from = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
-			}
+		else = {
+			diplomacy_is_not_homicidal_non_gestalt = yes
 		}
 		if = {
 			limit = { from = { has_valid_civic = civic_inwards_perfection } }
@@ -94,9 +101,7 @@ action_form_commercial_pact = {
 			from = {
 				NAND = {
 					has_federation = yes
-					federation = {
-						has_federation_law = treaties_separate_no
-					}
+					federation = { has_federation_law = treaties_separate_no }
 					NOT = { federation = { any_member = { is_same_value = root } } }
 				}
 			}
@@ -191,7 +196,7 @@ action_form_commercial_pact = {
 	}
 }
 
-# Break an existing commercial pact, harms relations and sets a 10 year truce.
+# Modified: AI acceptance and AI proposal chances reduced between mercatorum subjects, their overlord, and their fellow subjects
 action_break_commercial_pact = {
 	icon = "GFX_diplomacy_status_commercial_pact"
 	auto_accepted = yes

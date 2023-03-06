@@ -1,0 +1,15 @@
+# supports features from my mod Civic: Organic Zealots
+# this = any
+has_civic_organic_zealots_active = {
+	optimize_memory
+	always = yes
+}
+
+### Civic: Organic Zealots ###
+
+# this = country, actor
+# from = country, recipient
+diplomacy_is_not_homicidal_non_gestalt = {
+	optimize_memory
+	always = no
+}
