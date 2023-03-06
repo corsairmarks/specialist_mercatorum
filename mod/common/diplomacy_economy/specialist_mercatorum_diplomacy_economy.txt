@@ -5,8 +5,8 @@ per_relation = {
 		trigger = {
 			hidden_trigger = { exists = from }
 			has_commercial_pact = from
-			OR = {
-				NOT = { has_ascension_perk = ap_universal_transactions }
+			NOR = {
+				has_ascension_perk = ap_universal_transactions
 				AND = { # same overlord, either subject is a mercatorum
 					is_subject = yes
 					from = {
