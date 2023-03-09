@@ -79,9 +79,7 @@
  edict_relay_network_customs_checkpoints: "Networked Customs Checkpoints"
  edict_relay_network_customs_checkpoints_desc: "Trade flowing through the Relay Network is easier to monitor for contraband and limits pilferage."
  relay_network_trade_protection_modifier: "$edict_relay_network_customs_checkpoints$"
-
  not_allowed_for_mercatorum: "$TRIGGER_FAIL$Not allowed for §Y$specialist_mercatorum$§! preset."
-
  mod_planet_branch_offices_unity_produces_add: "£unity£ $BRANCH_OFFICE$ Income"
  action_form_commercial_pact_mercatorum_acceptance_subject_to_subject: "Fellow Subject of [This.Overlord.GetRealName]"
  action_form_commercial_pact_mercatorum_acceptance_overlord_to_subject: "Overlord of Mercatorum [From.GetRealName]"
@@ -89,7 +87,6 @@
  action_break_commercial_pact_mercatorum_acceptance_subject_to_subject: "$action_form_commercial_pact_mercatorum_acceptance_subject_to_subject$"
  action_break_commercial_pact_mercatorum_acceptance_overlord_to_subject: "$action_form_commercial_pact_mercatorum_acceptance_overlord_to_subject$"
  action_break_commercial_pact_mercatorum_acceptance_subject_to_overlord: "$action_form_commercial_pact_mercatorum_acceptance_subject_to_overlord$"
-
  trade_action_mercatorum_prefabs: "Mercatorum Customs Enforcement"
  trade_action_mercatorum_prefabs_desc: "§LOur vassals should focus their customs enforcement in the territory where it it most effective - ours.§!"
  trade_action_mercatorum_technology: "Mercatorum Technology"
@@ -97,3 +94,10 @@
  mercatorum_technology_physics_modifier: "$trade_action_mercatorum_technology$ Sharing"
  mercatorum_technology_society_modifier: "$mercatorum_technology_physics_modifier$"
  mercatorum_technology_engineering_modifier: "$mercatorum_technology_physics_modifier$"
+ specialist_mercatorum_dividends: "Mercatorum Dividends"
+ specialist_mercatorum_dividends_type: "$specialist_mercatorum_dividends$"
+ stage_depository_period: "Depository Period"
+ stage_depository_period_desc: "Resources are invested in private concerns to generate dividends for out overlord, the §H[This.Owner.Overlord.GetName]§!."
+ approach_investment_maturation: "Dividend Maturation"
+ approach_investment_maturation_desc: "Market forces influence how quickly we are able to render dividends to our overlord. Our internal economy, our trade economy via §Y$commercial_pacts$§!, and the galactic economic environment in the §H[global_event_country.GetGalCommunityOrGalImperium]§! influence investment growth."
+ approach_investment_maturation_tooltip: "There is nothing to do but wait for the Invisible Hand to improve the valuation of our overlord's investments."

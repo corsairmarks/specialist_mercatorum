@@ -8,7 +8,15 @@ specialist_mercatorum = {
 	icon_large = "GFX_diplomacy_specialist_subject_mercatorum_large"
 	preferred_ethic = ethic_xenophile
 	base_conversion_time = @specialist_base_conversion_time
-	on_progress_complete = { target = { try_convert_to_mercatorum_megacorp = yes } }
+	on_progress_complete = {
+		target = {
+			try_convert_to_mercatorum_megacorp = yes
+			start_situation = {
+				type = specialist_mercatorum_dividends
+				target = this
+			}
+		}
+	}
 	levels = {
 		# Level 1
 		{

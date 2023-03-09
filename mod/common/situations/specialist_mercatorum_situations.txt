@@ -1,0 +1,144 @@
+#################################
+# Mercatorum Dividends Overlord #
+#################################
+
+@mercatorum_dividend_base_rate = 0.417 # 20 years to completion with no other modifiers
+@mercatorum_dividend_commercial_pact_rate = 0.417 # Adds an extra month of progress for each commercial pact
+@mercatorum_dividend_colony_rate = 0.105 # Adds a month of progress for every 4 colonies
+@mercatorum_dividend_resolution_rate = 0.208 # Adds an extra half a month of progress per active economic GalCom resolution
+@mercatorum_dividend_deficit_rate = -2.085 # Subtracts five months of progress during a deficit
+@mercatorum_dividend_default_rate = -4.170 # Subtracts ten months of progress during default
+@mercatorum_dividend_ascension_perk_rate = 1.043 # Adds an extra two and a half months of progress if the Mercatorum has an appropriate ascension perk
+
+specialist_mercatorum_dividends = {
+	picture = GFX_evt_financial_instruments
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_meh
+	on_progress_complete = {
+		custom_tooltip = situation_unknown_outcome_approach
+		owner = {
+			country_event = {
+				id = specialist_mercatorum.275
+			}
+		}
+	}
+	on_fail = {
+		log_error = "specialist_mercatorum_dividends situation failed, this is not meant to happen"
+		destroy_situation = this
+	}
+	stages = {
+		stage_depository_period = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+		}
+	}
+	on_monthly = {
+		events = {
+			# TODO
+			# maybe bailouts from overlord can work?
+			# check if a deficit monthly, then ping overlord to ask for a bailout of any/all ongoing deficits
+			# ping once a deficit starts (add a flag indicating it has already been asked), then ping again if likely to default next month
+			# overlord should suffer if the mercatorum goes bankrupt
+			# bailout give positive opinion, + loyalty
+			# allowing them to default causes huge negative opinion, huge negative loyalty
+		}
+		# random_events = {
+		# 	100 = 0
+		# }
+		# what can I do without overriding the built-in situations?
+	}
+	monthly_progress = {
+		base = @mercatorum_dividend_base_rate
+		modifier = { # bonus progress for a commerical with the overlord
+			add = @mercatorum_dividend_commercial_pact_rate
+			desc = PACT_commercial_pact
+			exists = owner
+			owner = {
+				is_specialist_subject_type = { TYPE = mercatorum }
+				has_commercial_pact = overlord
+			}
+		}
+		modifier = {
+			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|@mercatorum_dividend_commercial_pact_rate|TRIGGER|num_commercial_pacts|
+			desc = PACT_commercial_pact
+			exists = owner
+			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+		}
+		modifier = {
+			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|@mercatorum_dividend_colony_rate|TRIGGER|num_owned_planets|
+			desc = COLONIES
+			exists = owner
+			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+		}
+		modifier = {
+			add = @mercatorum_dividend_deficit_rate
+			desc = DEFICIT
+			owner = { any_situation = { has_situation_flag = deficit_situation } }
+			situation_progress > @mercatorum_dividend_deficit_rate # we don't want total situation progress to ever go below 0
+		}
+		modifier = {
+			add = @mercatorum_dividend_default_rate
+			desc = country_defaulted
+			owner = { has_modifier = country_defaulted }
+			situation_progress > @mercatorum_dividend_default_rate # we don't want total situation progress to ever go below 0
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = RESOLUTIONS
+			owner = { is_galactic_community_member = yes }
+			is_active_resolution = resolution_commerce_buzzword_standardization
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = RESOLUTIONS
+			owner = { is_galactic_community_member = yes }
+			is_active_resolution = resolution_commerce_leveraged_privateering
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = RESOLUTIONS
+			owner = { is_galactic_community_member = yes }
+			is_active_resolution = resolution_commerce_underdeveloped_system_utilization
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = RESOLUTIONS
+			owner = { is_galactic_community_member = yes }
+			is_active_resolution = resolution_commerce_holistic_asset_coordination
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = RESOLUTIONS
+			owner = { is_galactic_community_member = yes }
+			is_active_resolution = resolution_commerce_profit_maximization_engines
+		}
+		modifier = {
+			add = @mercatorum_dividend_resolution_rate
+			desc = GALACTIC_MARKET
+			has_global_flag = galactic_market_founded
+			owner = {
+				is_galactic_community_member = yes
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			add = @mercatorum_dividend_ascension_perk_rate
+			desc = ap_universal_transactions
+			exists = owner
+			owner = {
+				is_specialist_subject_type = { TYPE = mercatorum }
+				has_ascension_perk = ap_universal_transactions
+			}
+		}
+	}
+	approach = {
+		name = approach_investment_maturation
+		icon = GFX_situation_approach_energy_credits
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		on_select = {
+			custom_tooltip = approach_investment_maturation_tooltip
+		}
+	}
+}

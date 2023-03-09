@@ -1,0 +1,10 @@
+# $BASE$ = the base value
+# $TRIGGER$ = the owner-scoped trigger to use as a multiplier for the base value
+mercatorum_specialist_dividend_situation_owner_trigger_multiplier = {
+	base = $BASE$
+	complex_trigger_modifier = {
+		trigger = $TRIGGER$
+		trigger_scope = owner
+		mode = multiply
+	}
+}

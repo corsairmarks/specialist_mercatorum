@@ -37,3 +37,21 @@ has_specialist_subject_mercatorum_leader_trait = {
 		has_trait = leader_trait_mercatorum_industrialist
 	}
 }
+
+# this = country
+has_specialist_subject_exact_tier = {
+	is_overlord = yes
+	any_agreement = {
+		has_active_specialization = specialist_$TYPE$
+		specialist_tier = $TIER$
+	}
+}
+
+# this = country
+is_specialist_subject_exact_tier = {
+	is_subject = yes
+	any_agreement = {
+		has_active_specialization = specialist_$TYPE$
+		specialist_tier = $TIER$
+	}
+}
