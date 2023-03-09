@@ -1,0 +1,179 @@
+trade_action_mercatorum_customs_enforcement = {
+	fire_and_forget = no
+	potential = {
+		has_overlord_dlc = yes
+		has_overlord = from
+		NOT = {
+			is_action_active = {
+				action = trade_action_mercatorum_customs_enforcement
+				with_country = from
+			}
+		}
+		is_specialist_subject_type = { TYPE = mercatorum }
+		from = { NOT = { has_modifier = mercatorum_customs_enforcement_overlord } }
+	}
+	active = {
+		has_overlord = from
+		is_specialist_subject_type = { TYPE = mercatorum }
+	}
+	on_traded_effect = {
+		if = {
+			limit = {
+				is_specialist_subject_tier = {
+					TYPE = mercatorum
+					TIER = 3
+				}
+			}
+			root = {
+				add_modifier = {
+					modifier = mercatorum_customs_enforcement_subject
+					multiplier = 3
+				}
+			}
+			custom_tooltip = double_newline
+			from = {
+				add_modifier = {
+					modifier = mercatorum_customs_enforcement_overlord
+					multiplier = 3
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_specialist_subject_tier = {
+					TYPE = mercatorum
+					TIER = 2 }
+				}
+			root = {
+				add_modifier = {
+					modifier = mercatorum_customs_enforcement_subject
+					multiplier = 2
+				}
+			}
+			custom_tooltip = double_newline
+			from = {
+				add_modifier = {
+					modifier = mercatorum_customs_enforcement_overlord
+					multiplier = 2
+				}
+			}
+		}
+		else = {
+			root = { add_modifier = { modifier = mercatorum_customs_enforcement_subject } }
+			custom_tooltip = double_newline
+			from = { add_modifier = { modifier = mercatorum_customs_enforcement_overlord } }
+		}
+	}
+	on_deal_ended_sender_effect = {
+		remove_modifier = mercatorum_customs_enforcement_subject
+	}
+	on_deal_ended_recipient_effect = {
+		remove_modifier = mercatorum_customs_enforcement_overlord
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 1.5
+			from = { has_ethic = ethic_authoritarian }
+		}
+		modifier = {
+			factor = 2
+			from = { has_ethic = ethic_fanatic_authoritarian }
+		}
+		modifier = {
+			factor = 0.5
+			from = { has_ethic = ethic_egalitarian }
+		}
+		modifier = {
+			factor = 0.1
+			from = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+}
+
+trade_action_mercatorum_technology = {
+	fire_and_forget = yes
+	potential = {
+		has_overlord_dlc = yes
+		has_overlord = from
+		is_specialist_subject_type = { TYPE = mercatorum }
+		from = {
+			inverted_switch = {
+				trigger = has_technology
+				space_trading = { root = { has_technology = space_trading } }
+				interstellar_economics = { root = { has_technology = interstellar_economics } }
+				galactic_markets = { root = { has_technology = galactic_markets } }
+				strike_craft_1 = { root = { has_technology = strike_craft_1 } }
+				strike_craft_2 = { root = { has_technology = strike_craft_2 } }
+				strike_craft_3 = { root = { has_technology = strike_craft_3 } }
+			}
+			NOR = {
+				has_modifier = mercatorum_technology_physics_modifier
+				has_modifier = mercatorum_technology_society_modifier
+				has_modifier = mercatorum_technology_engineering_modifier
+			}
+		}
+	}
+	on_traded_effect = {
+		from = {
+			inverted_switch = {
+				trigger = has_technology
+				space_trading = {
+					add_research_option = space_trading
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_society_modifier
+							days = 360
+						}
+					}
+				}
+				interstellar_economics = {
+					add_research_option = interstellar_economics
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_society_modifier
+							days = 360
+						}
+					}
+				}
+				galactic_markets = {
+					add_research_option = galactic_markets
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_society_modifier
+							days = 360
+						}
+					}
+				}
+				strike_craft_1 = {
+					add_research_option = strike_craft_1
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_engineering_modifier
+							days = 360
+						}
+					}
+				}
+				strike_craft_2 = {
+					add_research_option = strike_craft_2
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_engineering_modifier
+							days = 360
+						}
+					}
+				}
+				strike_craft_3 = {
+					add_research_option = strike_craft_3
+					root = {
+						add_modifier = {
+							modifier = mercatorum_technology_engineering_modifier
+							days = 360
+						}
+					}
+				}
+			}
+		}
+	}
+	ai_weight = { weight = 25 }
+}

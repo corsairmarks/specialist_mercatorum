@@ -1,16 +1,3 @@
-# Trade-related modifiers:
-# - starbase_trade_collection_range_add, Category: Starbases, Trade
-# - starbase_trade_protection_range_add, Category: Starbases, Trade
-# - starbase_trade_protection_add, Category: Starbases, Trade
-# - local_trade_protection_add, Category: Countries, Trade
-# - country_trade_fee, Category: Countries
-# - trade_value_add, Category: Planets, Megastructures, Starbases
-# - trade_value_mult, Category: Planets, Megastructures, Starbases
-# - max_trade_piracy_add, Category: Star Systems
-# - max_trade_piracy_mult, Category: Star Systems
-# - pop_job_trade_mult, Category: Pops
-# - pop_lifestyle_trade_mult, Category: Pops
-
 ## Modifiers related to hyper relay network
 relay_network_trade_edict_modifier = {
 	trade_value_mult = 0.05
@@ -22,6 +9,22 @@ relay_network_trade_protection_modifier = {
 
 relay_network_trade_protection_range_modifier = {
 	starbase_trade_protection_range_add = 1
+}
+
+#########################################
+# SPECIALIST & OVERLORD PASSIVE BONUSES #
+#########################################
+
+mercatorum_technology_physics_modifier = {
+	country_physics_research_produces_mult = -0.1
+}
+
+mercatorum_technology_society_modifier = {
+	country_society_research_produces_mult = -0.1
+}
+
+mercatorum_technology_engineering_modifier = {
+	country_engineering_research_produces_mult = -0.1
 }
 
 ###########################
@@ -39,19 +42,15 @@ specialist_mercatorum_neighbor = {
 # TRADE ACTION MODIFIERS #
 ##########################
 
-# TODO: what trade action(s) are appropriate for a mercatorum?
+mercatorum_customs_enforcement_overlord = {
+	icon = "gfx/interface/icons/modifiers/mod_starbase_trade_protection_add.dds"
+	starbase_trade_protection_add = 5
+}
 
-# bulwark_prefabs_overlord = {
-# 	icon = "gfx/interface/icons/modifiers/mod_ship_military_station_small_cost_mult_positive.dds"
-# 	ship_military_station_small_cost_mult = -0.25
-# 	ship_military_station_small_upkeep_mult = -0.25
-# }
-
-# bulwark_prefabs_subject = {
-# 	icon = "gfx/interface/icons/modifiers/mod_ship_military_station_small_cost_mult_negative.dds"
-# 	ship_military_station_small_cost_mult = 0.25
-# 	ship_military_station_small_upkeep_mult = 0.25
-# }
+mercatorum_customs_enforcement_subject = {
+	icon = "gfx/interface/icons/modifiers/mod_starbase_trade_protection_add.dds"
+	starbase_trade_protection_add = -5
+}
 
 ###########################
 # BRANCH OFFICE MODIFIERS #
