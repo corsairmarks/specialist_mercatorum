@@ -1,4 +1,4 @@
-specialist_meractorum_personality = {
+specialist_mercatorum_personality = {
 	aggressiveness = 0.4
 	trade_willingness = 1.0
 	bravery = 0.5
@@ -59,7 +59,7 @@ specialist_meractorum_personality = {
 	weight_modifier = { weight = 1000 }
 }
 
-specialist_meractorum_personality_slaver = {
+specialist_mercatorum_personality_slaver = {
 	aggressiveness = 0.6
 	trade_willingness = 1.0
 	bravery = 0.6
