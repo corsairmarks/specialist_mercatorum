@@ -1,6 +1,7 @@
 per_relation = {
 	# this is applied for each such relation with another country
-	# scope: this = current country, FROM : other country in the relation
+	# this = current country
+	# from = other country in the relation
 	commercial_pact = {
 		trigger = {
 			hidden_trigger = { exists = from }
