@@ -527,9 +527,9 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = minerals
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
 		}
 		add_monthly_resource_mult = {
 			resource = food
@@ -549,9 +549,9 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = minerals
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
 		}
 		add_monthly_resource_mult = {
 			resource = food
@@ -571,9 +571,9 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = minerals
-			value = @tier4materialreward
-			min = @tier4materialmin
-			max = @tier4materialmax
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
 		}
 		add_monthly_resource_mult = {
 			resource = food
@@ -614,9 +614,9 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = consumer_goods
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
 		}
 		add_monthly_resource_mult = {
 			resource = alloys
@@ -636,12 +636,12 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = consumer_goods
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = consumer_goods
+			resource = alloys
 			value = @tier2materialreward
 			min = @tier2materialmin
 			max = @tier2materialmax
@@ -658,9 +658,9 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = consumer_goods
-			value = @tier4materialreward
-			min = @tier4materialmin
-			max = @tier4materialmax
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
 		}
 		add_monthly_resource_mult = {
 			resource = alloys
@@ -704,13 +704,19 @@ country_event = {
 			max = @tier1materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = minerals
+			resource = volatile_motes
 			value = @tier1materialreward
 			min = @tier1materialmin
 			max = @tier1materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = food
+			resource = exotic_gases
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = rare_crystals
 			value = @tier1materialreward
 			min = @tier1materialmin
 			max = @tier1materialmax
@@ -726,13 +732,19 @@ country_event = {
 			max = @tier2materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = minerals
+			resource = volatile_motes
 			value = @tier2materialreward
 			min = @tier2materialmin
 			max = @tier2materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = food
+			resource = exotic_gases
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = rare_crystals
 			value = @tier2materialreward
 			min = @tier2materialmin
 			max = @tier2materialmax
@@ -748,13 +760,19 @@ country_event = {
 			max = @tier3materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = minerals
+			resource = volatile_motes
 			value = @tier3materialreward
 			min = @tier3materialmin
 			max = @tier3materialmax
 		}
 		add_monthly_resource_mult = {
-			resource = food
+			resource = exotic_gases
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = rare_crystals
 			value = @tier3materialreward
 			min = @tier3materialmin
 			max = @tier3materialmax
@@ -789,6 +807,12 @@ country_event = {
 		name = EXCELLENT
 		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 1 } }
 		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+		add_monthly_resource_mult = {
 			resource = sr_living_metal
 			value = @tier1influencereward
 			min = @tier1influencemin
@@ -811,6 +835,12 @@ country_event = {
 		name = EXCELLENT
 		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 2 } }
 		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+		add_monthly_resource_mult = {
 			resource = sr_living_metal
 			value = @tier2influencereward
 			min = @tier2influencemin
@@ -832,6 +862,12 @@ country_event = {
 	option = {
 		name = EXCELLENT
 		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 3 } }
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
 		add_monthly_resource_mult = {
 			resource = sr_living_metal
 			value = @tier3influencereward
