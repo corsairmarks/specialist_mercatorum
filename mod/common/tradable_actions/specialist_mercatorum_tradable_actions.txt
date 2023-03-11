@@ -42,8 +42,9 @@ trade_action_mercatorum_customs_enforcement = {
 			limit = {
 				is_specialist_subject_tier = {
 					TYPE = mercatorum
-					TIER = 2 }
+					TIER = 2
 				}
+			}
 			root = {
 				add_modifier = {
 					modifier = specialist_mercatorum_customs_enforcement_subject
