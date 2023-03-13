@@ -274,3 +274,60 @@ try_convert_to_mercatorum_megacorp = {
 		clear_variable = num_civics_to_add
 	}
 }
+
+# set a varible with the owner's $RESOURCE$ deficit monthly income shortfall - but only if it hasn't been set, or this month is worse (lower) than the saved amount
+# this = situation
+# $RESOURCE$ = the resource for which to export the monthly deficit
+set_owner_monthly_shortfall = {
+	owner = {
+		if = {
+			limit = {
+				resource_income_compare = {
+					resource = $RESOURCE$
+					value < 0
+				}
+			}
+			export_resource_income_to_variable = {
+				resource = $RESOURCE$
+				variable = deficit_amount
+			}
+			prev = { 
+				if = {
+					limit = {
+						OR = {
+							NOT = { is_variable_set = deficit_amount }
+							check_variable = {
+								which = deficit_amount
+								value < prev.deficit_amount
+							}
+						}
+					}
+					set_variable = {
+						which = deficit_amount
+						value = prev.deficit_amount
+					}
+				}
+			}
+		}
+	}
+}
+
+# remove the $RESOURCE$ bailout from the overlord and add it to the subject
+# this = situation
+# root = country, overlord
+# from = country, subject (mercatorum)
+# $RESOURCE$ = the resource for which the subject is being bailed out
+bail_out_mercatorum_subject = {
+	root = {
+		add_resource = {
+			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_cost
+			multiplier = value:bailout_scaling_factor
+		}
+	}
+	from = {
+		add_resource = {
+			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_payment
+			multiplier = value:bailout_scaling_factor
+		}
+	}
+}

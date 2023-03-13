@@ -35,18 +35,8 @@ specialist_mercatorum_dividends = {
 	}
 	on_monthly = {
 		events = {
-			# TODO
-			# maybe bailouts from overlord can work?
-			# check if a deficit monthly, then ping overlord to ask for a bailout of any/all ongoing deficits
-			# ping once a deficit starts (add a flag indicating it has already been asked), then ping again if likely to default next month
-			# overlord should suffer if the mercatorum goes bankrupt
-			# bailout give positive opinion, + loyalty
-			# allowing them to default causes huge negative opinion, huge negative loyalty
+			specialist_mercatorum.12
 		}
-		# random_events = {
-		# 	100 = 0
-		# }
-		# what can I do without overriding the built-in situations?
 	}
 	monthly_progress = {
 		base = @mercatorum_dividend_base_rate

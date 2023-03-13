@@ -1,0 +1,35 @@
+opinion_specialist_mercatorum_overlord_deficit_bailout = {
+	opinion = {
+		base = 60
+	}
+	accumulative = yes
+	max = 600
+	monthly = yes
+	decay = {
+		base = -2
+	}
+}
+
+opinion_specialist_mercatorum_overlord_deficit_bailout_refuse = {
+	opinion = {
+		base = -30
+	}
+	accumulative = yes
+	max = -300
+	monthly = yes
+	decay = {
+		base = -2
+	}
+}
+
+opinion_specialist_mercatorum_overlord_allowed_default = {
+	opinion = {
+		base = -120
+	}
+	accumulative = yes
+	min = -1200
+	monthly = yes
+	decay = {
+		base = 1
+	}
+}

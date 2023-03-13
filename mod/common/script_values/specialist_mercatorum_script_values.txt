@@ -8,3 +8,24 @@ mercatorum_specialist_dividend_situation_owner_trigger_multiplier = {
 		mode = multiply
 	}
 }
+
+# this = situation
+mercatorum_specialist_deficit_bailout_cost = {
+	base = trigger:situation_progress
+	modifier = {
+		if_variable_set = deficit_amount
+		check_variable = {
+			which = deficit_amount
+			value < 0
+		}
+		subtract = deficit_amount
+	}
+	multiply = -10
+	min = 100
+}
+
+# this = situation
+mercatorum_specialist_deficit_bailout_payment = {
+	base = value:mercatorum_specialist_deficit_bailout_cost
+	multiply = -1
+}
