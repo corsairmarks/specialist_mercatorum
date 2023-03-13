@@ -3,18 +3,30 @@ specialist_mercatorum = {
 	triggered_loyalty_change = {
 		trigger = { target = { is_xenophile = yes } }
 		loyalty_change = 5
+		ai_acceptance = {
+			subject = 25
+		}
 	}
 	triggered_loyalty_change = {
 		trigger = { target = { is_capitalist = yes } }
 		loyalty_change = 5
+		ai_acceptance = {
+			subject = 25
+		}
 	}
 	triggered_loyalty_change = {
 		trigger = { target = { is_oligarchy = yes } }
 		loyalty_change = 5
+		ai_acceptance = {
+			subject = 25
+		}
 	}
 	triggered_loyalty_change = {
 		trigger = { target = { is_xenophobe = yes } }
 		loyalty_change = -20
+		ai_acceptance = {
+			subject = -100
+		}
 	}
 	activate_effect = {
 		convert_to_specialist = specialist_mercatorum

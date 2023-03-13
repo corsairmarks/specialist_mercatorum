@@ -13,6 +13,7 @@ specialist_mercatorum_personality = {
 	research_agreement_acceptance = 0
 	defensive_pact_acceptance = 0
 	migration_pact_acceptance = 0
+	loyalty_acceptance = 1
 
 	advanced_start_chance = 0
 
@@ -43,6 +44,7 @@ specialist_mercatorum_personality = {
 		multispecies = yes
 		crisis_fighter = no
 		wants_tribute = no
+		sneak_attacker = no
 	}
 
 	allow = {

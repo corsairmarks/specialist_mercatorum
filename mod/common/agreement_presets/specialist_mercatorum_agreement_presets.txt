@@ -136,6 +136,7 @@ preset_mercatorum = {
 						who = from
 						ratio >= @protectorate_tech_threshold
 					}
+					has_origin = origin_enlightened
 				}
 			}
 		}

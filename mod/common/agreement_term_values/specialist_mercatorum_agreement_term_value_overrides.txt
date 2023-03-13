@@ -33,6 +33,10 @@
 subject_can_be_integrated = {
 	term = subject_integration
 	loyalty_change = -50
+	ai_acceptance = {
+		overlord = 300
+		subject = -250
+	}
 	activate_effect = {
 		set_rule_can_subject_be_integrated = yes
 	}
@@ -83,6 +87,10 @@ subject_can_be_integrated = {
 subject_can_not_do_diplomacy = {
 	term = subject_diplomacy
 	loyalty_change = -15
+	ai_acceptance = {
+		overlord = 90
+		subject = -75
+	}
 	activate_effect = {
 		set_rule_can_subject_vote = no
 		set_rule_can_subject_do_diplomacy = no

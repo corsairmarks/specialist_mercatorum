@@ -14,7 +14,11 @@ mercatorum_1_modifier = {
 	activate_effect = {
 		target = {
 			store_country_backup_data = {
+				flag = no
 				room = yes
+				name = no
+				ethics = no
+				government = no
 			}
 			set_country_flag = mercatorum_country_backup_data
 			# explicit name because it is more compatible than needing to duplicate all of the ruler = { } -scoped room selectors

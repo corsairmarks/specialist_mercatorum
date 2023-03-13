@@ -19,18 +19,14 @@ resource_subsidies_commercial = {
 		energy
 		consumer_goods
 	}
-
 	subsidy_multiplier = @subsidy_multiplier_mercatorum
 	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_mercatorum
-
 	resource_min = {
 		base = @subsidy_minimum
 	}
-
 	resource_max = {
 		base = @subsidy_maximum
 	}
-
 	potential = {
 		agreement_preset = preset_mercatorum
 	}
@@ -38,24 +34,19 @@ resource_subsidies_commercial = {
 
 resource_subsidies_infrastructure = {
 	term = resource_subsidies
-
 	resources = {
 		minerals
 		food
 		alloys
 	}
-
 	subsidy_multiplier = @subsidy_multiplier_mercatorum
 	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_mercatorum
-
 	resource_min = {
 		base = @subsidy_minimum
 	}
-
 	resource_max = {
 		base = @subsidy_maximum
 	}
-
 	potential = {
 		agreement_preset = preset_mercatorum
 	}
