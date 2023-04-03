@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 # supports features from my mod Civic: Organic Zealots
 # this = any
 has_civic_organic_zealots_active = {
