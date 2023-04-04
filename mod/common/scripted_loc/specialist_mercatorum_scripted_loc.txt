@@ -1,0 +1,65 @@
+# this = situation
+defined_text = {
+	name = GetDeficitResourceName
+	text = {
+		trigger = { is_situation_type = situation_energy_deficit }
+		localization_key = r_energy
+	}
+	text = {
+		trigger = { is_situation_type = situation_mineral_deficit }
+		localization_key = r_minerals
+	}
+	text = {
+		trigger = { is_situation_type = situation_food_deficit }
+		localization_key = r_food
+	}
+	text = {
+		trigger = { is_situation_type = situation_consumer_goods_deficit }
+		localization_key = r_consumer_goods
+	}
+	text = {
+		trigger = { is_situation_type = situation_alloys_deficit }
+		localization_key = r_alloys
+	}
+	text = {
+		trigger = { is_situation_type = situation_volatile_motes_deficit }
+		localization_key = r_volatile_motes
+	}
+	text = {
+		trigger = { is_situation_type = situation_exotic_gases_deficit }
+		localization_key = r_exotic_gases
+	}
+	text = {
+		trigger = { is_situation_type = situation_rare_crystals_deficit }
+		localization_key = r_rare_crystals
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = { has_modifier = sr_living_metal_deficit }
+		}
+		localization_key = r_living_metal
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = { has_modifier = dark_matter_deficit }
+		}
+		localization_key = r_dark_matter
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = { has_modifier = sr_zro_deficit }
+		}
+		localization_key = r_zro
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = { has_modifier = nanites_deficit }
+		}
+		localization_key = r_nanites
+	}
+	default = RESOURCES
+}

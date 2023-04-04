@@ -338,52 +338,28 @@ situation_event = {
 country_event = {
 	id = specialist_mercatorum.13
 	title = specialist_mercatorum.13.title
-	desc = {
-		text = specialist_mercatorum.13.desc.energy
-		trigger = { from = { is_situation_type = situation_energy_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.minerals
-		trigger = { from = { is_situation_type = situation_mineral_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.food
-		trigger = { from = { is_situation_type = situation_food_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.consumer_goods
-		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.alloys
-		trigger = { from = { is_situation_type = situation_alloys_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.volatile_motes
-		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.exotic_gases
-		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.rare_crystals
-		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
-	}
+	desc = specialist_mercatorum.13.desc
 	picture = GFX_evt_deficit
 	show_sound = event_bad_omen
 	is_triggered_only = yes
 	trigger = {
 		exists = event_target:specialist_mercatorum_agreement
-		OR = {
-			is_situation_type = situation_energy_deficit
-			is_situation_type = situation_mineral_deficit
-			is_situation_type = situation_food_deficit
-			is_situation_type = situation_consumer_goods_deficit
-			is_situation_type = situation_alloys_deficit
-			is_situation_type = situation_volatile_motes_deficit
-			is_situation_type = situation_exotic_gases_deficit
-			is_situation_type = situation_rare_crystals_deficit
+		exists = from
+		from = {
+			NOR = {
+				has_situation_flag = deficit_situation_warn
+				has_situation_flag = deficit_situation_imminent_default
+			}
+			OR = {
+				is_situation_type = situation_energy_deficit
+				is_situation_type = situation_mineral_deficit
+				is_situation_type = situation_food_deficit
+				is_situation_type = situation_consumer_goods_deficit
+				is_situation_type = situation_alloys_deficit
+				is_situation_type = situation_volatile_motes_deficit
+				is_situation_type = situation_exotic_gases_deficit
+				is_situation_type = situation_rare_crystals_deficit
+			}
 		}
 	}
 	abort_trigger = {
@@ -415,9 +391,6 @@ country_event = {
 			}
 		}
 	}
-	after = {
-		from = { set_situation_flag = deficit_situation_warn }
-	}
 	option = {
 		name = specialist_mercatorum.13.a
 		hidden:from = {
@@ -444,6 +417,7 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.13.b
 		from = {
+			hidden_effect = { set_situation_flag = deficit_situation_warn }
 			add_opinion_modifier = {
 				who = root
 				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout_refuse
@@ -460,38 +434,7 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.14
 	title = specialist_mercatorum.14.title
-	desc = {
-		text = specialist_mercatorum.14.desc.energy
-		trigger = { from = { is_situation_type = situation_energy_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.minerals
-		trigger = { from = { is_situation_type = situation_mineral_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.food
-		trigger = { from = { is_situation_type = situation_food_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.consumer_goods
-		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.alloys
-		trigger = { from = { is_situation_type = situation_alloys_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.volatile_motes
-		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.exotic_gases
-		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.14.desc.rare_crystals
-		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
-	}
+	desc = specialist_mercatorum.14.desc
 	picture = GFX_evt_deficit
 	show_sound = event_life_support_fail
 	is_triggered_only = yes
@@ -500,6 +443,7 @@ country_event = {
 		exists = from
 		from = {
 			has_situation_flag = deficit_situation_warn
+			NOT = { has_situation_flag = deficit_situation_imminent_default }
 			OR = {
 				is_situation_type = situation_energy_deficit
 				is_situation_type = situation_mineral_deficit
@@ -599,38 +543,7 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.15
 	title = specialist_mercatorum.15.title
-	desc = {
-		text = specialist_mercatorum.15.desc.energy
-		trigger = { from = { is_situation_type = situation_energy_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.minerals
-		trigger = { from = { is_situation_type = situation_mineral_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.food
-		trigger = { from = { is_situation_type = situation_food_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.consumer_goods
-		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.alloys
-		trigger = { from = { is_situation_type = situation_alloys_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.volatile_motes
-		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.exotic_gases
-		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.15.desc.rare_crystals
-		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
-	}
+	desc = specialist_mercatorum.15.desc
 	picture = GFX_evt_deficit
 	show_sound = event_life_support_fail
 	is_triggered_only = yes
