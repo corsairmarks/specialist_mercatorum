@@ -333,68 +333,63 @@ situation_event = {
 
 # triggered explicitly by specialist_mercatorum.12
 # root = country, overlord
-# from = country, subject (mercatorum)
+# from = situation, deficit
 # fromfrom = situation, mercatorum dividends
 country_event = {
 	id = specialist_mercatorum.13
 	title = specialist_mercatorum.13.title
 	desc = {
 		text = specialist_mercatorum.13.desc.energy
-		trigger = { fromfrom = { is_situation_type = situation_energy_deficit } }
+		trigger = { from = { is_situation_type = situation_energy_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.minerals
-		trigger = { fromfrom = { is_situation_type = situation_mineral_deficit } }
+		trigger = { from = { is_situation_type = situation_mineral_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.food
-		trigger = { fromfrom = { is_situation_type = situation_food_deficit } }
+		trigger = { from = { is_situation_type = situation_food_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.consumer_goods
-		trigger = { fromfrom = { is_situation_type = situation_consumer_goods_deficit } }
+		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.alloys
-		trigger = { fromfrom = { is_situation_type = situation_alloys_deficit } }
+		trigger = { from = { is_situation_type = situation_alloys_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.volatile_motes
-		trigger = { fromfrom = { is_situation_type = situation_volatile_motes_deficit } }
+		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.exotic_gases
-		trigger = { fromfrom = { is_situation_type = situation_exotic_gases_deficit } }
+		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.13.desc.rare_crystals
-		trigger = { fromfrom = { is_situation_type = situation_rare_crystals_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.unknown
-		trigger = {
-			fromfrom = {
-				NOR = {
-					is_situation_type = situation_energy_deficit
-					is_situation_type = situation_mineral_deficit
-					is_situation_type = situation_food_deficit
-					is_situation_type = situation_consumer_goods_deficit
-					is_situation_type = situation_alloys_deficit
-					is_situation_type = situation_volatile_motes_deficit
-					is_situation_type = situation_exotic_gases_deficit
-					is_situation_type = situation_rare_crystals_deficit
-				}
-			}
-		}
+		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
 	}
 	picture = GFX_evt_deficit
 	show_sound = event_bad_omen
 	is_triggered_only = yes
-	trigger = { exists = event_target:specialist_mercatorum_agreement }
+	trigger = {
+		exists = event_target:specialist_mercatorum_agreement
+		OR = {
+			is_situation_type = situation_energy_deficit
+			is_situation_type = situation_mineral_deficit
+			is_situation_type = situation_food_deficit
+			is_situation_type = situation_consumer_goods_deficit
+			is_situation_type = situation_alloys_deficit
+			is_situation_type = situation_volatile_motes_deficit
+			is_situation_type = situation_exotic_gases_deficit
+			is_situation_type = situation_rare_crystals_deficit
+		}
+	}
 	abort_trigger = {
 		OR = {
-			NOT = { exists = fromfrom }
-			fromfrom = {
+			NOT = { exists = from }
+			from = {
 				OR = {
 					situation_progress >= 100
 					has_situation_flag = deficit_situation_warn
@@ -403,7 +398,7 @@ country_event = {
 		}
 	}
 	immediate = {
-		fromfrom = {
+		from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { set_owner_monthly_shortfall = { RESOURCE = energy } }
@@ -415,17 +410,17 @@ country_event = {
 				situation_exotic_gases_deficit = { set_owner_monthly_shortfall = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { set_owner_monthly_shortfall = { RESOURCE = rare_crystals } }
 				default = {
-					# TODO: no default deficits for rare resources, artifacts, or nanites
+					log_error = "Unhandled deficit sitation type for situation named [This.GetName] owned by the [This.Owner.GetRealName]"
 				}
 			}
 		}
 	}
 	after = {
-		fromfrom = { set_situation_flag = deficit_situation_warn }
+		from = { set_situation_flag = deficit_situation_warn }
 	}
 	option = {
 		name = specialist_mercatorum.13.a
-		hidden:fromfrom = {
+		hidden:from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -436,10 +431,6 @@ country_event = {
 				situation_volatile_motes_deficit = { bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
-				default = {
-					# TODO: no default deficits for rare resources, artifacts, or nanites
-					# costs energy x10 the normal value
-				}
 			}
 		}
 		from = {
@@ -464,72 +455,67 @@ country_event = {
 
 # triggered explicitly by specialist_mercatorum.12
 # root = country, overlord
-# from = country, subject (mercatorum)
+# from = situation, deficit
 # fromfrom = situation, mercatorum dividends
 country_event = {
 	id = specialist_mercatorum.14
 	title = specialist_mercatorum.14.title
 	desc = {
 		text = specialist_mercatorum.14.desc.energy
-		trigger = { fromfrom = { is_situation_type = situation_energy_deficit } }
+		trigger = { from = { is_situation_type = situation_energy_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.minerals
-		trigger = { fromfrom = { is_situation_type = situation_mineral_deficit } }
+		trigger = { from = { is_situation_type = situation_mineral_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.food
-		trigger = { fromfrom = { is_situation_type = situation_food_deficit } }
+		trigger = { from = { is_situation_type = situation_food_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.consumer_goods
-		trigger = { fromfrom = { is_situation_type = situation_consumer_goods_deficit } }
+		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.alloys
-		trigger = { fromfrom = { is_situation_type = situation_alloys_deficit } }
+		trigger = { from = { is_situation_type = situation_alloys_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.volatile_motes
-		trigger = { fromfrom = { is_situation_type = situation_volatile_motes_deficit } }
+		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.exotic_gases
-		trigger = { fromfrom = { is_situation_type = situation_exotic_gases_deficit } }
+		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
 	}
 	desc = {
 		text = specialist_mercatorum.14.desc.rare_crystals
-		trigger = { fromfrom = { is_situation_type = situation_rare_crystals_deficit } }
-	}
-	desc = {
-		text = specialist_mercatorum.13.desc.unknown
-		trigger = {
-			fromfrom = {
-				NOR = {
-					is_situation_type = situation_energy_deficit
-					is_situation_type = situation_mineral_deficit
-					is_situation_type = situation_food_deficit
-					is_situation_type = situation_consumer_goods_deficit
-					is_situation_type = situation_alloys_deficit
-					is_situation_type = situation_volatile_motes_deficit
-					is_situation_type = situation_exotic_gases_deficit
-					is_situation_type = situation_rare_crystals_deficit
-				}
-			}
-		}
+		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
 	}
 	picture = GFX_evt_deficit
 	show_sound = event_life_support_fail
 	is_triggered_only = yes
 	trigger = {
 		exists = event_target:specialist_mercatorum_agreement
-		exists = fromfrom
-		fromfrom = { has_situation_flag = deficit_situation_warn }
+		exists = from
+		from = {
+			has_situation_flag = deficit_situation_warn
+			OR = {
+				is_situation_type = situation_energy_deficit
+				is_situation_type = situation_mineral_deficit
+				is_situation_type = situation_food_deficit
+				is_situation_type = situation_consumer_goods_deficit
+				is_situation_type = situation_alloys_deficit
+				is_situation_type = situation_volatile_motes_deficit
+				is_situation_type = situation_exotic_gases_deficit
+				is_situation_type = situation_rare_crystals_deficit
+			}
+		}
 	}
 	abort_trigger = {
 		OR = {
-			NOT = { exists = fromfrom }
-			fromfrom = {
+			NOT = { exists = from }
+			from = {
 				OR = {
 					situation_progress >= 100
 					has_situation_flag = deficit_situation_imminent_default
@@ -538,7 +524,7 @@ country_event = {
 		}
 	}
 	immediate = {
-		fromfrom = {
+		from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { set_owner_monthly_shortfall = { RESOURCE = energy } }
@@ -550,17 +536,17 @@ country_event = {
 				situation_exotic_gases_deficit = { set_owner_monthly_shortfall = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { set_owner_monthly_shortfall = { RESOURCE = rare_crystals } }
 				default = {
-					# TODO: no default deficits for rare resources, artifacts, or nanites
+					log_error = "Unhandled deficit sitation type for situation named [This.GetName] owned by the [This.Owner.GetRealName]"
 				}
 			}
 		}
 	}
 	after = {
-		fromfrom = { set_situation_flag = deficit_situation_imminent_default }
+		from = { set_situation_flag = deficit_situation_imminent_default }
 	}
 	option = {
 		name = specialist_mercatorum.14.a
-		hidden:fromfrom = {
+		hidden:from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -571,10 +557,6 @@ country_event = {
 				situation_volatile_motes_deficit = { bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
-				default = {
-					# TODO: no default deficits for rare resources, artifacts, or nanites
-					# costs energy x10 the normal value
-				}
 			}
 		}
 		from = {

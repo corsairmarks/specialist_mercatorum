@@ -34,7 +34,6 @@
  specialist_mercatorum.13.desc.volatile_motes: ""
  specialist_mercatorum.13.desc.exotic_gases: ""
  specialist_mercatorum.13.desc.rare_crystals: ""
- specialist_mercatorum.13.desc.unknown: " " # bailout body
  specialist_mercatorum.13.a: "Bail them out."
  specialist_mercatorum.13.b: "We cannot afford to resolve their mismanagement."
  specialist_mercatorum.14.title: "[From.Owner.GetName] Default Imminent"
@@ -47,7 +46,6 @@
  specialist_mercatorum.14.desc.volatile_motes: ""
  specialist_mercatorum.14.desc.exotic_gases: ""
  specialist_mercatorum.14.desc.rare_crystals: ""
- specialist_mercatorum.14.desc.unknown: " " # bailout body
  specialist_mercatorum.14.a: "$specialist_mercatorum.13.a$"
  specialist_mercatorum.14.b: "$specialist_mercatorum.13.b$"
  specialist_mercatorum.14.b.tooltip: "If your Mercatorum subject defaults, the following will occur:"
