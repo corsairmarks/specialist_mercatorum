@@ -268,7 +268,10 @@ try_convert_to_mercatorum_megacorp = {
 		remove_country_flag = civic_feudal_realm
 		# backup civics in case points remain unspent - no more than 2 can ever be added, so a minimum of two fallbacks are needed
 		# (repeats are ok because they would have transferred above if the non-corporate "equivalent" was present)
-		add_civic_if_not_present = { CIVIC = civic_corporate_crafters } # only available with Humanoids Species Pack
+		if = {
+			limit = { has_humanoids = yes }
+			add_civic_if_not_present = { CIVIC = civic_corporate_crafters }
+		}
 		add_civic_if_not_present = { CIVIC = civic_public_relations_specialists }
 		add_civic_if_not_present = { CIVIC = civic_trading_posts }
 		clear_variable = num_civics_to_add
