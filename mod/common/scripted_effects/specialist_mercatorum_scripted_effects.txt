@@ -324,12 +324,12 @@ bail_out_mercatorum_subject = {
 	root = {
 		add_resource = {
 			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_amount
-			multiplier = -1 # overlord pays the resources
 		}
 	}
 	from = {
 		add_resource = {
 			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_amount
+			multiplier = -1 # subject pays the resources
 		}
 	}
 }

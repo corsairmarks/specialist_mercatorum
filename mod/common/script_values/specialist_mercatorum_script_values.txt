@@ -9,6 +9,11 @@ mercatorum_specialist_dividend_situation_owner_trigger_multiplier = {
 	}
 }
 
+# determines how much of a resource is required to pay off a mercatorum's deficit:
+# * higher the farther the deficit situation has progressed
+# * higher based on the largest monthly shortfall during the deficit period
+# * scales based on the game's default deficit scaling (function of game years passed)
+# resulting value is *negative*, representing how much the overlord must pay
 # this = situation
 mercatorum_specialist_deficit_bailout_amount = {
 	base = 0
@@ -19,8 +24,9 @@ mercatorum_specialist_deficit_bailout_amount = {
 			which = deficit_amount
 			value < 0
 		}
-		add = deficit_amount
+		add = deficit_amount # negative plus negative => farther from zero
 	}
-	multiply = -10
+	multiply = value:bailout_scaling_factor # built-in script_value that scales based on game years passed
+	multiply = 10
 	min = 100
 }
