@@ -332,4 +332,5 @@ bail_out_mercatorum_subject = {
 			multiplier = -1 # subject pays the resources
 		}
 	}
+	abort_situation = this
 }

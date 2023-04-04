@@ -1,0 +1,93 @@
+# Modified:
+# * ensure any existing country_defaulted modifier is cleared
+# * mercatorum overlord suffer consequences for allowing their subject to default
+# root = situation, deficit that defaulted
+# this = country
+country_defaulted_effect = {
+	hidden_effect = {
+		if = {
+			limit = { is_ai = yes }
+			log = "AI [This.GetName] defaulted as a result of [Root.GetName] in [GetYear]"
+		}
+		else = {
+			log = "Player [This.GetName] defaulted as a result of [Root.GetName] in [GetYear]"
+		}
+		downgrade_all_buildings = yes
+		every_owned_ship = {
+			limit = { is_ship_class = shipclass_military }
+			random = {
+				chance = 50
+				if = {
+					limit = { exists = leader }
+					leader = { unassign_leader = this }
+				}
+				delete_ship = this
+			}
+		}
+		every_owned_army = {
+			limit = { is_defensive_army = no }
+			if = {
+				limit = { exists = leader }
+				leader = { unassign_leader = this }
+			}
+			remove_army = yes
+		}
+		erase_modifier = { MOD = country_defaulted }
+	}
+	add_modifier = {
+		modifier = country_defaulted
+		years = 10
+	}
+	custom_tooltip = end_deficit_effect_tooltip
+	if = {
+		limit = {
+			any_situation = {
+				NOT = { is_same_value = root }
+				has_situation_flag = deficit_situation
+			}
+		}
+		custom_tooltip = end_other_deficit_situations_tooltip
+		hidden_effect = {
+			every_situation = {
+				limit = {
+					NOT = { is_same_value = root }
+					has_situation_flag = deficit_situation
+				}
+				abort_situation = this
+			}
+		}
+	}
+	if = {
+		limit = { is_specialist_subject_type = { TYPE = mercatorum } }
+		overlord = {
+			hidden_effect = { erase_modifier = { MOD = specialist_mercatorum_defaulted_overlord } }
+			add_modifier = {
+				modifier = specialist_mercatorum_defaulted_overlord
+				years = 10
+			}
+		}
+		add_opinion_modifier = {
+			who = overlord
+			modifier = opinion_specialist_mercatorum_overlord_allowed_default
+		}
+		random_agreement = {
+			limit = {
+				owner = { is_country = prev.overlord }
+				target = { is_country = prev }
+				has_active_specialization = specialist_mercatorum
+			}
+			add_loyalty = -20
+		}
+		# event intentionally fired last, after all the results have actually been applied
+		hidden_effect = {
+			overlord = {
+				country_event = {
+					id = specialist_mercatorum.15
+					scopes = {
+						from = root
+					}
+				}
+			}
+		}
+	}
+}

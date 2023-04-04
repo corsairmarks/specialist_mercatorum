@@ -541,9 +541,6 @@ country_event = {
 			}
 		}
 	}
-	after = {
-		from = { set_situation_flag = deficit_situation_imminent_default }
-	}
 	option = {
 		name = specialist_mercatorum.14.a
 		hidden:from = {
@@ -559,7 +556,7 @@ country_event = {
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
 			}
 		}
-		from = {
+		from.owner = {
 			add_opinion_modifier = {
 				who = root
 				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
@@ -570,27 +567,110 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.14.b
 		from = {
-			add_opinion_modifier = {
-				who = root
-				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout_refuse
+			hidden_effect = { set_situation_flag = deficit_situation_imminent_default }
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout_refuse
+				}
 			}
 		}
 		event_target:specialist_mercatorum_agreement = { add_loyalty = -5 }
 		custom_tooltip = specialist_mercatorum.14.b.tooltip
 		tooltip = {
-			# TODO: wire effects up to when a default happens, including below
-			# hidden_effect = { erase_modifier = { MOD = specialist_mercatorum_defaulted_overlord } }
 			add_modifier = {
 				modifier = specialist_mercatorum_defaulted_overlord
 				years = 10
 			}
-			from = {
+			from.owner = {
 				add_opinion_modifier = {
 					who = root
 					modifier = opinion_specialist_mercatorum_overlord_allowed_default
 				}
 			}
 			event_target:specialist_mercatorum_agreement = { add_loyalty = -20 }
+		}
+	}
+}
+
+# triggered explicitly by country_defaulted_effect
+# root = country, overlord
+# from = situation, deficit
+country_event = {
+	id = specialist_mercatorum.15
+	title = specialist_mercatorum.15.title
+	desc = {
+		text = specialist_mercatorum.15.desc.energy
+		trigger = { from = { is_situation_type = situation_energy_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.minerals
+		trigger = { from = { is_situation_type = situation_mineral_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.food
+		trigger = { from = { is_situation_type = situation_food_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.consumer_goods
+		trigger = { from = { is_situation_type = situation_consumer_goods_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.alloys
+		trigger = { from = { is_situation_type = situation_alloys_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.volatile_motes
+		trigger = { from = { is_situation_type = situation_volatile_motes_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.exotic_gases
+		trigger = { from = { is_situation_type = situation_exotic_gases_deficit } }
+	}
+	desc = {
+		text = specialist_mercatorum.15.desc.rare_crystals
+		trigger = { from = { is_situation_type = situation_rare_crystals_deficit } }
+	}
+	picture = GFX_evt_deficit
+	show_sound = event_life_support_fail
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		exists = from
+		from = {
+			OR = {
+				is_situation_type = situation_energy_deficit
+				is_situation_type = situation_mineral_deficit
+				is_situation_type = situation_food_deficit
+				is_situation_type = situation_consumer_goods_deficit
+				is_situation_type = situation_alloys_deficit
+				is_situation_type = situation_volatile_motes_deficit
+				is_situation_type = situation_exotic_gases_deficit
+				is_situation_type = situation_rare_crystals_deficit
+			}
+		}
+	}
+	option = {
+		name = UNFORTUNATE
+		tooltip = {
+			add_modifier = {
+				modifier = specialist_mercatorum_defaulted_overlord
+				years = 10
+			}
+			from.target = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_allowed_default
+				}
+			}
+			random_agreement = {
+				limit = {
+					owner = { is_country = prev }
+					target = { is_country = from.owner }
+					has_active_specialization = specialist_mercatorum
+				}
+				add_loyalty = -20
+			}
 		}
 	}
 }
