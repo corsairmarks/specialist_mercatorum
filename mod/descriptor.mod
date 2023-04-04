@@ -8,4 +8,4 @@ tags={
 }
 version="1.0.0"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.7.*"
