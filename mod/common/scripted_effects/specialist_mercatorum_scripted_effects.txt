@@ -321,15 +321,17 @@ set_owner_monthly_shortfall = {
 # from = country, subject (mercatorum)
 # $RESOURCE$ = the resource for which the subject is being bailed out
 bail_out_mercatorum_subject = {
+	log = "\\[Root.GetRealName] bailed out its mercatorum subject \\[From.GetRealName] for a deficit in $RESOURCE$"
 	root = {
 		add_resource = {
-			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_amount
+			$RESOURCE$ = 1
+			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}
 	from = {
 		add_resource = {
-			$RESOURCE$ = prev.value:mercatorum_specialist_deficit_bailout_amount
-			multiplier = -1 # subject pays the resources
+			$RESOURCE$ = -1 # subject receives the resources
+			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}
 	abort_situation = this
