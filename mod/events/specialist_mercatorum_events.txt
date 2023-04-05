@@ -393,7 +393,7 @@ country_event = {
 	}
 	option = {
 		name = specialist_mercatorum.13.a
-		hidden:from = {
+		from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -405,11 +405,11 @@ country_event = {
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
 			}
-		}
-		from = {
-			add_opinion_modifier = {
-				who = root
-				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+				}
 			}
 		}
 		event_target:specialist_mercatorum_agreement = { add_loyalty = 5 }
@@ -487,7 +487,7 @@ country_event = {
 	}
 	option = {
 		name = specialist_mercatorum.14.a
-		hidden:from = {
+		from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -499,11 +499,11 @@ country_event = {
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
 			}
-		}
-		from.owner = {
-			add_opinion_modifier = {
-				who = root
-				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+				}
 			}
 		}
 		event_target:specialist_mercatorum_agreement = { add_loyalty = 5 }
