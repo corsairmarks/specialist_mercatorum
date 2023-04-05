@@ -49,14 +49,14 @@ specialist_mercatorum_dividends = {
 				has_commercial_pact = overlord
 			}
 		}
-		modifier = {
-			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|@mercatorum_dividend_commercial_pact_rate|TRIGGER|num_commercial_pacts|
+		modifier = { # value matches @mercatorum_dividend_commercial_pact_rate
+			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|0.417|TRIGGER|num_commercial_pacts|
 			desc = PACT_commercial_pact
 			exists = owner
 			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
 		}
-		modifier = {
-			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|@mercatorum_dividend_colony_rate|TRIGGER|num_owned_planets|
+		modifier = { # value matches @mercatorum_dividend_colony_rate
+			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|0.105|TRIGGER|num_owned_planets|
 			desc = COLONIES
 			exists = owner
 			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
