@@ -121,6 +121,8 @@
  opinion_specialist_mercatorum_overlord_allowed_default: "Overlord Allowed Default"
  specialist_mercatorum_dividends: "Mercatorum Dividends"
  specialist_mercatorum_dividends_type: "$specialist_mercatorum_dividends$"
+ specialist_mercatorum_dividends_desc: "Our overlord §H[Overlord.GetName]§! invested heavily in our corporation as part of the foundational charter. We manage this investment portfolio across a bewildering amount of private, domestic, foreign, and galactic markets. Dividends and returns are periodically forwarded to them directly."
+ specialist_mercatorum_dividends_monthly_change_tooltip: "The stronger our domestic economy, international trade, and the galactic economy at large, the faster this §YSituation§! will progress towards paying dividends to our overlord. Conversely, deficits and default drastically slow the progress toward the next dividend payment.\nThe dividends paid to our overlord are withdrawn from their investment accounts and do not affect our resource stockpiles."
  stage_depository_period: "Depository Period"
  stage_depository_period_desc: "Resources are invested in private concerns to generate dividends for out overlord, the §H[This.Owner.Overlord.GetName]§!."
  approach_investment_maturation: "Dividend Maturation"
