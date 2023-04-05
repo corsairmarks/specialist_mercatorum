@@ -101,12 +101,12 @@ trade_action_mercatorum_technology = {
 		from = {
 			inverted_switch = {
 				trigger = has_technology
-				space_trading = { root = { has_technology = space_trading } }
-				interstellar_economics = { root = { has_technology = interstellar_economics } }
-				galactic_markets = { root = { has_technology = galactic_markets } }
-				strike_craft_1 = { root = { has_technology = strike_craft_1 } }
-				strike_craft_2 = { root = { has_technology = strike_craft_2 } }
-				strike_craft_3 = { root = { has_technology = strike_craft_3 } }
+				tech_space_trading = { root = { has_technology = tech_space_trading } }
+				tech_interstellar_economics = { root = { has_technology = tech_interstellar_economics } }
+				tech_galactic_markets = { root = { has_technology = tech_galactic_markets } }
+				tech_strike_craft_1 = { root = { has_technology = tech_strike_craft_1 } }
+				tech_strike_craft_2 = { root = { has_technology = tech_strike_craft_2 } }
+				tech_strike_craft_3 = { root = { has_technology = tech_strike_craft_3 } }
 			}
 			NOR = {
 				has_modifier = specialist_mercatorum_technology_physics_modifier
@@ -119,8 +119,8 @@ trade_action_mercatorum_technology = {
 		from = {
 			inverted_switch = {
 				trigger = has_technology
-				space_trading = {
-					add_research_option = space_trading
+				tech_space_trading = {
+					add_research_option = tech_space_trading
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_society_modifier
@@ -128,8 +128,8 @@ trade_action_mercatorum_technology = {
 						}
 					}
 				}
-				interstellar_economics = {
-					add_research_option = interstellar_economics
+				tech_interstellar_economics = {
+					add_research_option = tech_interstellar_economics
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_society_modifier
@@ -137,8 +137,8 @@ trade_action_mercatorum_technology = {
 						}
 					}
 				}
-				galactic_markets = {
-					add_research_option = galactic_markets
+				tech_galactic_markets = {
+					add_research_option = tech_galactic_markets
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_society_modifier
@@ -146,8 +146,8 @@ trade_action_mercatorum_technology = {
 						}
 					}
 				}
-				strike_craft_1 = {
-					add_research_option = strike_craft_1
+				tech_strike_craft_1 = {
+					add_research_option = tech_strike_craft_1
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_engineering_modifier
@@ -155,8 +155,8 @@ trade_action_mercatorum_technology = {
 						}
 					}
 				}
-				strike_craft_2 = {
-					add_research_option = strike_craft_2
+				tech_strike_craft_2 = {
+					add_research_option = tech_strike_craft_2
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_engineering_modifier
@@ -164,8 +164,8 @@ trade_action_mercatorum_technology = {
 						}
 					}
 				}
-				strike_craft_3 = {
-					add_research_option = strike_craft_3
+				tech_strike_craft_3 = {
+					add_research_option = tech_strike_craft_3
 					root = {
 						add_modifier = {
 							modifier = specialist_mercatorum_technology_engineering_modifier
