@@ -602,6 +602,10 @@ country_event = {
 			target = { is_country = root }
 			has_active_specialization = specialist_mercatorum
 		}
+		NOR = {
+			has_deficit = energy
+			has_actual_deficit = { RESOURCE = energy }
+		}
 	}
 	immediate = {
 		random_agreement = {
@@ -623,6 +627,21 @@ country_event = {
 					}
 				}
 				20 = {
+					modifier = {
+						factor = 0
+						prev = {
+							OR = {
+								AND = {
+									has_deficit = minerals
+									has_actual_deficit = { RESOURCE = minerals }
+								}
+								AND = {
+									has_deficit = food
+									has_actual_deficit = { RESOURCE = food }
+								}
+							}
+						}
+					}
 					country_event = {
 						id = specialist_mercatorum.2005
 						scopes = {
@@ -631,6 +650,21 @@ country_event = {
 					}
 				}
 				15 = {
+					modifier = {
+						factor = 0
+						prev = {
+							OR = {
+								AND = {
+									has_deficit = consumer_goods
+									has_actual_deficit = { RESOURCE = consumer_goods }
+								}
+								AND = {
+									has_deficit = alloys
+									has_actual_deficit = { RESOURCE = alloys }
+								}
+							}
+						}
+					}
 					country_event = {
 						id = specialist_mercatorum.2006
 						scopes = {
@@ -639,6 +673,25 @@ country_event = {
 					}
 				}
 				10 = {
+					modifier = {
+						factor = 0
+						prev = {
+							OR = {
+								AND = {
+									has_deficit = volatile_motes
+									has_actual_deficit = { RESOURCE = volatile_motes }
+								}
+								AND = {
+									has_deficit = exotic_gases
+									has_actual_deficit = { RESOURCE = exotic_gases }
+								}
+								AND = {
+									has_deficit = rare_crystals
+									has_actual_deficit = { RESOURCE = rare_crystals }
+								}
+							}
+						}
+					}
 					country_event = {
 						id = specialist_mercatorum.2007
 						scopes = {
@@ -647,6 +700,25 @@ country_event = {
 					}
 				}
 				5 = {
+					modifier = {
+						factor = 0
+						prev = {
+							OR = {
+								AND = {
+									has_deficit = sr_living_metal
+									has_actual_deficit = { RESOURCE = sr_living_metal }
+								}
+								AND = {
+									has_deficit = sr_zro
+									has_actual_deficit = { RESOURCE = sr_zro }
+								}
+								AND = {
+									has_deficit = sr_dark_matter
+									has_actual_deficit = { RESOURCE = sr_dark_matter }
+								}
+							}
+						}
+					}
 					country_event = {
 						id = specialist_mercatorum.2008
 						scopes = {
