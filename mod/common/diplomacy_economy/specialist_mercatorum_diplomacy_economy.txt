@@ -1,7 +1,97 @@
+#
+# This file is to store the upkeep / production of objects that are not otherwise scripted
+# right now it ignores the "cost" part of it
+# subjects upkeep/production is not stored here, but in the subject type
+#
+
+# applied only once per country
+once = {
+	# Not modified
+	federation = {
+		trigger = { has_federation = yes }
+		resources = {
+			category = federation
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+}
+
+# applied for each such relation with another country
+# this = current country
+# from = other country in the relation
 per_relation = {
-	# this is applied for each such relation with another country
-	# this = current country
-	# from = other country in the relation
+	# Not modified
+	rivalry = {
+		trigger = { has_rival = from }
+		resources = {
+			category = rivalries
+			produces = {
+				influence = 0.5
+			}
+		}
+	}
+
+	# Not modified
+	non_aggression_pact = {
+		trigger = { has_non_aggression_pact = from }
+		resources = {
+			category = non_aggression_pacts
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Modified: refactor trigger for less duplicate scoping (also short-circuits for the more common case - no federation)
+	migration_pact = {
+		trigger = {
+			has_diplo_migration_treaty = from
+			OR = {
+				has_federation = no
+				NOT = {
+					federation = {
+						OR = {
+							has_federation_perk = diplomacy_upkeep_1
+							has_federation_law = free_migration_yes
+						}
+						any_member = { is_same_value = from }
+					}
+				}
+			}
+		}
+		resources = {
+			category = migration_pacts
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Modified: refactor trigger for less duplicate scoping (also short-circuits for the more common case - no federation)
+	research_agreement = {
+		trigger = {
+			has_research_agreement = from
+			OR = {
+				has_federation = no
+				NOT = {
+					federation = {
+						has_federation_perk = diplomacy_upkeep_1
+						any_member = { is_same_value = from }
+					}
+				}
+			}
+		}
+		resources = {
+			category = research_agreements
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Modified: no upkeep between a mercatorum and its overlord, or a mecratorum and fellow subject of the ssame overlord
 	commercial_pact = {
 		trigger = {
 			hidden_trigger = { exists = from }
@@ -33,6 +123,147 @@ per_relation = {
 			category = commercial_pacts
 			upkeep = {
 				influence = 0.25
+			}
+		}
+	}
+
+	# Not modified
+	defensive_pact = {
+		trigger = { has_defensive_pact = from }
+		resources = {
+			category = defensive_pacts
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+
+	# Not modified
+	guarantee = {
+		trigger = { is_guaranteeing = from }
+		resources = {
+			category = guarantees
+			upkeep = {
+				influence = 0.5
+			}
+		}
+	}
+
+	# Not modified
+	improving_relations = {
+		trigger = {
+			is_improving_relations_with = from
+			OR = {
+				has_policy_flag = diplo_stance_isolationist
+				has_policy_flag = diplo_stance_belligerent
+				has_policy_flag = diplo_stance_supremacist
+			}
+		}
+		resources = {
+			category = envoy_costs
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Not modified
+	harming_relations = {
+		trigger = {
+			is_harming_relations_with = from
+			OR = {
+				has_policy_flag = diplo_stance_isolationist
+				has_policy_flag = diplo_stance_cooperative
+			}
+		}
+		resources = {
+			category = envoy_costs
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Not modified
+	diplo_stance_closed_borders = {
+		trigger = {
+			has_policy_flag = diplo_stance_mercantile
+			has_closed_borders = from
+			NOT = { has_rival = from }
+		}
+		resources = {
+			category = diplo_closed_borders
+			upkeep = {
+				influence = 0.25
+			}
+		}
+	}
+
+	# Not modified
+	embassy = {
+		trigger = {
+			has_active_tradition = tr_diplomacy_diplomatic_networking
+			has_embassy = from
+		}
+		resources = {
+			category = diplomatic_networking
+			produces = {
+				unity = 3
+			}
+		}
+	}
+
+	# Not modified
+	societal_enlightenment = {
+		trigger = { from = { is_under_societal_enlightenment = root } }
+		resources = {
+			category = societal_enlightenment_pacts
+			upkeep = {
+				influence = 0.1
+				unity = 5
+			}
+		}
+	}
+
+	# Not modified
+	open_technological_enlightenment = {
+		trigger = { from = { is_under_open_technological_enlightenment = root } }
+		resources = {
+			category = open_technological_enlightenment_pacts
+			upkeep = {
+				influence = 0.1
+				physics_research = 5
+				society_research = 5
+				engineering_research = 5
+			}
+		}
+	}
+
+	# Not modified
+	stratified_technological_enlightenment = {
+		trigger = { from = { is_under_stratified_technological_enlightenment = root } }
+		resources = {
+			category = stratified_technological_enlightenment_pacts
+			upkeep = {
+				influence = 0.1
+				physics_research = 3
+				society_research = 3
+				engineering_research = 3
+			}
+		}
+	}
+
+	# Not modified
+	pre_ftl_trade = {
+		trigger = { from = { has_pre_ftl_trade = root } }
+		resources = {
+			category = pre_ftl_trade_pacts
+			upkeep = {
+				trigger = { NOT = { has_ascension_perk = ap_universal_transactions } }
+				influence = 0.1
+			}
+			upkeep = {
+				minerals = 5
 			}
 		}
 	}
