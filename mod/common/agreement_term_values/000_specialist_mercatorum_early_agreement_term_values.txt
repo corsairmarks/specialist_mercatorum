@@ -9,7 +9,7 @@
 @subsidy_minimum = -0.75
 @subsidy_maximum = 0.75
 
-# these values are specific to these agreement_term_values, but are based on the _basic and _advanced values (which are equal as of 3.6 "Orion")
+# these values are specific to these agreement_term_values, but are based on the _basic and _advanced values (which are equal as of 3.7 "Canis Minor")
 @subsidy_multiplier_mercatorum = 0.5
 @subsidy_monthly_multiplier_mercatorum = 5
 
