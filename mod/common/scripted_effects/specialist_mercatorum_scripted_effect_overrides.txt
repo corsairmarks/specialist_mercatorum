@@ -72,8 +72,8 @@ country_defaulted_effect = {
 		}
 		random_agreement = {
 			limit = {
-				owner = { is_country = prev.overlord }
-				target = { is_country = prev }
+				owner = { is_country = prevprev.overlord }
+				target = { is_country = prevprev }
 				has_active_specialization = specialist_mercatorum
 			}
 			add_loyalty = -20
