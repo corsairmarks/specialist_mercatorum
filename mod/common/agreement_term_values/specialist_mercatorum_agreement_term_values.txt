@@ -35,3 +35,73 @@ specialist_mercatorum = {
 		agreement_preset = preset_mercatorum
 	}
 }
+
+specialist_mercatorum_commission_0 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = -30
+	ai_acceptance = {
+		overlord = 60
+		subject = -150
+	}
+	target_modifier = {
+		monthly_loyalty = -2
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_5 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = -15
+	ai_acceptance = {
+		overlord = 30
+		subject = -75
+	}
+	target_modifier = {
+		monthly_loyalty = -1
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_10 = { # default
+	term = specialist_mercatorum_commission
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_15 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = 10
+	ai_acceptance = {
+		overlord = -30
+		subject = 25
+	}
+	target_modifier = {
+		monthly_loyalty = 0.5
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_20 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = 20
+	ai_acceptance = {
+		overlord = -60
+		subject = 50
+	}
+	target_modifier = {
+		monthly_loyalty = 1
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_25 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = 30
+	ai_acceptance = {
+		overlord = -90
+		subject = 75
+	}
+	target_modifier = {
+		monthly_loyalty = 1.5
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}

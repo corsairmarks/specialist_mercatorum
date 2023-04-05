@@ -48,6 +48,10 @@ preset_mercatorum_nice_01 = {
 				value = subject_holdings_limit_1
 			}
 			{
+				key = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_15
+			}
+			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
@@ -161,6 +165,10 @@ preset_mercatorum_nice_02 = {
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_0
+			}
+			{
+				key = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_20
 			}
 			{
 				key = subject_loyalty
@@ -278,6 +286,10 @@ preset_mercatorum_mean_01 = {
 				value = subject_holdings_limit_2
 			}
 			{
+				key = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_5
+			}
+			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
@@ -393,6 +405,10 @@ preset_mercatorum_mean_02 = {
 				value = subject_holdings_limit_3
 			}
 			{
+				key = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_0
+			}
+			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
@@ -506,6 +522,10 @@ preset_mercatorum_mean_03 = {
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_4
+			}
+			{
+				key = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_0
 			}
 			{
 				key = subject_loyalty

@@ -1,0 +1,3 @@
+specialist_mercatorum_commission = {
+	term_type = discrete_number
+}
