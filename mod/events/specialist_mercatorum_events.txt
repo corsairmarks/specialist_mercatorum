@@ -622,10 +622,19 @@ country_event = {
 					country_event = {
 						id = specialist_mercatorum.2000
 						scopes = {
-							from = root
+							from = from
+						}
+					}
+					prev = {
+						country_event = {
+							id = specialist_mercatorum.2000
+							scopes = {
+								from = from
+							}
 						}
 					}
 				}
+				# TODO: fire same event for overlord and subject, from = situation
 				20 = {
 					modifier = {
 						factor = 0
@@ -786,95 +795,142 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.2000
 	title = specialist_mercatorum.2000.title
-	desc = specialist_mercatorum.2000.desc
+	desc = {
+		text = specialist_mercatorum.2000.desc.overlord
+		trigger = { is_overlord = yes }
+	}
+	desc = {
+		text = specialist_mercatorum.2000.desc.subject
+		trigger = {
+			is_overlord = no
+			event_target:specialist_mercatorum_agreement = {
+				check_variable = {
+					which = commission_percentage
+					value > 0
+				}
+			}
+		}
+	}
+	desc = {
+		text = specialist_mercatorum.2000.desc.subject.none
+		trigger = {
+			is_overlord = no
+			event_target:specialist_mercatorum_agreement = {
+				check_variable = {
+					which = commission_percentage
+					value <= 0
+				}
+			}
+		}
+	}
 	picture = GFX_evt_physics_research
 	picture = GFX_evt_society_research
 	picture = GFX_evt_engineering_research
 	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 	trigger = { exists = event_target:specialist_mercatorum_agreement }
-	option = {
-		name = EXCELLENT
-		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 1 } }
-		add_monthly_resource_mult = {
-			resource = energy
-			value = @tier1materialreward
-			min = @tier1materialmin
-			max = @tier1materialmax
+	immediate = {
+		event_target:specialist_mercatorum_agreement = {
+			set_dividend_percentage = yes
+			target = {
+				if = {
+					limit = { prev = { specialist_tier <= 1 } }
+					set_monthly_resource_income = {
+						RESOURCE = energy
+						TIER = 1
+					}
+					set_monthly_resource_income = {
+						RESOURCE = physics_research
+						TIER = 1
+					}
+					set_monthly_resource_income = {
+						RESOURCE = society_research
+						TIER = 1
+					}
+					set_monthly_resource_income = {
+						RESOURCE = engineering_research
+						TIER = 1
+					}
+				}
+				else_if = {
+					limit = { prev = { specialist_tier = 2 } }
+					set_monthly_resource_income = {
+						RESOURCE = energy
+						TIER = 2
+					}
+					set_monthly_resource_income = {
+						RESOURCE = physics_research
+						TIER = 2
+					}
+					set_monthly_resource_income = {
+						RESOURCE = society_research
+						TIER = 2
+					}
+					set_monthly_resource_income = {
+						RESOURCE = engineering_research
+						TIER = 2
+					}
+				}
+				else = {
+					# > 2
+					set_monthly_resource_income = {
+						RESOURCE = energy
+						TIER = 3
+					}
+					set_monthly_resource_income = {
+						RESOURCE = physics_research
+						TIER = 3
+					}
+					set_monthly_resource_income = {
+						RESOURCE = society_research
+						TIER = 3
+					}
+					set_monthly_resource_income = {
+						RESOURCE = engineering_research
+						TIER = 3
+					}
+				}
+			}
 		}
-		add_monthly_resource_mult = {
-			resource = physics_research
-			value = @tier1materialreward
-			min = @tier1materialmin
-			max = @tier1materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = society_research
-			value = @tier1materialreward
-			min = @tier1materialmin
-			max = @tier1materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = engineering_research
-			value = @tier1materialreward
-			min = @tier1materialmin
-			max = @tier1materialmax
+	}
+	after = {
+		event_target:specialist_mercatorum_agreement = {
+			clear_variable = dividend_percentage
+			target = {
+				clear_variable = monthly_income_energy
+				clear_variable = monthly_income_physics_research
+				clear_variable = monthly_income_society_research
+				clear_variable = monthly_income_engineering_research
+			}
 		}
 	}
 	option = {
 		name = EXCELLENT
-		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 2 } }
-		add_monthly_resource_mult = {
-			resource = energy
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
+		trigger = {
+			hidden_trigger = {
+				check_variable = {
+					which = dividend_percentage
+					value > 0
+				}
+			}
 		}
-		add_monthly_resource_mult = {
-			resource = physics_research
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = society_research
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = engineering_research
-			value = @tier2materialreward
-			min = @tier2materialmin
-			max = @tier2materialmax
+		add_resource = {
+			energy = event_target:specialist_mercatorum_agreement.target.monthly_income_energy
+			physics_research = event_target:specialist_mercatorum_agreement.target.monthly_income_physics_research
+			society_research = event_target:specialist_mercatorum_agreement.target.monthly_income_society_research
+			engineering_research = event_target:specialist_mercatorum_agreement.target.monthly_income_engineering_research
+			multiplier = event_target:specialist_mercatorum_agreement.dividend_percentage
 		}
 	}
 	option = {
-		name = EXCELLENT
-		trigger = { event_target:specialist_mercatorum_agreement = { specialist_tier = 3 } }
-		add_monthly_resource_mult = {
-			resource = energy
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = physics_research
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = society_research
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
-		}
-		add_monthly_resource_mult = {
-			resource = engineering_research
-			value = @tier3materialreward
-			min = @tier3materialmin
-			max = @tier3materialmax
+		name = UNFORTUNATE
+		trigger = {
+			hidden_trigger = {
+				check_variable = {
+					which = dividend_percentage
+					value <= 0
+				}
+			}
 		}
 	}
 }
@@ -1618,4 +1674,67 @@ country_event = {
 			}
 		}
 	}
+}
+
+country_event = {
+	id = specialist_mercatorum.2100
+	is_triggered_only = yes
+	base = specialist_mercatorum.2000
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2100.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2105
+	is_triggered_only = yes
+	base = specialist_mercatorum.2005
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2105.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2106
+	is_triggered_only = yes
+	base = specialist_mercatorum.2006
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2106.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2107
+	is_triggered_only = yes
+	base = specialist_mercatorum.2007
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2107.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2108
+	is_triggered_only = yes
+	base = specialist_mercatorum.2008
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2108.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2110
+	is_triggered_only = yes
+	base = specialist_mercatorum.2010
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2110.desc
+}
+
+country_event = {
+	id = specialist_mercatorum.2120
+	is_triggered_only = yes
+	base = specialist_mercatorum.2020
+	title = specialist_mercatorum.2100.title
+	desc_clear = yes
+	desc = specialist_mercatorum.2120.desc
 }
