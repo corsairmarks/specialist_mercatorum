@@ -44,22 +44,15 @@ specialist_mercatorum_dividends = {
 			add = @mercatorum_dividend_commercial_pact_rate
 			desc = PACT_commercial_pact
 			exists = owner
-			owner = {
-				is_specialist_subject_type = { TYPE = mercatorum }
-				has_commercial_pact = overlord
-			}
+			owner = { has_commercial_pact = overlord }
 		}
 		modifier = { # value matches @mercatorum_dividend_commercial_pact_rate
 			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|0.417|TRIGGER|num_commercial_pacts|
 			desc = PACT_commercial_pact
-			exists = owner
-			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
 		}
 		modifier = { # value matches @mercatorum_dividend_colony_rate
 			add = value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|0.105|TRIGGER|num_owned_planets|
 			desc = COLONIES
-			exists = owner
-			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
 		}
 		modifier = {
 			add = @mercatorum_dividend_deficit_rate
@@ -116,10 +109,7 @@ specialist_mercatorum_dividends = {
 			add = @mercatorum_dividend_ascension_perk_rate
 			desc = ap_universal_transactions
 			exists = owner
-			owner = {
-				is_specialist_subject_type = { TYPE = mercatorum }
-				has_ascension_perk = ap_universal_transactions
-			}
+			owner = { has_ascension_perk = ap_universal_transactions }
 		}
 	}
 	approach = {
@@ -130,5 +120,9 @@ specialist_mercatorum_dividends = {
 		on_select = {
 			custom_tooltip = approach_investment_maturation_tooltip
 		}
+	}
+	abort_trigger = {
+		exists = owner
+		owner = { NOT = { is_specialist_subject_type = { TYPE = mercatorum } } }
 	}
 }
