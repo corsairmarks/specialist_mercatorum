@@ -45,7 +45,7 @@ specialist_mercatorum_commission_0 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = -30
 	ai_acceptance = {
-		overlord = 60
+		overlord = 90
 		subject = -150
 	}
 	target_modifier = {
@@ -89,7 +89,7 @@ specialist_mercatorum_commission_20 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = 20
 	ai_acceptance = {
-		overlord = -60
+		overlord = -90
 		subject = 50
 	}
 	target_modifier = {
@@ -102,7 +102,7 @@ specialist_mercatorum_commission_25 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = 30
 	ai_acceptance = {
-		overlord = -90
+		overlord = -120
 		subject = 75
 	}
 	target_modifier = {
