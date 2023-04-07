@@ -457,43 +457,43 @@ set_dividend_percentage = {
 # this = planet
 try_convert_branch_office_to_normal = {
 	optimize_memory
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_wildcat_miners
 		TO = building_private_mining_consortium
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_bio_reprocessing_facilities
 		TO = building_food_conglomerate
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_underground_chemists
 		TO = building_virtual_entertainment_studios
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_wrecking_yards
 		TO = building_private_shipyards
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_pirate_haven
 		TO = building_military_contractors
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_syndicate_outreach_office
 		TO = building_public_relations_office
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_illicit_research_labs
 		TO = building_private_research_initiative
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_underground_clubs
 		TO = building_amusement_megaplex
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_smuggling_rings
 		TO = building_commercial_forum
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_disinformation_center
 		TO = building_corporate_embassy
 	}
@@ -502,43 +502,43 @@ try_convert_branch_office_to_normal = {
 # this = planet
 try_convert_branch_office_to_criminal = {
 	optimize_memory
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_private_mining_consortium
 		TO = building_wildcat_miners
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_food_conglomerate
 		TO = building_bio_reprocessing_facilities
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_virtual_entertainment_studios
 		TO = building_underground_chemists
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_private_shipyards
 		TO = building_wrecking_yards
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_military_contractors
 		TO = building_pirate_haven
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_public_relations_office
 		TO = building_syndicate_outreach_office
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_private_research_initiative
 		TO = building_illicit_research_labs
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_amusement_megaplex
 		TO = building_underground_clubs
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_commercial_forum
 		TO = building_smuggling_rings
 	}
-	sm_swap_all_buildings = {
+	sm_swap_corporate_holdings = {
 		FROM = building_corporate_embassy
 		TO = building_disinformation_center
 	}
@@ -547,11 +547,22 @@ try_convert_branch_office_to_criminal = {
 # this = planet
 # $FROM$ = building, source
 # $TO$ = building, target
-sm_swap_all_buildings = {
+sm_swap_corporate_holdings = {
 	optimize_memory
 	while = {
-		limit = { has_building = $FROM$ }
-		remove_building = $FROM$
-		add_building = $TO$
+		limit = {
+			has_holding = {
+				holding = $FROM$
+				owner = branch_office_owner
+			}
+		}
+		remove_holding = {
+			holding = $FROM$
+			owner = branch_office_owner
+		}
+		add_holding = {
+			holding = $TO$
+			owner = branch_office_owner
+		}
 	}
 }
