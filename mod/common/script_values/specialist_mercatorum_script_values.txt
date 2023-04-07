@@ -1,5 +1,6 @@
 # $BASE$ = the base value
 # $TRIGGER$ = the owner-scoped trigger to use as a multiplier for the base value
+# value:mercatorum_specialist_dividend_situation_owner_trigger_multiplier|BASE|10|TRIGGER|subjects|
 mercatorum_specialist_dividend_situation_owner_trigger_multiplier = {
 	base = $BASE$
 	complex_trigger_modifier = {
@@ -29,4 +30,48 @@ mercatorum_specialist_deficit_bailout_amount = {
 	multiply = value:bailout_scaling_factor # built-in script_value that scales based on game years passed
 	multiply = 10
 	min = 100
+}
+
+# this = country (with should have variable dividend_percentage set)
+# event_target:specialist_mercatorum_agreement = agreement, specialist_mercatorum
+# $BONUS_TIERS$ = an additional value to be added to the specialist_tier (optional; default: 0)
+# value:dividends_from_subject_monthly_income|RESOURCE|energy|BONUS_TIERS|2|
+dividends_from_subject_monthly_income = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		parameters = {
+			resource = $RESOURCE$
+		}
+		trigger_scope = event_target:specialist_mercatorum_agreement.target
+		mode = add
+	}
+	multiply = value:scale_by_power_of_two_to_specialist_tier|VALUE|@dividend_base|BONUS_TIERS|$BONUS_TIERS|0$|
+	min = value:scale_by_power_of_two_to_specialist_tier|VALUE|@dividend_min|BONUS_TIERS|$BONUS_TIERS|0$|
+	max = value:scale_by_power_of_two_to_specialist_tier|VALUE|@dividend_max|BONUS_TIERS|$BONUS_TIERS|0$|
+	modifier = {
+		is_variable_set = dividend_percentage
+		multiply = dividend_percentage
+	}
+	# tentatively global scripted_variables can be parameters
+}
+
+# this = any
+# event_target:specialist_mercatorum_agreement = agreement, specialist_mercatorum
+# $VALUE$ = the base value to be scaled by power of two
+# $BONUS_TIERS$ = an additional value to be added to the specialist_tier (optional; default: 0)
+# value:exponentiate_by_specialist_tier|BASE|4|BONUS_TIERS|2|
+scale_by_power_of_two_to_specialist_tier = {
+	base = 2
+	pow = value:specialist_tier_with_bonus|BONUS_TIERS|$BONUS_TIERS|0$|
+	multiply = $VALUE$
+}
+
+# this = any
+# event_target:specialist_mercatorum_agreement = agreement, specialist_mercatorum
+# $BONUS_TIERS$ = an additional value to be added to the specialist_tier (optional; default: 0)
+specialist_tier_with_bonus = {
+	base = 0
+	add = event_target:specialist_mercatorum_agreement.trigger:specialist_tier
+	[[BONUS_TIERS] add = $BONUS_TIERS$ ]
 }
