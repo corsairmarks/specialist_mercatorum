@@ -282,6 +282,7 @@ try_convert_to_mercatorum_megacorp = {
 # this = situation
 # $RESOURCE$ = the resource for which to export the monthly deficit
 set_owner_monthly_shortfall = {
+	optimize_memory
 	owner = {
 		if = {
 			limit = {
@@ -321,6 +322,7 @@ set_owner_monthly_shortfall = {
 # from = country, subject (mercatorum)
 # $RESOURCE$ = the resource for which the subject is being bailed out
 bail_out_mercatorum_subject = {
+	optimize_memory
 	log = "\\[Root.GetRealName] bailed out its mercatorum subject \\[From.GetRealName] for a deficit in $RESOURCE$"
 	root = {
 		add_resource = {
@@ -337,140 +339,104 @@ bail_out_mercatorum_subject = {
 	abort_situation = this
 }
 
-# this = country, mercatorum subject
-# $RESOURCE$ = resource name
-# $TIER$ = material reward tier (formatted into the name of a scripted_variable)
-# output to variable monthly_income_$RESOURCE$
-set_monthly_resource_income = {
-	export_resource_income_to_variable = {
-		resource = $RESOURCE$
-		variable = monthly_income_$RESOURCE$
-	}
-	multiply_variable = {
-		variable = monthly_income_$RESOURCE$
-		value = @tier$TIER$materialreward
-	}
-	if = {
-		limit = {
-			check_variable = {
-				variable = monthly_income_$RESOURCE$
-				value < @tier$TIER$materialmin
-			}
-		}
-		set_variable = {
-			variable = monthly_income_$RESOURCE$
-			value = @tier$TIER$materialmin
-		}
-	}
-	else_if = {
-		limit = {
-			check_variable = {
-				variable = monthly_income_$RESOURCE$
-				value > @tier$TIER$materialmax
-			}
-		}
-		set_variable = {
-			variable = monthly_income_$RESOURCE$
-			value = @tier$TIER$materialmax
-		}
-	}
-}
-
-# calculates the actual percentage of dividends the 
-# this = agreement, specialist_mercatorum
-# prev = country, overlord or subject
-# output to variable commission_percentage
+# calculates the actual percentage of dividends the country receives based on agreement terms and also whether the overlord or subject
+# this = country, overlord or subject
+# event_target:specialist_mercatorum_agreement = agreement, specialist_mercatorum
+# output to variable dividend_percentage
 set_dividend_percentage = {
-	if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_0
+	optimize_memory
+	event_target:specialist_mercatorum_agreement = {
+		if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_0
+				}
+			}
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0
 			}
 		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0
-		}
-	}
-	else_if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_5
+		else_if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_5
+				}
+			}
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0.05
 			}
 		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0.05
-		}
-	}
-	else_if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_10
+		else_if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_10
+				}
+			}
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0.1
 			}
 		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0.1
-		}
-	}
-	else_if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_15
+		else_if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_15
+				}
+			}
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0.15
 			}
 		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0.15
-		}
-	}
-	else_if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_20
+		else_if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_20
+				}
+			}
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0.2
 			}
 		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0.2
-		}
-	}
-	else_if = {
-		limit = {
-			has_term_value = {
-				term = specialist_mercatorum_commission
-				term = specialist_mercatorum_commission_25
+		else_if = {
+			limit = {
+				has_term_value = {
+					term = specialist_mercatorum_commission
+					value = specialist_mercatorum_commission_25
+				}
 			}
-		}
-		set_variable = {
-			which = mercatorum_commission_percentage
-			value = 0.25
+			set_variable = {
+				which = mercatorum_commission_percentage
+				value = 0.25
+			}
 		}
 	}
 
 	if = {
-		limit = { prev = { is_overlord = yes } }
+		limit = { is_overlord = yes }
 		set_variable = {
 			which = dividend_percentage
 			value = 1
 		}
 		subtract_variable = {
 			which = dividend_percentage
-			value = mercatorum_commission_percentage
+			value = event_target:specialist_mercatorum_agreement.mercatorum_commission_percentage
 		}
 	}
 	else = {
 		set_variable = {
 			which = dividend_percentage
-			value = mercatorum_commission_percentage
+			value = event_target:specialist_mercatorum_agreement.mercatorum_commission_percentage
 		}
 	}
 
-	clear_variable = mercatorum_commission_percentage
+	event_target:specialist_mercatorum_agreement = { clear_variable = mercatorum_commission_percentage }
 }
