@@ -1,0 +1,4 @@
+# variables for mercatorum dividends (each group of amounts scales by +1 factor e.g. 4th base is 2^4 = 16
+@dividend_base = 4
+@dividend_min = 60
+@dividend_max = 2000
