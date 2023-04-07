@@ -1285,7 +1285,7 @@ country_event = {
 			}
 			1 = {
 				add_resource = {
-					food = 1
+					alloys = 1
 					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|alloys|
 				}
 			}
@@ -1295,19 +1295,19 @@ country_event = {
 			locked_random_list = {
 				1 = {
 					add_resource = {
-						food = 1
+						volatile_motes = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|volatile_motes|BONUS_TIERS|1|
 					}
 				}
 				1 = {
 					add_resource = {
-						food = 1
+						exotic_gases = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|exotic_gases|BONUS_TIERS|1|
 					}
 				}
 				1 = {
 					add_resource = {
-						food = 1
+						rare_crystals = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|rare_crystals|BONUS_TIERS|1|
 					}
 				}
@@ -1318,19 +1318,19 @@ country_event = {
 			locked_random_list = {
 				1 = {
 					add_resource = {
-						food = 1
+						sr_living_metal = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_living_metal|BONUS_TIERS|-2|
 					}
 				}
 				1 = {
 					add_resource = {
-						food = 1
+						sr_zro = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_zro|BONUS_TIERS|-2|
 					}
 				}
 				1 = {
 					add_resource = {
-						food = 1
+						sr_dark_matter = 1
 						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_dark_matter|BONUS_TIERS|-2|
 					}
 				}
@@ -1339,19 +1339,19 @@ country_event = {
 		locked_random_list = {
 			1 = {
 				add_resource = {
-					food = 1
+					physics_research = 1
 					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|physics_research|
 				}
 			}
 			1 = {
 				add_resource = {
-					food = 1
+					society_research = 1
 					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|society_research|
 				}
 			}
 			1 = {
 				add_resource = {
-					food = 1
+					engineering_research = 1
 					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|engineering_research|
 				}
 			}
