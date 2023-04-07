@@ -602,157 +602,161 @@ country_event = {
 			target = { is_country = root }
 			has_active_specialization = specialist_mercatorum
 		}
-		NOR = {
-			has_deficit = energy
-			has_actual_deficit = { RESOURCE = energy }
-		}
 	}
 	immediate = {
-		random_agreement = {
+		if = {
 			limit = {
-				owner = { is_country = root.overlord }
-				target = { is_country = root }
-				has_active_specialization = specialist_mercatorum
+				NOR = {
+					has_deficit = energy
+					has_actual_deficit = { RESOURCE = energy }
+				}
 			}
-			save_event_target_as = specialist_mercatorum_agreement
-		}
-		overlord = {
-			random_list = {
-				10 = {
-					country_event = {
-						id = specialist_mercatorum.2000
-					}
-					prev = {
+			random_agreement = {
+				limit = {
+					owner = { is_country = root.overlord }
+					target = { is_country = root }
+					has_active_specialization = specialist_mercatorum
+				}
+				save_event_target_as = specialist_mercatorum_agreement
+			}
+			overlord = {
+				random_list = {
+					10 = {
 						country_event = {
 							id = specialist_mercatorum.2000
 						}
-					}
-				}
-				20 = {
-					modifier = {
-						factor = 0
 						prev = {
-							OR = {
-								AND = {
-									has_deficit = minerals
-									has_actual_deficit = { RESOURCE = minerals }
-								}
-								AND = {
-									has_deficit = food
-									has_actual_deficit = { RESOURCE = food }
-								}
+							country_event = {
+								id = specialist_mercatorum.2000
 							}
 						}
 					}
-					country_event = {
-						id = specialist_mercatorum.2005
-					}
-					prev = {
+					20 = {
+						modifier = {
+							factor = 0
+							prev = {
+								OR = {
+									AND = {
+										has_deficit = minerals
+										has_actual_deficit = { RESOURCE = minerals }
+									}
+									AND = {
+										has_deficit = food
+										has_actual_deficit = { RESOURCE = food }
+									}
+								}
+							}
+						}
 						country_event = {
 							id = specialist_mercatorum.2005
 						}
-					}
-				}
-				15 = {
-					modifier = {
-						factor = 0
 						prev = {
-							OR = {
-								AND = {
-									has_deficit = consumer_goods
-									has_actual_deficit = { RESOURCE = consumer_goods }
-								}
-								AND = {
-									has_deficit = alloys
-									has_actual_deficit = { RESOURCE = alloys }
-								}
+							country_event = {
+								id = specialist_mercatorum.2005
 							}
 						}
 					}
-					country_event = {
-						id = specialist_mercatorum.2006
-					}
-					prev = {
+					15 = {
+						modifier = {
+							factor = 0
+							prev = {
+								OR = {
+									AND = {
+										has_deficit = consumer_goods
+										has_actual_deficit = { RESOURCE = consumer_goods }
+									}
+									AND = {
+										has_deficit = alloys
+										has_actual_deficit = { RESOURCE = alloys }
+									}
+								}
+							}
+						}
 						country_event = {
 							id = specialist_mercatorum.2006
 						}
-					}
-				}
-				10 = {
-					modifier = {
-						factor = 0
 						prev = {
-							OR = {
-								AND = {
-									has_deficit = volatile_motes
-									has_actual_deficit = { RESOURCE = volatile_motes }
-								}
-								AND = {
-									has_deficit = exotic_gases
-									has_actual_deficit = { RESOURCE = exotic_gases }
-								}
-								AND = {
-									has_deficit = rare_crystals
-									has_actual_deficit = { RESOURCE = rare_crystals }
-								}
+							country_event = {
+								id = specialist_mercatorum.2006
 							}
 						}
 					}
-					country_event = {
-						id = specialist_mercatorum.2007
-					}
-					prev = {
+					10 = {
+						modifier = {
+							factor = 0
+							prev = {
+								OR = {
+									AND = {
+										has_deficit = volatile_motes
+										has_actual_deficit = { RESOURCE = volatile_motes }
+									}
+									AND = {
+										has_deficit = exotic_gases
+										has_actual_deficit = { RESOURCE = exotic_gases }
+									}
+									AND = {
+										has_deficit = rare_crystals
+										has_actual_deficit = { RESOURCE = rare_crystals }
+									}
+								}
+							}
+						}
 						country_event = {
 							id = specialist_mercatorum.2007
 						}
-					}
-				}
-				5 = {
-					modifier = {
-						factor = 0
 						prev = {
-							OR = {
-								AND = {
-									has_deficit = sr_living_metal
-									has_actual_deficit = { RESOURCE = sr_living_metal }
-								}
-								AND = {
-									has_deficit = sr_zro
-									has_actual_deficit = { RESOURCE = sr_zro }
-								}
-								AND = {
-									has_deficit = sr_dark_matter
-									has_actual_deficit = { RESOURCE = sr_dark_matter }
-								}
+							country_event = {
+								id = specialist_mercatorum.2007
 							}
 						}
 					}
-					country_event = {
-						id = specialist_mercatorum.2008
-					}
-					prev = {
+					5 = {
+						modifier = {
+							factor = 0
+							prev = {
+								OR = {
+									AND = {
+										has_deficit = sr_living_metal
+										has_actual_deficit = { RESOURCE = sr_living_metal }
+									}
+									AND = {
+										has_deficit = sr_zro
+										has_actual_deficit = { RESOURCE = sr_zro }
+									}
+									AND = {
+										has_deficit = sr_dark_matter
+										has_actual_deficit = { RESOURCE = sr_dark_matter }
+									}
+								}
+							}
+						}
 						country_event = {
 							id = specialist_mercatorum.2008
 						}
+						prev = {
+							country_event = {
+								id = specialist_mercatorum.2008
+							}
+						}
 					}
-				}
-				35 = {
-					country_event = {
-						id = specialist_mercatorum.2010
-					}
-					prev = {
+					35 = {
 						country_event = {
 							id = specialist_mercatorum.2010
 						}
+						prev = {
+							country_event = {
+								id = specialist_mercatorum.2010
+							}
+						}
 					}
-				}
-				5 = {
-					country_event = {
-						id = specialist_mercatorum.2020
-					}
-					prev = {
+					5 = {
 						country_event = {
 							id = specialist_mercatorum.2020
+						}
+						prev = {
+							country_event = {
+								id = specialist_mercatorum.2020
+							}
 						}
 					}
 				}
