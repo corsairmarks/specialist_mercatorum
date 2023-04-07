@@ -539,7 +539,7 @@ try_convert_branch_office_to_criminal = {
 		TO = building_smuggling_rings
 	}
 	sm_swap_all_buildings = {
-		FROM = foo
+		FROM = building_corporate_embassy
 		TO = building_disinformation_center
 	}
 }
