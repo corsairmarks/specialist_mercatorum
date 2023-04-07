@@ -119,6 +119,7 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_exalted_priesthood }
 		set_civic_flag_if_present = { CIVIC = civic_ascensionists }
 		set_civic_flag_if_present = { CIVIC = civic_feudal_realm }
+		set_civic_flag_if_present = { CIVIC = civic_criminal_heritage }
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
 		if = {
 			limit = { has_ethic = ethic_fanatic_authoritarian }
@@ -245,6 +246,18 @@ try_convert_to_mercatorum_megacorp = {
 		add_civic_if_flag_present = {
 			FLAG = civic_feudal_realm
 			CIVIC = civic_franchising
+		}
+		if = {
+			limit = { has_country_flag = civic_criminal_heritage }
+			every_galaxy_planet = {
+				limit = {
+					is_colony = yes
+					has_branch_office = yes
+					branch_office_owner = { is_country = prevprev }
+				}
+				try_convert_branch_office_to_normal = yes
+			}
+			remove_country_flag = civic_criminal_heritage
 		}
 		# cleanup all possible flags from above
 		remove_country_flag = civic_crafters
@@ -439,4 +452,106 @@ set_dividend_percentage = {
 	}
 
 	event_target:specialist_mercatorum_agreement = { clear_variable = mercatorum_commission_percentage }
+}
+
+# this = planet
+try_convert_branch_office_to_normal = {
+	optimize_memory
+	sm_swap_all_buildings = {
+		FROM = building_wildcat_miners
+		TO = building_private_mining_consortium
+	}
+	sm_swap_all_buildings = {
+		FROM = building_bio_reprocessing_facilities
+		TO = building_food_conglomerate
+	}
+	sm_swap_all_buildings = {
+		FROM = building_underground_chemists
+		TO = building_virtual_entertainment_studios
+	}
+	sm_swap_all_buildings = {
+		FROM = building_wrecking_yards
+		TO = building_private_shipyards
+	}
+	sm_swap_all_buildings = {
+		FROM = building_pirate_haven
+		TO = building_military_contractors
+	}
+	sm_swap_all_buildings = {
+		FROM = building_syndicate_outreach_office
+		TO = building_public_relations_office
+	}
+	sm_swap_all_buildings = {
+		FROM = building_illicit_research_labs
+		TO = building_private_research_initiative
+	}
+	sm_swap_all_buildings = {
+		FROM = building_underground_clubs
+		TO = building_amusement_megaplex
+	}
+	sm_swap_all_buildings = {
+		FROM = building_smuggling_rings
+		TO = building_commercial_forum
+	}
+	sm_swap_all_buildings = {
+		FROM = building_disinformation_center
+		TO = building_corporate_embassy
+	}
+}
+
+# this = planet
+try_convert_branch_office_to_criminal = {
+	optimize_memory
+	sm_swap_all_buildings = {
+		FROM = building_private_mining_consortium
+		TO = building_wildcat_miners
+	}
+	sm_swap_all_buildings = {
+		FROM = building_food_conglomerate
+		TO = building_bio_reprocessing_facilities
+	}
+	sm_swap_all_buildings = {
+		FROM = building_virtual_entertainment_studios
+		TO = building_underground_chemists
+	}
+	sm_swap_all_buildings = {
+		FROM = building_private_shipyards
+		TO = building_wrecking_yards
+	}
+	sm_swap_all_buildings = {
+		FROM = building_military_contractors
+		TO = building_pirate_haven
+	}
+	sm_swap_all_buildings = {
+		FROM = building_public_relations_office
+		TO = building_syndicate_outreach_office
+	}
+	sm_swap_all_buildings = {
+		FROM = building_private_research_initiative
+		TO = building_illicit_research_labs
+	}
+	sm_swap_all_buildings = {
+		FROM = building_amusement_megaplex
+		TO = building_underground_clubs
+	}
+	sm_swap_all_buildings = {
+		FROM = building_commercial_forum
+		TO = building_smuggling_rings
+	}
+	sm_swap_all_buildings = {
+		FROM = foo
+		TO = building_disinformation_center
+	}
+}
+
+# this = planet
+# $FROM$ = building, source
+# $TO$ = building, target
+sm_swap_all_buildings = {
+	optimize_memory
+	while = {
+		limit = { has_building = $FROM$ }
+		remove_building = $FROM$
+		add_building = $TO$
+	}
 }
