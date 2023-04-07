@@ -36,6 +36,11 @@ specialist_mercatorum = {
 	}
 }
 
+specialist_mercatorum_commission_null = {
+	term = specialist_mercatorum_commission
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
 specialist_mercatorum_commission_0 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = -30

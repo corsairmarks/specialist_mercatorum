@@ -61,6 +61,8 @@
  specialist_mercatorum_commission: "Mercatorum Dividend Commission Percentage"
  specialist_mercatorum_commission_desc: "This Term dictates what percentage of Dividends are paid to the Subject as a Commission. The Overlords receives the remaining Dividends."
  specialist_mercatorum_commission_tooltip: "Dividend Commission ($VALUE|Y$)"
+ specialist_mercatorum_commission_null: "N/A"
+ specialist_mercatorum_commission_null_desc: "§RThis Term is only available for an Agreement between a £mercatorum£ Mercatorum specialist subject and its Overlord.§!"
  specialist_mercatorum_commission_0: "None"
  specialist_mercatorum_commission_0_desc: "For managing investments on behalf of its Overlord, the Subject receives no Commission on Dividends. Fulfilling the duties of a Subject is its own reward.\nThe Overlord receives 100% of Dividends."
  specialist_mercatorum_commission_5: "5%"
