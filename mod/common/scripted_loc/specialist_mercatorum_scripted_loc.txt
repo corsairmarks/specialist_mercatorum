@@ -63,3 +63,13 @@ defined_text = {
 	}
 	default = RESOURCES
 }
+
+# this = country
+defined_text = {
+	name = GetDividendsEventTitle
+	text = {
+		trigger = { is_overlord = yes }
+		localization_key = specialist_mercatorum.2000.title.overlord
+	}
+	default = specialist_mercatorum.2000.title.subject
+}
