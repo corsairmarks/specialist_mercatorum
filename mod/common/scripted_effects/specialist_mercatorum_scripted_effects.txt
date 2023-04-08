@@ -497,6 +497,10 @@ try_convert_branch_office_to_normal = {
 		FROM = building_disinformation_center
 		TO = building_corporate_embassy
 	}
+	sm_swap_corporate_holdings = {
+		FROM = building_subversive_shrine
+		TO = building_temple_of_prosperity
+	}
 }
 
 # this = planet
@@ -541,6 +545,10 @@ try_convert_branch_office_to_criminal = {
 	sm_swap_corporate_holdings = {
 		FROM = building_corporate_embassy
 		TO = building_disinformation_center
+	}
+	sm_swap_corporate_holdings = {
+		FROM = building_temple_of_prosperity
+		TO = building_subversive_shrine
 	}
 }
 
