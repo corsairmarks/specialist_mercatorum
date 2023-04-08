@@ -1,0 +1,79 @@
+# effectively 1 per fellow subject and overlord due to the restriction of one per planet and can only be constructed on a branch office on the target's capital
+building_mercatorum_national_headquarters = {
+	icon = holding_franchise_headquarters
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	owner_type = corporate
+	category = unity
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+		exists = owner
+		owner = {
+			OR = {
+				AND = {
+					is_overlord = yes
+					has_subject = prev.branch_office_owner
+				}
+				AND = {
+					is_subject = yes
+					has_overlord = prev.branch_office_owner.overlord
+				}
+			}
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = is_capital
+			exists = planet
+			planet = { is_capital = yes }
+		}
+	}
+	destroy_trigger = {
+		OR = {
+			has_branch_office = no
+			branch_office_owner = { NOT = { is_specialist_subject_type = { TYPE = mercatorum } } }
+			NOT = { exists = owner }
+			owner = {
+				NOR = {
+					AND = {
+						is_overlord = yes
+						has_subject = prev.branch_office_owner
+					}
+					AND = {
+						is_subject = yes
+						has_overlord = prev.branch_office_owner.overlord
+					}
+				}
+			}
+		}
+		# intentionally not destroyed in the event the host empire moves its capital
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	country_modifier = {
+		trade_value_mult = 0.05
+		local_trade_protection_add = 5
+	}
+	# see opinion_modifier opinion_mercatorum_national_headquarters_fellow_subject;
+	# fellow subjects of the same overlord gain opinion if this building is present
+	planet_modifier = {
+		trade_value_mult = 0.2
+		job_mercatorum_executive_add = 1
+		job_mercatorum_manager_add = 1
+	}
+	triggered_desc = {
+		text = job_executive_effect_desc
+	}
+	triggered_desc = {
+		text = job_manager_effect_desc
+	}
+	ai_weight = { weight = 500 }
+}
