@@ -29,7 +29,7 @@
 @set_factor_3 = 0.60
 @set_factor_3_neg = -0.60
 
-# Modified: Mercatora can't be integrated
+# Modified: Mercatora cannot be integrated
 subject_can_be_integrated = {
 	term = subject_integration
 	loyalty_change = -50
@@ -122,6 +122,68 @@ subject_can_not_do_diplomacy = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_satrapy
 			NOT = { agreement_preset = preset_relic_satrapy }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_galcom_resolution
+			not_allowed_for_galcom_resolution_trigger = { RESOLUTION = resolution_intergalacticdirective_a_voice_for_all }
+		}
+	}
+}
+
+# Modified: Mercatora cannot be prevented from expanding
+subject_cannot_expand = {
+	term = subject_expand
+	loyalty_change = -15
+	ai_acceptance = {
+		overlord = 90
+		subject = -75
+	}
+	activate_effect = {
+		set_rule_can_subject_expand = cannot_expand
+	}
+	target_modifier = {
+		monthly_loyalty = -1
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = not_allowed_for_bulwark
+			NOT = { agreement_preset = preset_bulwark }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_scholarium
+			NOT = { agreement_preset = preset_scholarium }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_prospectorium
+			NOT = { agreement_preset = preset_prospectorium }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_mercatorum
+			NOT = { agreement_preset = preset_mercatorum }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_tributary
+			NOT = { agreement_preset = preset_tributary }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_subsidiary
+			NOT = { agreement_preset = preset_subsidiary }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_satrapy
+			NOT = { agreement_preset = preset_relic_satrapy }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_feudal_society
+			NOT = { owner = { has_civic = civic_feudal_realm } }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_franchising
+			NOT = { owner = { has_civic = civic_franchising } }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_galcom_resolution
+			not_allowed_for_galcom_resolution_trigger = { RESOLUTION = resolution_intergalacticdirective_ensured_sovereignty }
 		}
 		custom_tooltip = {
 			fail_text = not_allowed_for_galcom_resolution
