@@ -70,10 +70,32 @@ building_mercatorum_national_headquarters = {
 		job_mercatorum_manager_add = 1
 	}
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_overlord = yes }
+		}
 		text = job_executive_effect_desc
 	}
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_overlord = yes }
+		}
 		text = job_manager_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_subject = yes }
+		}
+		text = job_mercatorum_executive_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_subject = yes }
+		}
+		text = job_mercatorum_manager_effect_desc
 	}
 	ai_weight = { weight = 500 }
 }
