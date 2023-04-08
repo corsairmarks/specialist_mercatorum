@@ -63,11 +63,14 @@ mercatorum_executive = {
 		potential = {
 			exists = owner
 			owner = { is_subject = yes }
-			has_branch_office = yes
-			branch_office_owner = {
-				OR = {
-					has_valid_civic = civic_public_relations_specialists
-					has_valid_civic = civic_media_conglomerate
+			exists = planet
+			planet = {
+				has_branch_office = yes
+				branch_office_owner = {
+					OR = {
+						has_valid_civic = civic_public_relations_specialists
+						has_valid_civic = civic_media_conglomerate
+					}
 				}
 			}
 		}
@@ -172,11 +175,14 @@ mercatorum_manager = {
 		potential = {
 			exists = owner
 			owner = { is_subject = yes }
-			has_branch_office = yes
-			branch_office_owner = {
-				OR = {
-					has_valid_civic = civic_public_relations_specialists
-					has_valid_civic = civic_media_conglomerate
+			exists = planet
+			planet = {
+				has_branch_office = yes
+				branch_office_owner = {
+					OR = {
+						has_valid_civic = civic_public_relations_specialists
+						has_valid_civic = civic_media_conglomerate
+					}
 				}
 			}
 		}
