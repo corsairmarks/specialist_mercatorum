@@ -48,6 +48,11 @@ specialist_mercatorum_neighbor = {
 	local_trade_protection_add = 15
 }
 
+specialist_mercatorum_national_headquarters = {
+	trade_value_mult = 0.05
+	local_trade_protection_add = 5
+}
+
 ##########################
 # TRADE ACTION MODIFIERS #
 ##########################

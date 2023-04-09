@@ -58,10 +58,6 @@ building_mercatorum_national_headquarters = {
 			energy = 3
 		}
 	}
-	country_modifier = {
-		trade_value_mult = 0.05
-		local_trade_protection_add = 5
-	}
 	# see opinion_modifier opinion_mercatorum_national_headquarters_fellow_subject;
 	# fellow subjects of the same overlord gain opinion if this building is present
 	planet_modifier = {
@@ -96,6 +92,18 @@ building_mercatorum_national_headquarters = {
 			owner = { is_subject = yes }
 		}
 		text = job_mercatorum_manager_effect_desc
+	}
+	on_built = {
+		if = {
+			limit = { exists = owner }
+			owner = { add_modifier = { modifier = specialist_mercatorum_national_headquarters } }
+		}
+	}
+	on_destroy = {
+		if = {
+			limit = { exists = owner }
+			owner = { remove_modifier = specialist_mercatorum_national_headquarters }
+		}
 	}
 	ai_weight = { weight = 500 }
 }
