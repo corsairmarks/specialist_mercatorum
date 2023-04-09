@@ -130,3 +130,67 @@ building_mercatorum_national_headquarters = {
 		}
 	}
 }
+
+holding_mercatorum_corporate_headquarters = {
+	icon = holding_franchise_headquarters
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	owner_type = subject_holding
+	category = unity
+	allow = {
+		is_capital = yes
+		custom_tooltip = {
+			fail_text = subject_is_mercatorum
+			exists = owner
+			owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+		}
+	}
+	destroy_trigger = {
+		OR = {
+			NOT = { exists = owner }
+			owner = { NOT = { is_specialist_subject_type = { TYPE = mercatorum } } }
+		}
+	}
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = @b3_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+	planet_modifier = {
+		trade_value_mult = 0.25
+		job_mercatorum_executive_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_specialist_subject_tier = {
+					TYPE = mercatorum
+					TIER = 2
+				}
+			}
+		}
+		job_mercatorum_executive_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_specialist_subject_tier = {
+					TYPE = mercatorum
+					TIER = 3
+				}
+			}
+		}
+		job_mercatorum_executive_add = 1
+	}
+	triggered_desc = {
+		text = job_mercatorum_executive_effect_holding_desc
+	}
+}

@@ -1,10 +1,13 @@
 # derived from the executive ruler job
+# * unity is produced for the overlord if the job is on a mercatorum planet (i.e. from the overlord's holding)
 # * produces edicts fund for byzantine bureaucracies
 # * adds loyalty production for the fellow subject towards the shared overlord
 # * loyalty production is increased if the branch office owner (i.e. mercatorum) is a PR or media company
 mercatorum_executive = {
 	category = ruler
 	condition_string = RULER_JOB_TRIGGER
+	can_set_priority = no
+	is_capped_by_modifier = yes
 	icon = executive
 	building_icon = holding_franchise_headquarters
 	clothes_texture_index = 1
@@ -22,10 +25,27 @@ mercatorum_executive = {
 	resources = {
 		category = planet_executives
 		produces = {
+			trigger = {
+				exists = owner
+				owner = { is_overlord = yes }
+			}
 			unity = 6
 		}
 		upkeep = {
 			consumer_goods = 2
+		}
+	}
+
+	overlord_resources = {
+		category = planet_overlord_executives
+		produces = {
+			trigger = {
+				OR = {
+					NOT = { exists = owner }
+					owner = { is_subject = yes }
+				}
+			}
+			unity = 6
 		}
 	}
 
@@ -54,9 +74,31 @@ mercatorum_executive = {
 		potential = {
 			exists = owner
 			owner = { is_subject = yes }
+			exists = planet
+			planet = {
+				has_branch_office = yes
+				branch_office_owner = {
+					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = prevprev.owner.overlord
+				}
+			}
 		}
 		monthly_loyalty = 0.3
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = owner
+				owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+				has_holding = {
+					holding = holding_mercatorum_corporate_headquarters
+					owner = owner.overlord
+				}
+			}
+		}
+		monthly_loyalty = 0.25
 	}
 
 	triggered_planet_modifier = {
@@ -67,6 +109,8 @@ mercatorum_executive = {
 			planet = {
 				has_branch_office = yes
 				branch_office_owner = {
+					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = prevprev.owner.overlord
 					OR = {
 						has_valid_civic = civic_public_relations_specialists
 						has_valid_civic = civic_media_conglomerate
@@ -75,11 +119,22 @@ mercatorum_executive = {
 			}
 		}
 		monthly_loyalty = 0.15
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 	}
 
 	weight = {
 		weight = @ruler_job_weight
+		modifier = {
+			add = @overlord_job_weight
+			exists = planet
+			planet = {
+				exists = owner
+				owner = { is_specialist_subject_type = { TYPE = mercatorum } }
+				has_holding = {
+					holding = holding_mercatorum_corporate_headquarters
+					owner = owner.overlord
+				}
+			}
+		}
 		mult = value:job_weights_modifier|JOB|mercatorum_executive|RESOURCE|unity|
 		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
@@ -115,6 +170,8 @@ mercatorum_executive = {
 mercatorum_manager = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
+	can_set_priority = no
+	is_capped_by_modifier = yes
 	icon = manager
 	building_icon = holding_franchise_headquarters
 	clothes_texture_index = 3
@@ -130,11 +187,15 @@ mercatorum_manager = {
 
 	resources = {
 		category = planet_managers
-		produces = {
-			unity = 4
-		}
 		upkeep = {
 			consumer_goods = 2
+		}
+	}
+
+	overlord_resources = {
+		category = planet_overlord_managers
+		produces = {
+			unity = 4
 		}
 	}
 
@@ -166,9 +227,16 @@ mercatorum_manager = {
 		potential = {
 			exists = owner
 			owner = { is_subject = yes }
+			exists = planet
+			planet = {
+				has_branch_office = yes
+				branch_office_owner = {
+					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = prevprev.owner.overlord
+				}
+			}
 		}
 		monthly_loyalty = 0.2
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 	}
 
 	triggered_planet_modifier = {
@@ -179,6 +247,8 @@ mercatorum_manager = {
 			planet = {
 				has_branch_office = yes
 				branch_office_owner = {
+					is_specialist_subject_type = { TYPE = mercatorum }
+					has_overlord = prevprev.owner.overlord
 					OR = {
 						has_valid_civic = civic_public_relations_specialists
 						has_valid_civic = civic_media_conglomerate
@@ -187,7 +257,6 @@ mercatorum_manager = {
 			}
 		}
 		monthly_loyalty = 0.1
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 	}
 
 	weight = {
