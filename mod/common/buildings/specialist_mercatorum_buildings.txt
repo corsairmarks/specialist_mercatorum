@@ -191,6 +191,6 @@ holding_mercatorum_corporate_headquarters = {
 		job_mercatorum_executive_add = 1
 	}
 	triggered_desc = {
-		text = job_mercatorum_executive_effect_holding_desc
+		text = job_mercatorum_executive_effect_desc
 	}
 }
