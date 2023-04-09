@@ -79,14 +79,14 @@ building_mercatorum_national_headquarters = {
 			exists = owner
 			owner = { is_overlord = yes }
 		}
-		text = job_executive_effect_desc
+		text = job_mercatorum_executive_overlord_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
 			owner = { is_overlord = yes }
 		}
-		text = job_manager_effect_desc
+		text = job_mercatorum_manager_overlord_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
