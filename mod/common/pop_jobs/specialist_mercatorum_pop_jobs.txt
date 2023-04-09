@@ -125,15 +125,8 @@ mercatorum_executive = {
 		weight = @ruler_job_weight
 		modifier = {
 			add = @overlord_job_weight
-			exists = planet
-			planet = {
-				exists = owner
-				owner = { is_specialist_subject_type = { TYPE = mercatorum } }
-				has_holding = {
-					holding = holding_mercatorum_corporate_headquarters
-					owner = owner.overlord
-				}
-			}
+			exists = owner
+			owner = { is_subject = yes }
 		}
 		mult = value:job_weights_modifier|JOB|mercatorum_executive|RESOURCE|unity|
 		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
@@ -261,6 +254,11 @@ mercatorum_manager = {
 
 	weight = {
 		weight = @specialist_job_weight
+		modifier = {
+			add = @overlord_job_weight
+			exists = owner
+			owner = { is_subject = yes }
+		}
 		mult = value:job_weights_modifier|JOB|mercatorum_manager|RESOURCE|unity|
 		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
 		modifier = {
