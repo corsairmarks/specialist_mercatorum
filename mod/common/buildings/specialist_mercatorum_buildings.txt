@@ -24,9 +24,18 @@ building_mercatorum_national_headquarters = {
 	}
 	allow = {
 		custom_tooltip = {
-			fail_text = is_capital
-			exists = planet
-			planet = { is_capital = yes }
+			fail_text = building_mercatorum_national_headquarters_limit_per_empire
+			exists = owner
+			owner = {
+				NOT = {
+					any_owned_planet = {
+						has_holding = {
+							holding = building_mercatorum_national_headquarters
+							owner = prevprev.branch_office_owner
+						}
+					}
+				}
+			}
 		}
 	}
 	destroy_trigger = {
@@ -105,5 +114,19 @@ building_mercatorum_national_headquarters = {
 			owner = { remove_modifier = specialist_mercatorum_national_headquarters }
 		}
 	}
-	ai_weight = { weight = 500 }
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_trade_designation = yes
+		}
+		modifier = {
+			factor = 4
+			has_unity_designation = yes
+		}
+		modifier = {
+			factor = 2
+			is_capital = yes
+		}
+	}
 }
