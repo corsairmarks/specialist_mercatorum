@@ -27,7 +27,7 @@ specialist_mercatorum_dividends = {
 	}
 	on_monthly = {
 		events = {
-			specialist_mercatorum.12
+			specialist_mercatorum.16
 		}
 	}
 	monthly_progress = {

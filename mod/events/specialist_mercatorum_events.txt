@@ -273,25 +273,30 @@ country_event = {
 	}
 }
 
-# triggered explicitly by on_monthly from the situation specialist_mercatorum_dividends
+# triggered explicitly by specialist_mercatorum.16
 situation_event = {
 	id = specialist_mercatorum.12
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_situation_type = specialist_mercatorum_dividends
+		exists = owner
 		owner = { is_subject = yes }
 	}
 	immediate = {
 		owner = {
+			random_agreement = {
+				limit = {
+					owner = { is_country = prevprev.overlord }
+					target = { is_country = prevprev }
+					has_active_specialization = specialist_mercatorum
+				}
+				save_event_target_as = specialist_mercatorum_agreement
+			}
 			every_situation = {
 				limit = { has_situation_flag = deficit_situation }
 				set_variable = {
-					which = situation_progress_remaining
-					value = 100
-				}
-				subtract_variable = {
-					which = situation_progress_remaining
+					which = current_situation_progress
 					value = trigger:situation_progress
 				}
 				if = {
@@ -302,6 +307,7 @@ situation_event = {
 							scopes = {
 								from = prev
 								fromfrom = root
+								fromfromfrom = event_target:specialist_mercatorum_agreement
 							}
 						}
 					}
@@ -310,7 +316,7 @@ situation_event = {
 					limit = {
 						NOT = { has_situation_flag = deficit_situation_imminent_default }
 						check_variable_arithmetic = {
-							which = situation_progress_remaining
+							which = current_situation_progress
 							add = trigger:situation_monthly_progress
 							value >= 100
 						}
@@ -325,7 +331,7 @@ situation_event = {
 						}
 					}
 				}
-				clear_variable = situation_progress_remaining
+				clear_variable = current_situation_progress
 			}
 		}
 	}
@@ -343,7 +349,6 @@ country_event = {
 	show_sound = event_bad_omen
 	is_triggered_only = yes
 	trigger = {
-		exists = event_target:specialist_mercatorum_agreement
 		exists = from
 		from = {
 			NOR = {
@@ -361,6 +366,8 @@ country_event = {
 				is_situation_type = situation_rare_crystals_deficit
 			}
 		}
+		exists = fromfrom
+		exists = fromfromfrom
 	}
 	abort_trigger = {
 		OR = {
@@ -371,6 +378,8 @@ country_event = {
 					has_situation_flag = deficit_situation_warn
 				}
 			}
+			NOT = { exists = fromfrom }
+			NOT = { exists = fromfromfrom }
 		}
 	}
 	immediate = {
@@ -412,18 +421,22 @@ country_event = {
 				}
 			}
 		}
-		event_target:specialist_mercatorum_agreement = { add_loyalty = 5 }
+		fromfromfrom = { add_loyalty = 5 }
+		# TODO ai_weight
 	}
 	option = {
 		name = specialist_mercatorum.13.b
 		from = {
 			hidden_effect = { set_situation_flag = deficit_situation_warn }
-			add_opinion_modifier = {
-				who = root
-				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout_refuse
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout_refuse
+				}
 			}
 		}
-		event_target:specialist_mercatorum_agreement = { add_loyalty = -5 }
+		fromfromfrom = { add_loyalty = -5 }
+		# TODO ai_weight
 	}
 }
 
@@ -439,7 +452,6 @@ country_event = {
 	show_sound = event_life_support_fail
 	is_triggered_only = yes
 	trigger = {
-		exists = event_target:specialist_mercatorum_agreement
 		exists = from
 		from = {
 			has_situation_flag = deficit_situation_warn
@@ -455,6 +467,8 @@ country_event = {
 				is_situation_type = situation_rare_crystals_deficit
 			}
 		}
+		exists = fromfrom
+		exists = fromfromfrom
 	}
 	abort_trigger = {
 		OR = {
@@ -465,6 +479,8 @@ country_event = {
 					has_situation_flag = deficit_situation_imminent_default
 				}
 			}
+			NOT = { exists = fromfrom }
+			NOT = { exists = fromfromfrom }
 		}
 	}
 	immediate = {
@@ -506,7 +522,8 @@ country_event = {
 				}
 			}
 		}
-		event_target:specialist_mercatorum_agreement = { add_loyalty = 5 }
+		fromfromfrom = { add_loyalty = 5 }
+		# TODO ai_weight
 	}
 	option = {
 		name = specialist_mercatorum.14.b
@@ -519,7 +536,7 @@ country_event = {
 				}
 			}
 		}
-		event_target:specialist_mercatorum_agreement = { add_loyalty = -5 }
+		fromfromfrom = { add_loyalty = -5 }
 		custom_tooltip = specialist_mercatorum.14.b.tooltip
 		tooltip = {
 			add_modifier = {
@@ -532,8 +549,9 @@ country_event = {
 					modifier = opinion_specialist_mercatorum_overlord_allowed_default
 				}
 			}
-			event_target:specialist_mercatorum_agreement = { add_loyalty = -20 }
+			fromfromfrom = { add_loyalty = -20 }
 		}
+		# TODO ai_weight
 	}
 }
 
@@ -578,12 +596,32 @@ country_event = {
 			}
 			random_agreement = {
 				limit = {
-					owner = { is_country = prev }
+					owner = { is_country = root }
 					target = { is_country = from.owner }
 					has_active_specialization = specialist_mercatorum
 				}
 				add_loyalty = -20
 			}
+		}
+	}
+}
+
+# triggered explicitly by on_monthly from the situation specialist_mercatorum_dividends
+# shim event in order to delay a day for monthly progress and calculations to completed
+situation_event = {
+	id = specialist_mercatorum.16
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_situation_type = specialist_mercatorum_dividends
+		exists = owner
+		owner = { is_subject = yes }
+	}
+	immediate = {
+		# delay a day for monthly calculations to be updated
+		situation_event = {
+			id = specialist_mercatorum.12
+			days = 1
 		}
 	}
 }
