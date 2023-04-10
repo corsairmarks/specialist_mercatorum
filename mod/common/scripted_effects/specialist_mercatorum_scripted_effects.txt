@@ -308,7 +308,7 @@ set_owner_monthly_shortfall = {
 				resource = $RESOURCE$
 				variable = deficit_amount
 			}
-			prev = { 
+			prev = {
 				if = {
 					limit = {
 						OR = {
@@ -338,13 +338,13 @@ bail_out_mercatorum_subject = {
 	# overlord explicitly not nested so it looks nice in tooltips
 	owner.overlord = {
 		add_resource = {
-			$RESOURCE$ = 1
+			$RESOURCE$ = -1 # overlord pays the resources
 			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}
 	owner = {
 		add_resource = {
-			$RESOURCE$ = -1 # subject receives the resources
+			$RESOURCE$ = 1
 			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}

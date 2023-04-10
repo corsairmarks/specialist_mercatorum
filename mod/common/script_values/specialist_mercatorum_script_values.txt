@@ -29,6 +29,7 @@ mercatorum_specialist_deficit_bailout_amount = {
 	}
 	multiply = value:bailout_scaling_factor # built-in script_value that scales based on game years passed
 	multiply = 10
+	abs = yes
 	min = 100
 }
 
