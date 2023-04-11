@@ -76,3 +76,9 @@ specialist_tier_with_bonus = {
 	add = event_target:specialist_mercatorum_agreement.trigger:specialist_tier
 	[[BONUS_TIERS] add = $BONUS_TIERS$ ]
 }
+
+# this = any
+sm_bailout_scaling_factor_negative = {
+	base = 0
+	subtract = value:bailout_scaling_factor
+}

@@ -349,7 +349,19 @@ bail_out_mercatorum_subject = {
 			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}
+
 	abort_situation = this
+	hidden_effect = {
+		# remove the free resources granted by the situation being aborted
+		# (these are intended to be the bonus resources if the country defaults)
+		# see common/situations/02_deficit_situations.txt
+		owner = {
+			add_resource = {
+				$RESOURCE$ = @bailout_basic_base_amount
+				multiplier = value:sm_bailout_scaling_factor_negative
+			}
+		}
+	}
 }
 
 # calculates the actual percentage of dividends the country receives based on agreement terms and also whether the overlord or subject
