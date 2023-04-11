@@ -54,7 +54,6 @@ dividends_from_subject_monthly_income = {
 		is_variable_set = dividend_percentage
 		multiply = dividend_percentage
 	}
-	# tentatively global scripted_variables can be parameters
 }
 
 # this = any
