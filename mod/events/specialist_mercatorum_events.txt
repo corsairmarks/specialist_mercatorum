@@ -886,18 +886,53 @@ country_event = {
 		text = specialist_mercatorum.2000.desc.subject
 		trigger = { is_overlord = no }
 	}
-	picture = GFX_evt_physics_research
-	picture = GFX_evt_society_research
-	picture = GFX_evt_engineering_research
+	picture = {
+		picture = GFX_evt_physics_research
+		trigger = {
+			check_variable = {
+				which = sm_2000_random
+				value = 0
+			}
+		}
+	}
+	picture = {
+		picture = GFX_evt_society_research
+		trigger = {
+			check_variable = {
+				which = sm_2000_random
+				value = 1
+			}
+		}
+	}
+	picture = {
+		picture = GFX_evt_engineering_research
+		trigger = {
+			check_variable = {
+				which = sm_2000_random
+				value = 2
+			}
+		}
+	}
 	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 	trigger = { exists = event_target:specialist_mercatorum_agreement }
-	immediate = { set_dividend_percentage = yes }
+	immediate = {
+		set_dividend_percentage = yes
+		set_variable_to_random_value = {
+			which = sm_2000_random
+			rounded = yes
+		}
+		modulo_variable = {
+			which = sm_2000_random
+			value = 3
+		}
+	}
 	after = {
 		if = {
 			limit = { is_variable_set = dividend_percentage }
 			hidden_effect = { clear_variable = dividend_percentage }
 		}
+		hidden_effect = { clear_variable = sm_2000_random }
 	}
 	option = {
 		name = EXCELLENT
@@ -954,8 +989,24 @@ country_event = {
 		text = specialist_mercatorum.2005.desc.subject
 		trigger = { is_overlord = no }
 	}
-	picture = GFX_evt_mining_operations
-	picture = GFX_evt_mining_station
+	picture = {
+		picture = GFX_evt_mining_operations
+		trigger = {
+			check_variable = {
+				which = sm_2005_random
+				value = 0
+			}
+		}
+	}
+	picture = {
+		picture = GFX_evt_mining_station
+		trigger = {
+			check_variable = {
+				which = sm_2005_random
+				value = 1
+			}
+		}
+	}
 	show_sound = event_drilling
 	is_triggered_only = yes
 	trigger = { exists = event_target:specialist_mercatorum_agreement }
@@ -972,12 +1023,21 @@ country_event = {
 	}
 	immediate = {
 		set_dividend_percentage = yes
+		set_variable_to_random_value = {
+			which = sm_2005_random
+			rounded = yes
+		}
+		modulo_variable = {
+			which = sm_2005_random
+			value = 2
+		}
 	}
 	after = {
 		if = {
 			limit = { is_variable_set = dividend_percentage }
 			hidden_effect = { clear_variable = dividend_percentage }
 		}
+		hidden_effect = { clear_variable = sm_2005_random }
 	}
 	option = {
 		name = EXCELLENT
