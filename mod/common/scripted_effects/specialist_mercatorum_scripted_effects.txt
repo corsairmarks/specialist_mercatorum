@@ -292,7 +292,8 @@ try_convert_to_mercatorum_megacorp = {
 }
 
 # set a varible with the owner's $RESOURCE$ deficit monthly income shortfall - but only if it hasn't been set, or this month is worse (lower) than the saved amount
-# this = situation
+# root = country, overlord
+# this = situation, deficit
 # $RESOURCE$ = the resource for which to export the monthly deficit
 set_owner_monthly_shortfall = {
 	optimize_memory
@@ -330,13 +331,13 @@ set_owner_monthly_shortfall = {
 }
 
 # remove the $RESOURCE$ bailout from the overlord and add it to the subject
-# this = situation
+# root = country, overlord
+# this = situation, deficit
 # $RESOURCE$ = the resource for which the subject is being bailed out
 bail_out_mercatorum_subject = {
 	optimize_memory
 	log = "\\[Owner.Overlord.GetRealName] bailed out its mercatorum subject \\[Owner.GetRealName]'s \\[This.GetName]"
-	# overlord explicitly not nested so it looks nice in tooltips
-	owner.overlord = {
+	root = {
 		add_resource = {
 			$RESOURCE$ = -1 # overlord pays the resources
 			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
