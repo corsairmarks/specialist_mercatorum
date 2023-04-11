@@ -403,6 +403,20 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.13.a
 		from = {
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+				}
+				hidden_effect = {
+					country_event = {
+						id = specialist_mercatorum.17
+						scopes = {
+							from = from
+						}
+					}
+				}
+			}
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -413,12 +427,6 @@ country_event = {
 				situation_volatile_motes_deficit = { bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
-			}
-			owner = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
-				}
 			}
 		}
 		fromfromfrom = { add_loyalty = 5 }
@@ -504,6 +512,20 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.14.a
 		from = {
+			owner = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
+				}
+				hidden_effect = {
+					country_event = {
+						id = specialist_mercatorum.17
+						scopes = {
+							from = from
+						}
+					}
+				}
+			}
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -514,12 +536,6 @@ country_event = {
 				situation_volatile_motes_deficit = { bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
 				situation_exotic_gases_deficit = { bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
 				situation_rare_crystals_deficit = { bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
-			}
-			owner = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
-				}
 			}
 		}
 		fromfromfrom = { add_loyalty = 5 }
@@ -623,6 +639,21 @@ situation_event = {
 			id = specialist_mercatorum.12
 			days = 1
 		}
+	}
+}
+
+# triggered explicitly by specialist_mercatorum.13 and .14 (option a (bailout))
+# root = country
+# from = situation, deficit
+country_event = {
+	id = specialist_mercatorum.17
+	is_triggered_only = yes
+	title = specialist_mercatorum.17.title
+	desc = specialist_mercatorum.17.desc
+	picture = GFX_evt_ship_offloading_cargo
+	trigger = { is_specialist_subject_type = { TYPE = mercatorum } }
+	option = {
+		name = EXCELLENT
 	}
 }
 
