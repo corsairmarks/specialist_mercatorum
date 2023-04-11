@@ -402,6 +402,22 @@ country_event = {
 	}
 	option = {
 		name = specialist_mercatorum.13.a
+		allow = {
+			from = {
+				switch = {
+					trigger = is_situation_type
+					situation_energy_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
+					situation_mineral_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = minerals } }
+					situation_food_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = food } }
+					situation_consumer_goods_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = consumer_goods } }
+					situation_alloys_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = alloys } }
+					situation_volatile_motes_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
+					situation_exotic_gases_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
+					situation_rare_crystals_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
+					default = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
+				}
+			}
+		}
 		from = {
 			owner = {
 				add_opinion_modifier = {
@@ -430,7 +446,68 @@ country_event = {
 			}
 		}
 		fromfromfrom = { add_loyalty = 5 }
-		# TODO ai_weight
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 1
+				has_ethic = ethic_xenophile
+			}
+			modifier = {
+				add = 2
+				has_ethic = ethic_fanatic_xenophile
+			}
+			modifier = {
+				add = 2
+				OR = {
+					is_capitalist = yes
+					has_corporate_government = yes
+				}
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = subjugator
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = multispecies
+			}
+			modifier = {
+				factor = 2
+				NOR = { # these built-in personalities don't care about loyalty (loyalty_acceptance < 1)
+					has_ai_personality = ruthless_capitalists
+					has_ai_personality = slaving_despots
+					has_ai_personality = decadent_hierarchy
+					has_ai_personality = xenophobic_isolationists
+					has_ai_personality = fanatic_purifiers
+					has_ai_personality = devouring_swarm
+					has_ai_personality = migrating_flock
+					has_ai_personality = exterminators
+					has_ai_personality = became_the_crisis
+					has_ai_personality = imperial_origin_overlord_ai
+					has_ai_personality = decadent_capitalists
+				}
+				from.owner = { is_loyal_to = root }
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					# these built-in personalities care about loyalty (loyalty_acceptance > 1)
+					has_ai_personality = erudite_explorers
+					has_ai_personality = democratic_crusaders
+					has_ai_personality = harmonious_hierarchy
+					has_ai_personality = federation_builders
+					has_ai_personality = servitors
+					has_ai_personality = fanatic_befrienders
+					# these built-in personalities care about economics
+					has_ai_personality = peaceful_traders
+					# these built-in personalities care about subjects
+					has_ai_personality = hegemonic_imperialists
+				}
+				from.owner = { is_loyal_to = root }
+			}
+		}
 	}
 	option = {
 		name = specialist_mercatorum.13.b
@@ -444,7 +521,55 @@ country_event = {
 			}
 		}
 		fromfromfrom = { add_loyalty = -5 }
-		# TODO ai_weight
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 1
+				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				add = 2
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = slaver
+			}
+			modifier = {
+				factor = 2
+				NOR = { # these built-in personalities care about disloyalty (loyalty_acceptance > 1)
+					has_ai_personality = erudite_explorers
+					has_ai_personality = democratic_crusaders
+					has_ai_personality = harmonious_hierarchy
+					has_ai_personality = federation_builders
+					has_ai_personality = servitors
+					has_ai_personality = fanatic_befrienders
+					# these built-in personalities care about economics
+					has_ai_personality = peaceful_traders
+					# these built-in personalities care about subjects
+					has_ai_personality = hegemonic_imperialists
+				}
+				from.owner = { is_disloyal_to = root }
+			}
+			modifier = {
+				factor = 2
+				OR = { # these built-in personalities don't care about disloyalty (loyalty_acceptance < 1)
+					has_ai_personality = ruthless_capitalists
+					has_ai_personality = slaving_despots
+					has_ai_personality = decadent_hierarchy
+					has_ai_personality = xenophobic_isolationists
+					has_ai_personality = fanatic_purifiers
+					has_ai_personality = devouring_swarm
+					has_ai_personality = migrating_flock
+					has_ai_personality = exterminators
+					has_ai_personality = became_the_crisis
+					has_ai_personality = imperial_origin_overlord_ai
+					has_ai_personality = decadent_capitalists
+				}
+				from.owner = { is_disloyal_to = root }
+			}
+		}
 	}
 }
 
@@ -511,6 +636,22 @@ country_event = {
 	}
 	option = {
 		name = specialist_mercatorum.14.a
+		allow = {
+			from = {
+				switch = {
+					trigger = is_situation_type
+					situation_energy_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
+					situation_mineral_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = minerals } }
+					situation_food_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = food } }
+					situation_consumer_goods_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = consumer_goods } }
+					situation_alloys_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = alloys } }
+					situation_volatile_motes_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = volatile_motes } }
+					situation_exotic_gases_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = exotic_gases } }
+					situation_rare_crystals_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = rare_crystals } }
+					default = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
+				}
+			}
+		}
 		from = {
 			owner = {
 				add_opinion_modifier = {
@@ -539,7 +680,51 @@ country_event = {
 			}
 		}
 		fromfromfrom = { add_loyalty = 5 }
-		# TODO ai_weight
+		ai_chance = {
+			base = 3
+			modifier = {
+				add = 1
+				has_ethic = ethic_xenophile
+			}
+			modifier = {
+				add = 2
+				has_ethic = ethic_fanatic_xenophile
+			}
+			modifier = {
+				add = 2
+				OR = {
+					is_capitalist = yes
+					has_corporate_government = yes
+				}
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = subjugator
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = multispecies
+			}
+			modifier = {
+				factor = 2
+				NOR = { # these built-in personalities don't care about loyalty (loyalty_acceptance < 1)
+					has_ai_personality = ruthless_capitalists
+					has_ai_personality = slaving_despots
+					has_ai_personality = decadent_hierarchy
+					has_ai_personality = xenophobic_isolationists
+					has_ai_personality = fanatic_purifiers
+					has_ai_personality = devouring_swarm
+					has_ai_personality = migrating_flock
+					has_ai_personality = exterminators
+					has_ai_personality = became_the_crisis
+					has_ai_personality = imperial_origin_overlord_ai
+					has_ai_personality = decadent_capitalists
+				}
+				from.owner = { is_loyal_to = root }
+			}
+		}
 	}
 	option = {
 		name = specialist_mercatorum.14.b
@@ -567,7 +752,27 @@ country_event = {
 			}
 			fromfromfrom = { add_loyalty = -20 }
 		}
-		# TODO ai_weight
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 1
+				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				add = 2
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				add = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = slaver
+			}
+			modifier = {
+				factor = 2
+				is_homicidal = yes
+				from.owner = { is_disloyal_to = root }
+			}
+		}
 	}
 }
 
@@ -931,11 +1136,13 @@ country_event = {
 		}
 	}
 	after = {
-		if = {
-			limit = { is_variable_set = dividend_percentage }
-			hidden_effect = { clear_variable = dividend_percentage }
+		hidden_effect = { 
+			if = {
+				limit = { is_variable_set = dividend_percentage }
+				clear_variable = dividend_percentage
+			}
+			clear_variable = sm_2000_random
 		}
-		hidden_effect = { clear_variable = sm_2000_random }
 	}
 	option = {
 		name = EXCELLENT
@@ -1036,11 +1243,13 @@ country_event = {
 		}
 	}
 	after = {
-		if = {
-			limit = { is_variable_set = dividend_percentage }
-			hidden_effect = { clear_variable = dividend_percentage }
+		hidden_effect = { 
+			if = {
+				limit = { is_variable_set = dividend_percentage }
+				clear_variable = dividend_percentage
+			}
+			clear_variable = sm_2005_random
 		}
-		hidden_effect = { clear_variable = sm_2005_random }
 	}
 	option = {
 		name = EXCELLENT
