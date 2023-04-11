@@ -651,7 +651,10 @@ country_event = {
 	title = specialist_mercatorum.17.title
 	desc = specialist_mercatorum.17.desc
 	picture = GFX_evt_ship_offloading_cargo
-	trigger = { is_specialist_subject_type = { TYPE = mercatorum } }
+	trigger = {
+		is_ai = no
+		is_specialist_subject_type = { TYPE = mercatorum }
+	}
 	option = {
 		name = EXCELLENT
 	}
