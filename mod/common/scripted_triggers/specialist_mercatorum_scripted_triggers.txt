@@ -37,3 +37,17 @@ has_specialist_subject_mercatorum_leader_trait = {
 		has_trait = leader_trait_mercatorum_industrialist
 	}
 }
+
+# whether the overlord can afford bailout the subject's deficit in $RESOURCE$
+# root = country, overlord
+# this = situation, deficit
+# $RESOURCE$ = the resource for which the subject might be bailed out
+can_afford_to_bail_out_mercatorum_subject = {
+	optimize_memory
+	root = {
+		resource_stockpile_compare = {
+			resource = $RESOURCE$
+			value >= prev.value:mercatorum_specialist_deficit_bailout_amount
+		}
+	}
+}
