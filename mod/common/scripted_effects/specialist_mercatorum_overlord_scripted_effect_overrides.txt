@@ -12,11 +12,11 @@ refresh_subject_count_loyalty_penalty = {
 			subjects > 1
 		}
 		set_variable = {
-			which = subjects_minus_one
+			which = subjects_minus_exclusions
 			value = trigger:subjects
 		}
-		subtract_variable = {
-			which = subjects_minus_one
+		subtract_variable = { # default exclude 1 subject
+			which = subjects_minus_exclusions
 			value = 1
 		}
 		if = {
@@ -28,17 +28,25 @@ refresh_subject_count_loyalty_penalty = {
 					}
 				}
 			}
-			subtract_variable = {
-				which = subjects_minus_one
+			subtract_variable = { # exclude mercatora with the right perk active
+				which = subjects_minus_exclusions
 				value = 1
 			}
 		}
-		every_subject = {
-			add_modifier = {
-				modifier = divided_patronage
-				multiplier = prev.subjects_minus_one
+		if = {
+			limit = {
+				check_variable = {
+					which = subjects_minus_exclusions
+					value > 0
+				}
+			}
+			every_subject = {
+				add_modifier = {
+					modifier = divided_patronage
+					multiplier = prev.subjects_minus_exclusions
+				}
 			}
 		}
-		clear_variable = subjects_minus_one
+		clear_variable = subjects_minus_exclusions
 	}
 }
