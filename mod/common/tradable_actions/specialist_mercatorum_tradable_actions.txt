@@ -107,12 +107,13 @@ trade_action_mercatorum_technology = {
 				tech_strike_craft_1 = { root = { has_technology = tech_strike_craft_1 } }
 				tech_strike_craft_2 = { root = { has_technology = tech_strike_craft_2 } }
 				tech_strike_craft_3 = { root = { has_technology = tech_strike_craft_3 } }
+				default = { always = no } # not valid if there are no techs to trade!
 			}
-			NOR = {
-				has_modifier = specialist_mercatorum_technology_physics_modifier
-				has_modifier = specialist_mercatorum_technology_society_modifier
-				has_modifier = specialist_mercatorum_technology_engineering_modifier
-			}
+		}
+		NOR = { # the built-in tech trade actions check the overlord for the modifiers... but it's the subject who has them set
+			has_modifier = specialist_mercatorum_technology_physics_modifier
+			has_modifier = specialist_mercatorum_technology_society_modifier
+			has_modifier = specialist_mercatorum_technology_engineering_modifier
 		}
 	}
 	on_traded_effect = {
