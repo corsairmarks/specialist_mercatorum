@@ -77,7 +77,7 @@
  specialist_mercatorum_commission_25: "25%"
  specialist_mercatorum_commission_25_desc: "For managing investments on behalf of its Overlord, the Subject receives a 25% Commission on Dividends. A well-funded Subject is a loyal Subject.\nThe Overlord receives 75% of Dividends."
  specialist_mercatorum_maximum_met: "Cannot have more than §Y1§! subject with the $specialist_mercatorum$ specialization."
- specialist_mercatorum_neighbor: "$specialist_mercatorum$ Economics"
+ specialist_mercatorum_neighbor: "$specialist_mercatorum$ Trade Route Security"
  specialist_mercatorum_neighbor_desc: "Direct connections to the shipping lanes and patrol routes of a nearby $specialist_mercatorum$ specialist yields a boost to the local economy and more secure interstellar trade."
  specialist_mercatorum_national_headquarters: "$building_mercatorum_national_headquarters$"
  specialist_mercatorum_national_headquarters_desc: "A $specialist_mercatorum$ specialist subject has established a $specialist_mercatorum_national_headquarters$ within our borders. Our national economy is bolstered by its mere presence, and it houses liaisons with the $specialist_mercatorum$'s customs enforcement and anti-piracy division - our shipping lanes have never been safer."
