@@ -348,6 +348,34 @@ bail_out_mercatorum_subject = {
 			$RESOURCE$ = 1
 			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
+		hidden_effect = {
+			set_variable = {
+				which = deficit_bailout_amount_$RESOURCE$
+				value = prev.value:mercatorum_specialist_deficit_bailout_amount
+			}
+			create_message = {
+				type = MERCATORUM_SUBJECT_BAILOUT
+				localization = MERCATORUM_SUBJECT_BAILOUT_$RESOURCE$
+				days = 30
+				variable = {
+					type = name
+					localization = OVERLORD
+					scope = overlord
+				}
+				variable = {
+					type = name
+					localization = SITUATION
+					scope = prev
+				}
+				variable = {
+					type = variable
+					varname = deficit_bailout_amount_$RESOURCE$
+					localization = VALUE
+					scope = this
+				}
+			}
+			clear_variable = deficit_bailout_amount_$RESOURCE$
+		}
 	}
 
 	abort_situation = this
