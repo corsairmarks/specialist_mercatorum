@@ -265,3 +265,68 @@ action_break_commercial_pact = {
 		}
 	}
 }
+
+# Modified:
+# * released subjects from organic zealots have their cybernetics/synthetics projects re-enabled
+# * released subjects have any mercatorum branch office modifiers removed
+# Release a subject of any type. Hurts relations and sets a 10 year truce.
+action_release_subject = {
+	icon = "GFX_diplomacy_status_has_vassal"
+	requires_recipient_independence = no
+	auto_accepted = yes
+	should_notify_all_communications = yes
+	should_show_auto_accept_message_recipient = yes
+	action_type = positive
+	on_accept = {
+		hidden_effect = {
+			if = {
+				# intentionally does NOT check civic validity
+				limit = {
+					has_civic_organic_zealots_active = yes
+					is_organic_zealots = yes
+				}
+				from = { re_enable_tech_ascension_special_projects_if_force_disabled = yes }
+			}
+			every_owned_planet = {
+				limit = { has_modifier = specialist_mercatorum_branch_office }
+				remove_modifier = specialist_mercatorum_branch_office
+			}
+		}
+	}
+}
+
+# Modified:
+# * released subjects from organic zealots have their cybernetics/synthetics projects re-enabled
+# * released subjects have any mercatorum branch office modifiers removed
+# Ask to be released as subject of any type (overlord must accept). Hurts relations and sets a 10 year truce.
+action_ask_to_be_released_subject = {
+	icon = "GFX_diplomacy_status_has_vassal"
+	requires_actor_independence = no
+	diplo_view_acceptance_icon = yes
+	should_notify_all_communications = yes
+	AI_acceptance_base_value = -50
+	action_type = neutral
+	on_accept = {
+		hidden_effect = {
+			if = {
+				# intentionally does NOT check civic validity
+				limit = {
+					has_civic_organic_zealots_active = yes
+					from = { is_organic_zealots = yes }
+				}
+				re_enable_tech_ascension_special_projects_if_force_disabled = yes
+			}
+			every_owned_planet = {
+				limit = { has_modifier = specialist_mercatorum_branch_office }
+				remove_modifier = specialist_mercatorum_branch_office
+			}
+		}
+	}
+	ai_acceptance = {
+		modifier = {
+			add = -100
+			has_origin = origin_slavers
+			desc = personality_decadent_capitalists
+		}
+	}
+}

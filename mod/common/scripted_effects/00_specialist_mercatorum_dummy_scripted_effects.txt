@@ -1,0 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
+# from Civic: Organic Zealots
+# this = country
+re_enable_tech_ascension_special_projects_if_force_disabled = { }

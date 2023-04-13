@@ -9,6 +9,12 @@ has_civic_organic_zealots_active = {
 
 ### Civic: Organic Zealots ###
 
+# this = country
+is_organic_zealots = {
+	optimize_memory
+	always = no
+}
+
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_homicidal_non_gestalt = {
