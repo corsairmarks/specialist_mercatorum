@@ -139,21 +139,13 @@ agreement_event = {
 		target = { save_event_target_as = former_specialist_mercatorum }
 		owner = {
 			every_owned_planet = {
-				limit = {
-					has_branch_office = yes
-					branch_office_owner = { is_country = event_target:former_specialist_mercatorum }
-					has_modifier = specialist_mercatorum_branch_office
-				}
+				limit = { has_modifier = specialist_mercatorum_branch_office }
 				remove_modifier = specialist_mercatorum_branch_office
 			}
 			every_subject = {
 				limit = { NOT = { is_country = event_target:former_specialist_mercatorum } }
 				every_owned_planet = {
-					limit = {
-						has_branch_office = yes
-						branch_office_owner = { is_country = event_target:former_specialist_mercatorum }
-						has_modifier = specialist_mercatorum_branch_office
-					}
+					limit = { has_modifier = specialist_mercatorum_branch_office }
 					remove_modifier = specialist_mercatorum_branch_office
 				}
 			}
@@ -941,10 +933,22 @@ country_event = {
 	id = specialist_mercatorum.19
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = {
+		exists = from
+		from = { NOT = { has_specialist_subject_type = { TYPE = mercatorum } } }
+	}
 	immediate = {
-		every_owned_planet = {
-			limit = { has_modifier = specialist_mercatorum_branch_office }
-			remove_modifier = specialist_mercatorum_branch_office
+		from = {
+			every_owned_planet = {
+				limit = { has_modifier = specialist_mercatorum_branch_office }
+				remove_modifier = specialist_mercatorum_branch_office
+			}
+			every_subject = {
+				every_owned_planet = {
+					limit = { has_modifier = specialist_mercatorum_branch_office }
+					remove_modifier = specialist_mercatorum_branch_office
+				}
+			}
 		}
 	}
 }
