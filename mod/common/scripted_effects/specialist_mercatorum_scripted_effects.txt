@@ -340,13 +340,13 @@ bail_out_mercatorum_subject = {
 	root = {
 		add_resource = {
 			$RESOURCE$ = -1 # overlord pays the resources
-			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
+			mult = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 	}
 	owner = {
 		add_resource = {
 			$RESOURCE$ = 1
-			multiplier = prev.value:mercatorum_specialist_deficit_bailout_amount
+			mult = prev.value:mercatorum_specialist_deficit_bailout_amount
 		}
 		hidden_effect = {
 			set_variable = {
@@ -387,7 +387,7 @@ bail_out_mercatorum_subject = {
 		owner = {
 			add_resource = {
 				$RESOURCE$ = @bailout_basic_base_amount
-				multiplier = value:sm_bailout_scaling_factor_negative
+				mult = value:sm_bailout_scaling_factor_negative
 			}
 		}
 	}

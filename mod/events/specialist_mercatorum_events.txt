@@ -253,7 +253,7 @@ country_event = {
 		try_convert_to_mercatorum_megacorp = yes
 		add_resource = {
 			unity = 1
-			multiplier = government_change_cost
+			mult = government_change_cost
 		}
 		if = {
 			limit = { is_ai = yes }
@@ -1225,19 +1225,19 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|
 		}
 		add_resource = {
 			physics_research = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|physics_research|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|physics_research|
 		}
 		add_resource = {
 			society_research = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|society_research|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|society_research|
 		}
 		add_resource = {
 			engineering_research = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|engineering_research|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|engineering_research|
 		}
 	}
 	option = {
@@ -1332,15 +1332,15 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|
 		}
 		add_resource = {
 			minerals = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|minerals|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|minerals|
 		}
 		add_resource = {
 			food = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|food|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|food|
 		}
 	}
 	option = {
@@ -1401,15 +1401,15 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|
 		}
 		add_resource = {
 			consumer_goods = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|consumer_goods|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|consumer_goods|
 		}
 		add_resource = {
 			alloys = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|alloys|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|alloys|
 		}
 	}
 	option = {
@@ -1474,19 +1474,19 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|
 		}
 		add_resource = {
 			volatile_motes = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|volatile_motes|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|volatile_motes|
 		}
 		add_resource = {
 			exotic_gases = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|exotic_gases|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|exotic_gases|
 		}
 		add_resource = {
 			rare_crystals = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|rare_crystals|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|rare_crystals|
 		}
 	}
 	option = {
@@ -1552,19 +1552,19 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|
 		}
 		add_resource = {
 			sr_living_metal = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_living_metal|BONUS_TIERS|-1|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_living_metal|BONUS_TIERS|-1|
 		}
 		add_resource = {
 			sr_zro = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_zro|BONUS_TIERS|-1|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_zro|BONUS_TIERS|-1|
 		}
 		add_resource = {
 			sr_dark_matter = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_dark_matter|BONUS_TIERS|-1|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_dark_matter|BONUS_TIERS|-1|
 		}
 	}
 	option = {
@@ -1619,7 +1619,7 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|BONUS_TIERS|2|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|BONUS_TIERS|2|
 		}
 	}
 	option = {
@@ -1674,29 +1674,29 @@ country_event = {
 		}
 		add_resource = {
 			energy = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|energy|BONUS_TIERS|2|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|energy|BONUS_TIERS|2|
 		}
 		add_resource = {
 			consumer_goods = 1
-			multiplier = value:dividends_from_subject_monthly_income|RESOURCE|consumer_goods|
+			mult = value:dividends_from_subject_monthly_income|RESOURCE|consumer_goods|
 		}
 		locked_random_list = {
 			1 = {
 				add_resource = {
 					minerals = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|minerals|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|minerals|
 				}
 			}
 			1 = {
 				add_resource = {
 					food = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|food|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|food|
 				}
 			}
 			1 = {
 				add_resource = {
 					alloys = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|alloys|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|alloys|
 				}
 			}
 		}
@@ -1706,19 +1706,19 @@ country_event = {
 				1 = {
 					add_resource = {
 						volatile_motes = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|volatile_motes|BONUS_TIERS|1|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|volatile_motes|BONUS_TIERS|1|
 					}
 				}
 				1 = {
 					add_resource = {
 						exotic_gases = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|exotic_gases|BONUS_TIERS|1|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|exotic_gases|BONUS_TIERS|1|
 					}
 				}
 				1 = {
 					add_resource = {
 						rare_crystals = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|rare_crystals|BONUS_TIERS|1|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|rare_crystals|BONUS_TIERS|1|
 					}
 				}
 			}
@@ -1729,19 +1729,19 @@ country_event = {
 				1 = {
 					add_resource = {
 						sr_living_metal = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_living_metal|BONUS_TIERS|-2|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_living_metal|BONUS_TIERS|-2|
 					}
 				}
 				1 = {
 					add_resource = {
 						sr_zro = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_zro|BONUS_TIERS|-2|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_zro|BONUS_TIERS|-2|
 					}
 				}
 				1 = {
 					add_resource = {
 						sr_dark_matter = 1
-						multiplier = value:dividends_from_subject_monthly_income|RESOURCE|sr_dark_matter|BONUS_TIERS|-2|
+						mult = value:dividends_from_subject_monthly_income|RESOURCE|sr_dark_matter|BONUS_TIERS|-2|
 					}
 				}
 			}
@@ -1750,19 +1750,19 @@ country_event = {
 			1 = {
 				add_resource = {
 					physics_research = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|physics_research|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|physics_research|
 				}
 			}
 			1 = {
 				add_resource = {
 					society_research = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|society_research|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|society_research|
 				}
 			}
 			1 = {
 				add_resource = {
 					engineering_research = 1
-					multiplier = value:dividends_from_subject_monthly_income|RESOURCE|engineering_research|
+					mult = value:dividends_from_subject_monthly_income|RESOURCE|engineering_research|
 				}
 			}
 		}
