@@ -934,6 +934,21 @@ planet_event = {
 	}
 }
 
+# triggered by on_becoming_independent
+# root = country, former subject
+# from = country, former overlord
+country_event = {
+	id = specialist_mercatorum.19
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		every_owned_planet = {
+			limit = { has_modifier = specialist_mercatorum_branch_office }
+			remove_modifier = specialist_mercatorum_branch_office
+		}
+	}
+}
+
 # triggered explicitly by the situation specialist_mercatorum_dividends
 # root = country, subject (mercatorum)
 # from = situation

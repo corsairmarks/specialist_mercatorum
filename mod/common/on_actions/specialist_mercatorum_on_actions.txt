@@ -25,6 +25,16 @@ on_becoming_subject = {
 	}
 }
 
+# fired when a subject country becomes independent
+# note: this is a custom on_action, so it may not fire for all uses of set_subject_of = { who = none }
+# this = country, former subject
+# from = country, former overlord
+on_becoming_independent = {
+	events = {
+		specialist_mercatorum.19
+	}
+}
+
 # fired when a subject has started converting to a specialist type
 # this = agreement
 # owner = country, overlord
