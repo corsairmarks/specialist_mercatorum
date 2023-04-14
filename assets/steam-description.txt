@@ -1,7 +1,51 @@
+[h1]Overview[/h1]
+This mod adds a brand-new specialist subject type - the Mercatorum! As an overlord, you can now charter one of your subjects as your very own megacorporation. Unlike other other specialist subject types, overlords are limited to a maximum of one Mercatorum, however that Mercatorum subject does not count for purposes of Divided Patronage (the loyalty penalty for having multiple subjects).
+
+[h1]Changes[/h1]
+Mercatorum subjects are focused on boosting the trade economy of their overlord and fellow subjects, at the cost for their own infrastructure resource (food, minerals, and alloys) production and military capacity. They are converted to have the Corporate authority as part of the specialization process (and are forced to keep it as long as they are aMercatorum specialist, although they may reform their civics). They gain bonuses to energy and consumer goods production as well as trade production, collection, and protection. Commercial Pacts between a Mercatorum and their overlord or a fellow subject of the same overlord does not cost influence. Furthermore, each branch office owned by a Mercatorum on a planet owned by their overlord or a fellow subject generates a bonus of three Unity.
+
+As the majority shareholder, the overlord of a Mercatorum can expect semi-regular dividends based on the monthly income and specialist tier of their subject. These dividends are generated through "investment activity" and do not impact the resource stockpiles of the Mercatorum. By default, the subject is entitled to 10% of dividends as their commission - however, that percentage is negotiable as part of the subject agreement. Mercatorum subjects might not be able to pay dividends if they are suffering a resource deficit - by as their financier, their overlord has the option to make a resource payment to end a resource shortage situation. Beware - allowing your Mercatorum subject to default will have a ripple effect on you economy!
+
+Also included are features similar to the other specialist subject types: special trade actions, specialist leader traits, and an overlord holding (the Mercatorum Corporate Headquarters). Mercatorum subjects also gain access to a new branch office building (the Mercatorum National Headquarters) which it can construct on one branch office in their overlord and once per fellow subject. Both buildings provide a boost to the local economy of their host planets, and the branch office building is accompanied by a small boost across the entire host empire. The buildings provide overlord-centric Executives/Manager jobs that generate unity for the overlord empire while generating trade value and amenities for the subject as well as inspire improved monthly loyalty towards the subjects' common overlord.
+
+Beyond the new specialist subject type, there are also three new hyper relay network edicts: Networked Trade Routes (trade value), Networked Customs Patrols (trade protection range), and Networked Customs CHeckpoints (trade protection). These are available to any non-gestalt empire with the appropriate technologies.
+
+[h2]Compatibility[/h2]
+Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
+
+Adding the Mercatorum specialist subject type required modifying a few built-in game objects in order to support them as a new specialist, and some to support their unique functionality. The most notable overwrites are a few diplomatic actions (Propose Commercial Pact, Break Commercial Pact, Release Subject, Request Independence), some subject agreement term values (Integration Permitted, Limited Diplomacy, Expansion Prohibited, Basic Resource Subsidies, Advanced Resource Subsidies), and the diplomatic economy file (to make Commercial Pacts free between Mercatorum subjects and their overlord and fellow subjects). Also included is a scripted trigger related to specialist leader traits, two scripted effects related to Divided Patronage and economic default, and the Independence war goal.
+
+What this means for you, the player, is that this mod may conflict with other mods that make changes to diplomatic actions, subject agreement term values, of the diplomatic economy file. This mod has built-in compatibility for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2920668465]Civic: Organic Zealots[/url] - both mods affect overlapping diplomatic actions and the Independence war goal.
+
+[h3]When to Install[/h3]
+This mod can be safely added to your savegame after the game has started. Because it adds gameplay objects (most notably things related to the Mercatorum subject specialization), it should not be removed during a game.
+
+[h3]Recommended Companion Mods[/h3]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] adds commercial districts to ecumenopolis planets, to be further boosted by your Mercatorum subject
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] enhances existing trade districts and colony designations - more jobs for more trade
+[/list]
+[h2]Known Issues[/h2]
+Overriding many types of game objects causes the game to log errors noting each override. Expect to see thirteen lines in the error.log file like these:
+[code]
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_form_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 4
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_break_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 199
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_release_subject exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 271
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_ask_to_be_released_subject exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 294
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: has_specialist_subject_leader_trait exists, using: common/scripted_triggers/10_specialist_mercatorum_scripted_trigger_overrides.txt line: 3
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: refresh_subject_count_loyalty_penalty exists, using: common/scripted_effects/specialist_mercatorum_overlord_scripted_effect_overrides.txt line: 2
+[22:42:20][game_singleobjdb.h:165]: Obj w/key: country_defaulted_effect exists, using: common/scripted_effects/specialist_mercatorum_scripted_effect_overrides.txt line: 6
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: wg_independence exists, using: common/war_goals/specialist_mercatorum_war_goal_overrides.txt line: 2
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_can_be_integrated exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 33
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_can_not_do_diplomacy exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 87
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_cannot_expand exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 134
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_basic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 196
+[22:42:26][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_advanced exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 267
+[/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
 
 [h2]Source Code[/h2]
-Hosted on [url=https://github.com/corsairmarks/]GitHub[/url]
+Hosted on [url=https://github.com/corsairmarks/specialist_mercatorum]GitHub[/url]
 
 [url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]
