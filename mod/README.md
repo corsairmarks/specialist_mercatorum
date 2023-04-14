@@ -52,6 +52,7 @@ Overriding many types of game objects causes the game to log errors noting each 
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Improve planet modifier cleanup when an overlord loses its Mercatorum subject
 
 ## Source Code
 
