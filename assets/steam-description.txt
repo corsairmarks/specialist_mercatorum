@@ -43,7 +43,7 @@ Overriding many types of game objects causes the game to log errors noting each 
 [22:42:26][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_advanced exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 267
 [/code]
 [h2]Changelog[/h2]
-See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2962066593]Change Notes[/url]
 
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/specialist_mercatorum]GitHub[/url]
