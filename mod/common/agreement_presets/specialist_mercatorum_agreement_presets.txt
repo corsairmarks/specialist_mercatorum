@@ -86,10 +86,7 @@ preset_mercatorum = {
 		base =  @specialist_subject_base_acceptance_value
 		modifier = {
 			add = @specialist_aligned_ethics_value
-			OR = {
-				is_xenophile = yes
-				is_capitalist = yes
-			}
+			is_xenophile = yes
 		}
 		modifier = {
 			add = @specialist_aligned_ethics_value
@@ -106,7 +103,7 @@ preset_mercatorum = {
 		has_megacorp = yes
 		is_machine_empire = no
 		is_hive_empire = no
-		is_homicidal = no
+		is_homicidal = no # disallowed since changing to a megacorp would remove their homicidal civic
 		NOR = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
