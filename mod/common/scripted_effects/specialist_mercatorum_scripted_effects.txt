@@ -357,6 +357,7 @@ bail_out_mercatorum_subject = {
 				type = MERCATORUM_SUBJECT_BAILOUT
 				localization = MERCATORUM_SUBJECT_BAILOUT_$RESOURCE$
 				days = 30
+				target = capital_scope.solar_system
 				variable = {
 					type = name
 					localization = OVERLORD
