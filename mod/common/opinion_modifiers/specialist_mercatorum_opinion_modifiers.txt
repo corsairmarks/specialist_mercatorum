@@ -6,7 +6,7 @@ opinion_specialist_mercatorum_overlord_deficit_bailout = {
 	max = 600
 	monthly = yes
 	decay = {
-		base = -2
+		base = 2
 	}
 }
 
