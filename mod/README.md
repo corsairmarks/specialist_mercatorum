@@ -53,6 +53,10 @@ Overriding many types of game objects causes the game to log errors noting each 
 
 * 1.0.0 Initial version
 * 1.0.1 Improve planet modifier cleanup when an overlord loses its Mercatorum subject
+* 1.0.2 Bugfixes
+    * Resolve incorrect text on the event for overlords that notifies them when a Mercatorum subject defaults on a deficit (special thanks to [Sel Und Irae](https://steamcommunity.com/profiles/76561198202023932))
+    * Ensure that the opinion bonus for bailing out a Mercatorum subject decays
+    * Ensure the Mercatorum Dividends situation cannot incorrectly end during a deficit
 
 ## Source Code
 
