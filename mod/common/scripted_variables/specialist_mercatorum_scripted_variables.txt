@@ -8,6 +8,6 @@
 @mercatorum_dividend_commercial_pact_rate = 0.417 # Adds an extra month of progress for each commercial pact
 @mercatorum_dividend_colony_rate = 0.105 # Adds a month of progress for every 4 colonies
 @mercatorum_dividend_resolution_rate = 0.208 # Adds an extra half a month of progress per active economic GalCom resolution
-@mercatorum_dividend_deficit_rate = -2.085 # Subtracts five months of progress during a deficit
-@mercatorum_dividend_default_rate = -4.170 # Subtracts ten months of progress during default
+@mercatorum_dividend_deficit_rate = 2.085 # Subtracts five months of progress during a deficit
+@mercatorum_dividend_default_rate = 4.170 # Subtracts ten months of progress during default
 @mercatorum_dividend_ascension_perk_rate = 1.043 # Adds an extra two and a half months of progress if the Mercatorum has an appropriate ascension perk

@@ -47,13 +47,13 @@ specialist_mercatorum_dividends = {
 			desc = COLONIES
 		}
 		modifier = {
-			add = @mercatorum_dividend_deficit_rate
+			subtract = @mercatorum_dividend_deficit_rate
 			desc = DEFICIT
 			owner = { any_situation = { has_situation_flag = deficit_situation } }
 			situation_progress > @mercatorum_dividend_deficit_rate # we don't want total situation progress to ever go below 0
 		}
 		modifier = {
-			add = @mercatorum_dividend_default_rate
+			subtract = @mercatorum_dividend_default_rate
 			desc = country_defaulted
 			owner = { has_modifier = country_defaulted }
 			situation_progress > @mercatorum_dividend_default_rate # we don't want total situation progress to ever go below 0
