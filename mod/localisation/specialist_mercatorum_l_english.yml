@@ -34,7 +34,7 @@
  specialist_mercatorum.14.a: "$specialist_mercatorum.13.a$"
  specialist_mercatorum.14.b: "$specialist_mercatorum.13.b$"
  specialist_mercatorum.14.b.tooltip: "If your $specialist_mercatorum$ subject defaults, the following will occur:"
- specialist_mercatorum.15.title: "§H[mercatorum_subject.GetName]§! Defaulted"
+ specialist_mercatorum.15.title: "$specialist_mercatorum$ Subject Defaulted"
  specialist_mercatorum.15.desc: "The shockwaves from our $specialist_mercatorum$ subject §H[mercatorum_subject.GetName]§!'s catastrophic default are still reverberating across our economy. Our tight economic ties as their primary shareholder and financier, normally a boon, are instead currently a disadvantage. Economics experts and market analysts across our empire are revising economic forecasts downwards as far out as ten years in the future."
  specialist_mercatorum.2000.title: "[Root.GetDividendsEventTitle]"
  specialist_mercatorum.2000.title.overlord: "$specialist_mercatorum$ §H[specialist_mercatorum_agreement.Target.GetName]§! Pays Dividends"
