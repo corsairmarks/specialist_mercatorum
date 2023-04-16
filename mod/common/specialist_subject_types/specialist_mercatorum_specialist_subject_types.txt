@@ -11,6 +11,19 @@ specialist_mercatorum = {
 	on_progress_complete = {
 		target = {
 			try_convert_to_mercatorum_megacorp = yes
+			if = {
+				limit = {
+					can_set_policy = {
+						policy = diplomatic_stance
+						option = diplo_stance_mercantile
+					}
+				}
+				set_policy = {
+					policy = diplomatic_stance
+					option = diplo_stance_mercantile
+					cooldown = yes
+				}
+			}
 			start_situation = {
 				type = specialist_mercatorum_dividends
 				target = this
