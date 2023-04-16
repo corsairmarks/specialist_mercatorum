@@ -328,6 +328,7 @@ situation_event = {
 							scopes = {
 								from = prev
 								fromfrom = root
+								fromfromfrom = event_target:specialist_mercatorum_agreement
 							}
 						}
 					}
