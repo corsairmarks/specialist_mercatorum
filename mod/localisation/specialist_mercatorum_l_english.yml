@@ -33,7 +33,7 @@
  specialist_mercatorum.14.desc: "Horrendous economic news from our $specialist_mercatorum$ subject §H[From.Owner.GetName]§! - their ongoing deficit of [From.GetDeficitResourceName] has pushed their overall economy to the brink of collapse. They are within one month of defaulting on their debts. As majority shareholders and financiers, we have the option to make a resource payment to resolve the deficit immediately. Should we make a one-time, lump-sum resource transfer to resolve the deficit and prevent our subject from defaulting?\n\n§LShould the §H[From.Owner.GetName]§! default on its debts, dividend payments from it are blocked for ten (10) years and our own economy will also be destabilized.§!"
  specialist_mercatorum.14.a: "$specialist_mercatorum.13.a$"
  specialist_mercatorum.14.b: "$specialist_mercatorum.13.b$"
- specialist_mercatorum.14.b.tooltip: "If your $specialist_mercatorum$ subject defaults, the following will occur:"
+ specialist_mercatorum.14.b.tooltip: "\nIf your $specialist_mercatorum$ subject defaults, the following will occur:"
  specialist_mercatorum.15.title: "$specialist_mercatorum$ Subject Defaulted"
  specialist_mercatorum.15.desc: "The shockwaves from our $specialist_mercatorum$ subject §H[mercatorum_subject.GetName]§!'s catastrophic default are still reverberating across our economy. Our tight economic ties as their primary shareholder and financier, normally a boon, are instead currently a disadvantage. Economics experts and market analysts across our empire are revising economic forecasts downwards as far out as ten years in the future."
  specialist_mercatorum.2000.title: "[Root.GetDividendsEventTitle]"

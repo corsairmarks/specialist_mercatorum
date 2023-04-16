@@ -646,13 +646,13 @@ country_event = {
 				}
 			}
 		}
-		from = {
-			owner = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
-				}
+		from.owner = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_specialist_mercatorum_overlord_deficit_bailout
 			}
+		}
+		from = {
 			switch = {
 				trigger = is_situation_type
 				situation_energy_deficit = { bail_out_mercatorum_subject = { RESOURCE = energy } }
