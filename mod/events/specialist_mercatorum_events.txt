@@ -1751,7 +1751,6 @@ country_event = {
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2100
@@ -1763,72 +1762,66 @@ country_event = {
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2105
 	base = specialist_mercatorum.2005
 	desc_clear = yes
-	title = specialist_mercatorum.2105.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2105.desc
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2106
 	base = specialist_mercatorum.2006
 	desc_clear = yes
-	title = specialist_mercatorum.2106.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2106.desc
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2107
 	base = specialist_mercatorum.2007
 	desc_clear = yes
-	title = specialist_mercatorum.2107.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2107.desc
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2108
 	base = specialist_mercatorum.2008
 	desc_clear = yes
-	title = specialist_mercatorum.2108.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2108.desc
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2110
 	base = specialist_mercatorum.2010
 	desc_clear = yes
-	title = specialist_mercatorum.2110.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2110.desc
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
 # root = country, subject (mercatorum)
-# from = country, overlord
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2120
 	base = specialist_mercatorum.2020
 	desc_clear = yes
-	title = specialist_mercatorum.2120.title
+	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2120.desc
 }
