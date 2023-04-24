@@ -13,6 +13,7 @@ specialist_mercatorum_dividends = {
 				id = specialist_mercatorum.275
 			}
 		}
+		destroy_situation = this
 	}
 	on_fail = {
 		log_error = "specialist_mercatorum_dividends situation failed, this is not meant to happen"

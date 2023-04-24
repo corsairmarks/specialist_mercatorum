@@ -405,7 +405,7 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.13.a
 		allow = {
-			from = {
+			hidden:from = {
 				switch = {
 					trigger = is_situation_type
 					situation_energy_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -631,7 +631,7 @@ country_event = {
 	option = {
 		name = specialist_mercatorum.14.a
 		allow = {
-			from = {
+			hidden:from = {
 				switch = {
 					trigger = is_situation_type
 					situation_energy_deficit = { can_afford_to_bail_out_mercatorum_subject = { RESOURCE = energy } }
@@ -957,7 +957,6 @@ country_event = {
 
 # triggered explicitly by the situation specialist_mercatorum_dividends
 # root = country, subject (mercatorum)
-# from = situation
 country_event = {
 	id = specialist_mercatorum.275
 	hide_window = yes
@@ -994,7 +993,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2000
+								id = specialist_mercatorum.2100
 							}
 						}
 					}
@@ -1019,7 +1018,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2005
+								id = specialist_mercatorum.2105
 							}
 						}
 					}
@@ -1044,7 +1043,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2006
+								id = specialist_mercatorum.2106
 							}
 						}
 					}
@@ -1073,7 +1072,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2007
+								id = specialist_mercatorum.2107
 							}
 						}
 					}
@@ -1102,7 +1101,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2008
+								id = specialist_mercatorum.2108
 							}
 						}
 					}
@@ -1112,7 +1111,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2010
+								id = specialist_mercatorum.2110
 							}
 						}
 					}
@@ -1122,7 +1121,7 @@ country_event = {
 						}
 						prev = {
 							country_event = {
-								id = specialist_mercatorum.2020
+								id = specialist_mercatorum.2120
 							}
 						}
 					}
@@ -1134,13 +1133,6 @@ country_event = {
 		start_situation = {
 			type = specialist_mercatorum_dividends
 			target = this
-		}
-		if = {
-			limit = {
-				exists = from
-				is_scope_type = situation
-			}
-			destroy_situation = from
 		}
 	}
 }
@@ -1171,19 +1163,13 @@ country_event = {
 }
 
 # research reward, triggered explicitly by specialist_mercatorum.275
-# root = country, recipient
+# root = country, overlord
+# from = country, subject (mercatorum)
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2000
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2000.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2000.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2000.desc
 	picture = {
 		picture = GFX_evt_physics_research
 		trigger = {
@@ -1277,18 +1263,12 @@ country_event = {
 
 # basic resources reward, triggered explicitly by specialist_mercatorum.275
 # root = country, overlord
+# from = country, subject (mercatorum)
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2005
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2005.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2005.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2005.desc
 	picture = {
 		picture = GFX_evt_mining_operations
 		trigger = {
@@ -1380,18 +1360,12 @@ country_event = {
 
 # advanced resources reward, triggered explicitly by specialist_mercatorum.275
 # root = country, overlord
+# from = country, subject (mercatorum)
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2006
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2006.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2006.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2006.desc
 	picture = GFX_evt_ship_offloading_cargo
 	show_sound = event_mystic_reveal_light
 	is_triggered_only = yes
@@ -1449,18 +1423,12 @@ country_event = {
 
 # strategic resources reward, triggered explicitly by specialist_mercatorum.275
 # root = country, overlord
+# from = country, subject (mercatorum)
 # event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
 country_event = {
 	id = specialist_mercatorum.2007
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2007.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2007.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2007.desc
 	picture = GFX_evt_strategic_resources
 	show_sound = event_construction
 	is_triggered_only = yes
@@ -1531,14 +1499,7 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.2008
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2008.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2008.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2008.desc
 	picture = GFX_evt_board_meeting
 	show_sound = event_conversation
 	is_triggered_only = yes
@@ -1609,14 +1570,7 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.2010
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2010.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2010.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2010.desc
 	picture = GFX_evt_tradedeal
 	show_sound = event_finding_loot
 	is_triggered_only = yes
@@ -1664,14 +1618,7 @@ country_event = {
 country_event = {
 	id = specialist_mercatorum.2020
 	title = specialist_mercatorum.2000.title
-	desc = {
-		text = specialist_mercatorum.2020.desc.overlord
-		trigger = { is_overlord = yes }
-	}
-	desc = {
-		text = specialist_mercatorum.2020.desc.subject
-		trigger = { is_overlord = no }
-	}
+	desc = specialist_mercatorum.2020.desc
 	picture = GFX_evt_financial_instruments
 	show_sound = event_galactic_market
 	is_triggered_only = yes
@@ -1800,4 +1747,88 @@ country_event = {
 			}
 		}
 	}
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2100
+	base = specialist_mercatorum.2000
+	desc_clear = yes
+	title = specialist_mercatorum.2100.title
+	desc = specialist_mercatorum.2100.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2105
+	base = specialist_mercatorum.2005
+	desc_clear = yes
+	title = specialist_mercatorum.2105.title
+	desc = specialist_mercatorum.2105.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2106
+	base = specialist_mercatorum.2006
+	desc_clear = yes
+	title = specialist_mercatorum.2106.title
+	desc = specialist_mercatorum.2106.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2107
+	base = specialist_mercatorum.2007
+	desc_clear = yes
+	title = specialist_mercatorum.2107.title
+	desc = specialist_mercatorum.2107.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2108
+	base = specialist_mercatorum.2008
+	desc_clear = yes
+	title = specialist_mercatorum.2108.title
+	desc = specialist_mercatorum.2108.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2110
+	base = specialist_mercatorum.2010
+	desc_clear = yes
+	title = specialist_mercatorum.2110.title
+	desc = specialist_mercatorum.2110.desc
+}
+
+# research reward, triggered explicitly by specialist_mercatorum.275
+# root = country, subject (mercatorum)
+# from = country, overlord
+# event_target:specialist_mercatorum_agreement = agreement, the mercatorum agreement between the overlord and subject
+country_event = {
+	id = specialist_mercatorum.2120
+	base = specialist_mercatorum.2020
+	desc_clear = yes
+	title = specialist_mercatorum.2120.title
+	desc = specialist_mercatorum.2120.desc
 }
