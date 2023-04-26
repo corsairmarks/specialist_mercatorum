@@ -30,10 +30,481 @@ specialist_mercatorum = {
 	}
 	activate_effect = {
 		convert_to_specialist = specialist_mercatorum
+		hidden_effect = { save_global_event_target_as = agreement_specialist_mercatorum@owner }
 	}
-	potential = {
-		agreement_preset = preset_mercatorum
+	deactivate_effect = {
+		hidden_effect = {
+			if = {
+				limit = { exists = event_target:agreement_specialist_mercatorum@owner }
+				clear_global_event_target = agreement_specialist_mercatorum@owner
+			}
+		}
 	}
+	extra_term_text_subject = specialist_mercatorum_extra_subject
+	extra_term_text_overlord = specialist_mercatorum_extra_overlord
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+# loyalty change and monthly loyalty impact for subsidies based on the basic/advanced resource sliders, 0.5 monthly loyalty and 5 loyalty per "notch"
+
+resource_subsidies_commercial_null = {
+	term = resource_subsidies_commercial
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
+resource_subsidies_commercial_0 = {
+	term = resource_subsidies_commercial
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_commercial_15 = {
+	term = resource_subsidies_commercial
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = -5
+	target_modifier = {
+		monthly_loyalty = -0.5
+	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|overlord|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|this|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_commercial_30 = {
+	term = resource_subsidies_commercial
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = -10
+	target_modifier = {
+		monthly_loyalty = -1
+	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.30|SCOPE|overlord|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.30|SCOPE|this|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_commercial_45 = {
+	term = resource_subsidies_commercial
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = -15
+	target_modifier = {
+		monthly_loyalty = -1.5
+	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.45|SCOPE|overlord|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.45|SCOPE|this|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_commercial_60 = {
+	term = resource_subsidies_commercial
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = -20
+	target_modifier = {
+		monthly_loyalty = -2
+	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.60|SCOPE|overlord|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.60|SCOPE|this|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_commercial_75 = {
+	term = resource_subsidies_commercial
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = -25
+	target_modifier = {
+		monthly_loyalty = -2.5
+	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.75|SCOPE|overlord|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			energy = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.75|SCOPE|this|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			consumer_goods = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_null = {
+	term = resource_subsidies_infrastructure
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
+resource_subsidies_infrastructure_0 = {
+	term = resource_subsidies_infrastructure
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_15 = {
+	term = resource_subsidies_infrastructure
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = 5
+	target_modifier = {
+		monthly_loyalty = 0.5
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.15|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.15|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.15|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.15|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.15|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_30 = {
+	term = resource_subsidies_infrastructure
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = 10
+	target_modifier = {
+		monthly_loyalty = 1
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.30|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.30|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.30|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.30|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.30|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_45 = {
+	term = resource_subsidies_infrastructure
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = 15
+	target_modifier = {
+		monthly_loyalty = 1.5
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.45|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.45|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.45|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.45|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.45|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_60 = {
+	term = resource_subsidies_infrastructure
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = 20
+	target_modifier = {
+		monthly_loyalty = 2
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.60|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.60|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.60|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.60|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.60|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+resource_subsidies_infrastructure_75 = {
+	term = resource_subsidies_infrastructure
+	# ai_acceptance = {
+	# 	overlord = 90
+	# 	subject = -150
+	# }
+	loyalty_change = 25
+	target_modifier = {
+		monthly_loyalty = 2.5
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.75|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|overlord|
+		}
+		produces = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.75|SCOPE|overlord|
+		}
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			minerals = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.75|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			food = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.75|SCOPE|this|
+		}
+		upkeep = {
+			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			alloys = 1
+			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.75|SCOPE|this|
+		}
+	}
+	potential = { agreement_preset = preset_mercatorum }
 }
 
 specialist_mercatorum_commission_null = {
@@ -43,10 +514,10 @@ specialist_mercatorum_commission_null = {
 
 specialist_mercatorum_commission_0 = {
 	term = specialist_mercatorum_commission
-	loyalty_change = -30
+	loyalty_change = -45
 	ai_acceptance = {
-		overlord = 90
-		subject = -150
+		overlord = 120
+		subject = -300
 	}
 	target_modifier = {
 		monthly_loyalty = -2
@@ -56,10 +527,10 @@ specialist_mercatorum_commission_0 = {
 
 specialist_mercatorum_commission_5 = {
 	term = specialist_mercatorum_commission
-	loyalty_change = -15
+	loyalty_change = -30
 	ai_acceptance = {
-		overlord = 30
-		subject = -75
+		overlord = 60
+		subject = -150
 	}
 	target_modifier = {
 		monthly_loyalty = -1
@@ -67,17 +538,30 @@ specialist_mercatorum_commission_5 = {
 	potential = { agreement_preset = preset_mercatorum }
 }
 
-specialist_mercatorum_commission_10 = { # default
+specialist_mercatorum_commission_10 = {
+	term = specialist_mercatorum_commission
+	loyalty_change = -15
+	ai_acceptance = {
+		overlord = 30
+		subject = -75
+	}
+	target_modifier = {
+		monthly_loyalty = -0.5
+	}
+	potential = { agreement_preset = preset_mercatorum }
+}
+
+specialist_mercatorum_commission_15 = { # default
 	term = specialist_mercatorum_commission
 	potential = { agreement_preset = preset_mercatorum }
 }
 
-specialist_mercatorum_commission_15 = {
+specialist_mercatorum_commission_20 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = 10
 	ai_acceptance = {
-		overlord = -30
-		subject = 25
+		overlord = -40
+		subject = 50
 	}
 	target_modifier = {
 		monthly_loyalty = 0.5
@@ -85,28 +569,15 @@ specialist_mercatorum_commission_15 = {
 	potential = { agreement_preset = preset_mercatorum }
 }
 
-specialist_mercatorum_commission_20 = {
+specialist_mercatorum_commission_25 = {
 	term = specialist_mercatorum_commission
 	loyalty_change = 20
 	ai_acceptance = {
-		overlord = -90
-		subject = 50
+		overlord = -80
+		subject = 100
 	}
 	target_modifier = {
 		monthly_loyalty = 1
-	}
-	potential = { agreement_preset = preset_mercatorum }
-}
-
-specialist_mercatorum_commission_25 = {
-	term = specialist_mercatorum_commission
-	loyalty_change = 30
-	ai_acceptance = {
-		overlord = -120
-		subject = 75
-	}
-	target_modifier = {
-		monthly_loyalty = 1.5
 	}
 	potential = { agreement_preset = preset_mercatorum }
 }

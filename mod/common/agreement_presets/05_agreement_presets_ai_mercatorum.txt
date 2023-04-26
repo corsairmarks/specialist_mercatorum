@@ -8,16 +8,6 @@ preset_mercatorum_nice_01 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.15
-			}
-			{
-				key = resource_subsidies_advanced
-				value = -0.3
-			}
-		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -48,8 +38,16 @@ preset_mercatorum_nice_01 = {
 				value = subject_holdings_limit_1
 			}
 			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_15
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_30
+			}
+			{
 				key = specialist_mercatorum_commission
-				value = specialist_mercatorum_commission_15
+				value = specialist_mercatorum_commission_20
 			}
 			{
 				key = subject_loyalty
@@ -131,16 +129,6 @@ preset_mercatorum_nice_02 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = -0.3
-			}
-			{
-				key = resource_subsidies_advanced
-				value = -0.3
-			}
-		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -171,8 +159,16 @@ preset_mercatorum_nice_02 = {
 				value = subject_holdings_limit_0
 			}
 			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_0
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_30
+			}
+			{
 				key = specialist_mercatorum_commission
-				value = specialist_mercatorum_commission_20
+				value = specialist_mercatorum_commission_25
 			}
 			{
 				key = subject_loyalty
@@ -254,16 +250,6 @@ preset_mercatorum_mean_01 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.15
-			}
-			{
-				key = resource_subsidies_advanced
-				value = 0.15
-			}
-		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -294,8 +280,16 @@ preset_mercatorum_mean_01 = {
 				value = subject_holdings_limit_2
 			}
 			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_30
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_15
+			}
+			{
 				key = specialist_mercatorum_commission
-				value = specialist_mercatorum_commission_5
+				value = specialist_mercatorum_commission_10
 			}
 			{
 				key = subject_loyalty
@@ -377,16 +371,6 @@ preset_mercatorum_mean_02 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.3
-			}
-			{
-				key = resource_subsidies_advanced
-				value = 0.3
-			}
-		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -417,8 +401,16 @@ preset_mercatorum_mean_02 = {
 				value = subject_holdings_limit_3
 			}
 			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_45
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_0
+			}
+			{
 				key = specialist_mercatorum_commission
-				value = specialist_mercatorum_commission_0
+				value = specialist_mercatorum_commission_5
 			}
 			{
 				key = subject_loyalty
@@ -538,6 +530,14 @@ preset_mercatorum_mean_03 = {
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_4
+			}
+			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_60
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_0
 			}
 			{
 				key = specialist_mercatorum_commission

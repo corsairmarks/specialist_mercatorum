@@ -42,6 +42,14 @@ preset_mercatorum = {
 				value = subject_loyalty_effects
 			}
 			{
+				key = resource_subsidies_commercial
+				value = resource_subsidies_commercial_15
+			}
+			{
+				key = resource_subsidies_infrastructure
+				value = resource_subsidies_infrastructure_30
+			}
+			{
 				key = specialist_mercatorum_commission
 				value = specialist_mercatorum_commission_10
 			}

@@ -1,3 +1,11 @@
+resource_subsidies_commercial = {
+	term_type = discrete_number
+}
+
+resource_subsidies_infrastructure = {
+	term_type = discrete_number
+}
+
 specialist_mercatorum_commission = {
 	term_type = discrete_number
 }

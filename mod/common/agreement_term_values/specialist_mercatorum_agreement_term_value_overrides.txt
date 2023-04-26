@@ -196,7 +196,7 @@ subject_cannot_expand = {
 	}
 }
 
-# Modified: Mercatora are restricted to the same subsidy caps as vassals/scholaria
+# Modified: Mercatora cannot use standard basic subsidies
 resource_subsidies_basic = {
 	term = resource_subsidies
 	resources = {
@@ -222,7 +222,6 @@ resource_subsidies_basic = {
 			OR = {
 				agreement_preset = preset_vassal
 				agreement_preset = preset_scholarium
-				agreement_preset = preset_mercatorum
 			}
 		}
 	}
@@ -249,14 +248,14 @@ resource_subsidies_basic = {
 			OR = {
 				agreement_preset = preset_vassal
 				agreement_preset = preset_scholarium
-				agreement_preset = preset_mercatorum
 				agreement_preset = preset_protectorate
 			}
 		}
 	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
 
-# Modified: Mercatora are restricted to the same subsidy caps as vassals/scholaria
+# Modified: Mercatora cannot use standard basic subsidies
 resource_subsidies_advanced = {
 	term = resource_subsidies
 	resources = {
@@ -284,7 +283,6 @@ resource_subsidies_advanced = {
 			OR = {
 				agreement_preset = preset_vassal
 				agreement_preset = preset_scholarium
-				agreement_preset = preset_mercatorum
 			}
 		}
 	}
@@ -302,11 +300,11 @@ resource_subsidies_advanced = {
 			OR = {
 				agreement_preset = preset_vassal
 				agreement_preset = preset_scholarium
-				agreement_preset = preset_mercatorum
 				agreement_preset = preset_relic_satrapy
 			}
 		}
 	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
 
 # Modified: Mercatora are restricted to the same subsidy caps as vassals/scholaria
