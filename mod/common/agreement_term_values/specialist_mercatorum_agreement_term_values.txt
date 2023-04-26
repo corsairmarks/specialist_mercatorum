@@ -40,6 +40,9 @@ specialist_mercatorum = {
 			}
 		}
 	}
+	target_modifier = {
+		envoys_add = value:sm_count_subjects_of_overlord
+	}
 	extra_term_text_subject = specialist_mercatorum_extra_subject
 	extra_term_text_overlord = specialist_mercatorum_extra_overlord
 	potential = { agreement_preset = preset_mercatorum }
