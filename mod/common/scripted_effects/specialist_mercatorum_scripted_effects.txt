@@ -615,3 +615,36 @@ sm_swap_corporate_holdings = {
 		}
 	}
 }
+
+# this = country, player with origin_imperial_vassal 
+origin_imperial_fiefdom_mercatorum_specialization_effect = {
+	custom_tooltip = origin.5705.g.specialist_mercatorum.tooltip
+	hidden_effect = {
+		random_agreement = {
+			limit = {
+				owner = { is_country = root.overlord }
+				target = { is_country = root }
+			}
+			set_agreement_preset = { preset = preset_mercatorum }
+			set_agreement_terms = { subject_expand = subject_can_expand_with_tithe }
+		}
+		every_owned_leader = {
+			limit = { leader_class = governor }
+			add_skill = 2
+			add_mercatorum_leader_trait = yes
+		}
+		capital_scope = {
+			add_holding = {
+				holding = holding_mercatorum_corporate_headquarters
+				owner = prev.overlord
+			}
+		}
+		overlord.capital_scope = {
+			establish_branch_office = prev
+			add_holding = {
+				holding = building_mercatorum_national_headquarters
+				owner = branch_office_owner
+			}
+		}
+	}
+}

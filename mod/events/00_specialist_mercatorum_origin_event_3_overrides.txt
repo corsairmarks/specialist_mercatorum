@@ -1,0 +1,108 @@
+namespace = origin
+
+country_event = {
+	id = origin.5705
+	title = TRANSMISSION
+	desc = {
+		trigger = { has_country_flag = imperial_fiefdom_harsh_response }
+		text = origin.5705.desc.harsh
+	}
+	desc = {
+		trigger = { has_country_flag = imperial_fiefdom_grateful_response }
+		text = origin.5705.desc.grateful
+	}
+	desc = {
+		trigger = { has_country_flag = imperial_fiefdom_reconsider_response }
+		text = origin.5705.desc.reconsider
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				has_country_flag = imperial_fiefdom_harsh_response
+				has_country_flag = imperial_fiefdom_grateful_response
+				has_country_flag = imperial_fiefdom_reconsider_response
+			}
+		}
+		text = origin.5705.desc
+	}
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = event_target:overlord_empire
+		planet_background = event_target:overlord_empire
+		graphical_culture = event_target:overlord_empire
+		city_level = event_target:overlord_empire
+		room = event_target:overlord_empire.ruler
+	}
+	trigger = {
+		has_origin = origin_imperial_vassal
+		is_ai = no
+	}
+	option = { # bulwark
+		name = origin.5705.a
+		origin_imperial_fiefdom_bulwark_specialization_effect = yes
+	}
+	option = { # learn about bulwarks
+		name = origin.5705.b
+		hidden_effect = {
+			country_event = {
+				id = origin.5706
+			}
+		}
+	}
+	option = { # scholarium
+		name = origin.5705.c
+		default_hide_option = yes
+		origin_imperial_fiefdom_scholarium_specialization_effect = yes
+	}
+	option = { # learn about scholaria
+		name = origin.5705.d
+		hidden_effect = {
+			country_event = {
+				id = origin.5707
+			}
+		}
+	}
+	option = { # prospectorium
+		name = origin.5705.e
+		origin_imperial_fiefdom_prospectorium_specialization_effect = yes
+	}
+	option = { # learn about prospectoria
+		name = origin.5705.f
+		hidden_effect = {
+			country_event = {
+				id = origin.5708
+			}
+		}
+	}
+	option = { # mercatorum
+		name = origin.5705.g.specialist_mercatorum
+		allow = {
+			custom_tooltip = {
+				fail_text = origin.5705.g.specialist_mercatorum.tooltip.fail_text
+				overlord = {
+					NAND = {
+						is_variable_set = num_specialist_mercatorum
+						check_variable = {
+							which = num_specialist_mercatorum
+							value > 0
+						}
+					}
+				}
+			}
+		}
+		origin_imperial_fiefdom_mercatorum_specialization_effect = yes
+	}
+	option = { # learn about mercatorum
+		name = origin.5705.h.specialist_mercatorum
+		hidden_effect = {
+			country_event = {
+				id = specialist_mercatorum.5709
+			}
+		}
+	}
+	after = {
+		remove_country_flag = imperial_fiefdom_harsh_response
+		remove_country_flag = imperial_fiefdom_grateful_response
+	}
+}

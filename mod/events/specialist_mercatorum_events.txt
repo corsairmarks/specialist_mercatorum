@@ -1819,3 +1819,46 @@ country_event = {
 	title = specialist_mercatorum.2100.title
 	desc = specialist_mercatorum.2120.desc
 }
+
+country_event = { # Learn more about Mercatora
+	id = specialist_mercatorum.5709
+	title = TRANSMISSION
+	desc = specialist_mercatorum.5709.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = event_target:overlord_empire
+		planet_background = event_target:overlord_empire
+		graphical_culture = event_target:overlord_empire
+		city_level = event_target:overlord_empire
+		room = event_target:overlord_empire.ruler
+	}
+	option = { # choose mercatorum
+		name = specialist_mercatorum.5709.a
+		allow = {
+			custom_tooltip = {
+				fail_text = origin.5705.h.specialist_mercatorum.tooltip.fail_text
+				overlord = {
+					NAND = {
+						is_variable_set = num_specialist_mercatorum
+						check_variable = {
+							which = num_specialist_mercatorum
+							value > 0
+						}
+					}
+				}
+			}
+		}
+		default_hide_option = yes
+		origin_imperial_fiefdom_mercatorum_specialization_effect = yes
+	}
+	option = { # reconsider
+		name = specialist_mercatorum.5709.b
+		hidden_effect = {
+			country_event = {
+				id = origin.5705
+			}
+			set_country_flag = imperial_fiefdom_reconsider_response
+		}
+	}
+}
