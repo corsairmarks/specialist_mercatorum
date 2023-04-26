@@ -879,10 +879,7 @@ planet_event = {
 		exists = from
 		from = {
 			OR = {
-				AND = {
-					is_overlord = yes
-					has_specialist_subject_type = { TYPE = mercatorum }
-				}
+				has_specialist_subject_type = { TYPE = mercatorum }
 				AND = {
 					has_any_overlord = yes
 					overlord = { has_specialist_subject_type = { TYPE = mercatorum } }
@@ -893,10 +890,7 @@ planet_event = {
 	immediate = {
 		from = {
 			if = {
-				limit = {
-					is_overlord = yes
-					has_specialist_subject_type = { TYPE = mercatorum }
-				}
+				limit = { has_specialist_subject_type = { TYPE = mercatorum } }
 				random_agreement = {
 					limit = { has_active_specialization = specialist_mercatorum }
 					target = { save_event_target_as = mercatorum_subject }
