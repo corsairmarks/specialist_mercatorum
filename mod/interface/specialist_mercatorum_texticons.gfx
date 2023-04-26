@@ -5,6 +5,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_text_commercial_resources"
+		texturefile = "gfx/interface/icons/text_icons/text_icon_commercial_resources.dds"
+	}
+
+	spriteType = {
 		name = "GFX_text_infrastructure_resources"
 		texturefile = "gfx/interface/icons/text_icons/text_icon_infrastructure_resources.dds"
 	}
