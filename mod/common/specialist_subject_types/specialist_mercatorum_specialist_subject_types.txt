@@ -39,9 +39,9 @@ specialist_mercatorum = {
 				mercatorum_1_penalties
 				mercatorum_1_econ_tech
 				mercatorum_1_overlord_modifier
-				# mercatorum_1_overlord_dividends
 				mercatorum_1_neighbor_bonuses
-				mercatorum_1_branch_office_bonuses
+				mercatorum_1_overlord_dividends
+				# mercatorum_1_branch_office_bonuses
 			}
 		}
 		# Level 2

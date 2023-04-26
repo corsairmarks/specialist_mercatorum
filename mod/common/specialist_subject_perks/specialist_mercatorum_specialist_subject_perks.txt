@@ -56,12 +56,12 @@ mercatorum_1_overlord_modifier = {
 	}
 }
 
-# mercatorum_1_overlord_dividends = {
-# 	icon = "GFX_specialist_perk_mercatorum_1_overlord_dividends"
-# 	desc = {
-# 		description = mercatorum_1_overlord_dividends_desc
-# 	}
-# }
+mercatorum_1_overlord_dividends = {
+	icon = "GFX_specialist_perk_mercatorum_1_overlord_dividends"
+	desc = {
+		description = mercatorum_1_overlord_dividends_desc
+	}
+}
 
 mercatorum_1_neighbor_bonuses = {
 	icon = "GFX_specialist_perk_mercatorum_1_neighbor_bonuses"
