@@ -10,11 +10,11 @@ preset_mercatorum_nice_01 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_commercial
+				key = resource_subsidies_basic
 				value = 0.15
 			}
 			{
-				key = resource_subsidies_infrastructure
+				key = resource_subsidies_advanced
 				value = -0.3
 			}
 		}
@@ -133,7 +133,11 @@ preset_mercatorum_nice_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_infrastructure
+				key = resource_subsidies_basic
+				value = -0.3
+			}
+			{
+				key = resource_subsidies_advanced
 				value = -0.3
 			}
 		}
@@ -252,8 +256,12 @@ preset_mercatorum_mean_01 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_commercial
-				value = 0.3
+				key = resource_subsidies_basic
+				value = 0.15
+			}
+			{
+				key = resource_subsidies_advanced
+				value = 0.15
 			}
 		}
 		discrete_terms = {
@@ -371,8 +379,12 @@ preset_mercatorum_mean_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_commercial
-				value = 0.45
+				key = resource_subsidies_basic
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_advanced
+				value = 0.3
 			}
 		}
 		discrete_terms = {
@@ -490,8 +502,12 @@ preset_mercatorum_mean_03 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_commercial
-				value = 0.6
+				key = resource_subsidies_basic
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_advanced
+				value = 0.45
 			}
 		}
 		discrete_terms = {
