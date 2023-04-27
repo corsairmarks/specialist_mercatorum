@@ -20,17 +20,15 @@ refresh_subject_count_loyalty_penalty = {
 			value = 1
 		}
 		if = {
-			limit = {
-				any_subject = {
-					any_agreement = {
-						has_active_specialization = specialist_mercatorum
-						has_specialist_perk = mercatorum_1_branch_office_bonuses
+			limit = { any_agreement = { agreement_preset = preset_mercatorum } }
+			every_subject = { # exclude mercatora
+				limit = { is_subject_with_preset = { PRESET = preset_mercatorum } }
+				prev = {
+					subtract_variable = {
+						which = subjects_minus_exclusions
+						value = 1
 					}
 				}
-			}
-			subtract_variable = { # exclude mercatora with the right perk active
-				which = subjects_minus_exclusions
-				value = 1
 			}
 		}
 		if = {
