@@ -113,8 +113,10 @@ preset_mercatorum = {
 					owner = { is_country = from }
 					OR = {
 						has_active_specialization = specialist_mercatorum
-						has_agreement_flag = convert_to_specialist_mercatorum
-						# has_agreement_flag = convert_from_specialist_mercatorum
+						AND = {
+							prev = { has_country_flag = specialistion_subject_conversion_flag }
+							agreement_preset = preset_mercatorum # has the preset during conversion, but not an active specialization
+						}
 					}
 				}
 			}
@@ -130,7 +132,6 @@ preset_mercatorum = {
 				}
 				OR = {
 					from = { has_origin = origin_imperial_vassal_overlord }
-					has_country_flag = specialistion_subject_conversion_flag
 					tech_unlocked_ratio = {
 						who = from
 						ratio >= @protectorate_tech_threshold

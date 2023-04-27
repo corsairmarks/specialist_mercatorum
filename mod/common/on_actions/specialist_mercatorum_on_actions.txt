@@ -16,41 +16,6 @@ on_country_destroyed = {
 	}
 }
 
-# fired when a subject has started converting to a specialist type
-# this = agreement
-# owner = country, overlord
-# target = country, subject
-on_specialist_subject_conversion_started = {
-	events = {
-		specialist_mercatorum.1
-		specialist_mercatorum.2
-	}
-}
-
-# fired when a subject has finished converting to a specialist type
-# this = agreement
-# owner = country, overlord
-# target = country, subject
-on_specialist_subject_conversion_finished = {
-	events = {
-		specialist_mercatorum.5
-		specialist_mercatorum.6
-		specialist_mercatorum.3
-		specialist_mercatorum.4
-	}
-}
-
-# fired when a subject specialist conversion has been aborted
-# this = agreement
-# owner = country, overlord
-# target = country, subject
-on_specialist_subject_conversion_aborted = {
-	events = {
-		specialist_mercatorum.3
-		specialist_mercatorum.4
-	}
-}
-
 # fired just as country is changing its government, after the new one is applied
 # this = country
 on_post_government_changed = {

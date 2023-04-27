@@ -1,116 +1,5 @@
 namespace = specialist_mercatorum
 
-# triggered by on_specialist_subject_conversion_started
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.1
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		agreement_preset = preset_mercatorum
-		NOT = { has_active_specialization = specialist_mercatorum }
-	}
-	immediate = {
-		set_agreement_flag = convert_to_specialist_mercatorum
-		owner = {
-			if = {
-				limit = { NOT = { is_variable_set = num_specialist_mercatorum } }
-				set_variable = {
-					which = num_specialist_mercatorum
-					value = 0
-				}
-			}
-			change_variable = {
-				which = num_specialist_mercatorum
-				value = 1
-			}
-		}
-	}
-}
-
-# triggered by on_specialist_subject_conversion_started
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.2
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { agreement_preset = preset_mercatorum }
-		has_active_specialization = specialist_mercatorum
-	}
-	immediate = {
-		set_agreement_flag = convert_from_specialist_mercatorum
-	}
-}
-
-# triggered by on_specialist_subject_conversion_finished and on_specialist_subject_conversion_aborted
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.3
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_agreement_flag = convert_to_specialist_mercatorum }
-	immediate = {
-		remove_agreement_flag = convert_to_specialist_mercatorum
-	}
-}
-
-# triggered by on_specialist_subject_conversion_finished and on_specialist_subject_conversion_aborted
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.4
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_agreement_flag = convert_from_specialist_mercatorum }
-	immediate = {
-		remove_agreement_flag = convert_from_specialist_mercatorum
-		owner = {
-			if = {
-				limit = { is_variable_set = num_specialist_mercatorum }
-				change_variable = {
-					which = num_specialist_mercatorum
-					value = -1
-				}
-			}
-		}
-	}
-}
-
-# triggered by on_specialist_subject_conversion_finished
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.5
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_agreement_flag = convert_to_specialist_mercatorum }
-	immediate = { owner = { refresh_subject_count_loyalty_penalty = yes } }
-}
-
-# triggered by on_specialist_subject_conversion_finished
-# root = agreement
-# owner = country, overlord
-# target = country, subject
-agreement_event = {
-	id = specialist_mercatorum.6
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_agreement_flag = convert_from_specialist_mercatorum }
-	immediate = {
-		target = { save_event_target_as = former_specialist_mercatorum }
-		owner = { refresh_subject_count_loyalty_penalty = yes }
-	}
-}
-
 # triggered by on_country_destroyed
 # root = country, destroyed
 # from = country, destroyer (optional)
@@ -122,7 +11,13 @@ country_event = {
 	immediate = {
 		overlord = {
 			if = {
-				limit = { is_variable_set = num_specialist_mercatorum }
+				limit = {
+					is_variable_set = num_specialist_mercatorum
+					check_variable = {
+						which = num_specialist_mercatorum
+						value > 0
+					}
+				}
 				change_variable = {
 					which = num_specialist_mercatorum
 					value = -1
@@ -133,7 +28,7 @@ country_event = {
 	}
 }
 
-# meratorum specialist subjects must be megacorps - change it back and refund the unity
+# mercatorum specialist subjects must be megacorps - change it back and refund the unity
 # triggered by on_post_government_changed
 # root = country
 country_event = {
