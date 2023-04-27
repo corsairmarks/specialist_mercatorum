@@ -66,13 +66,3 @@ specialist_mercatorum_customs_enforcement_subject = {
 	icon = "gfx/interface/icons/modifiers/mod_starbase_trade_protection_add.dds"
 	starbase_trade_protection_add = -5
 }
-
-###########################
-# BRANCH OFFICE MODIFIERS #
-###########################
-
-specialist_mercatorum_branch_office = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
-	icon_frame = 2
-	planet_branch_offices_unity_produces_add = 3
-}

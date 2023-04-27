@@ -93,37 +93,7 @@ agreement_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = { has_agreement_flag = convert_to_specialist_mercatorum }
-	immediate = {
-		target = { save_event_target_as = new_specialist_mercatorum }
-		owner = {
-			every_owned_planet = {
-				limit = {
-					has_branch_office = yes
-					branch_office_owner = { is_country = event_target:new_specialist_mercatorum }
-					NOT = { has_modifier = specialist_mercatorum_branch_office }
-				}
-				add_modifier = {
-					modifier = specialist_mercatorum_branch_office
-					clear_on_owner_change = yes
-				}
-			}
-			every_subject = {
-				limit = { NOT = { is_country = event_target:new_specialist_mercatorum } }
-				every_owned_planet = {
-					limit = {
-						has_branch_office = yes
-						branch_office_owner = { is_country = event_target:new_specialist_mercatorum }
-						NOT = { has_modifier = specialist_mercatorum_branch_office }
-					}
-					add_modifier = {
-						modifier = specialist_mercatorum_branch_office
-						clear_on_owner_change = yes
-					}
-				}
-			}
-			refresh_subject_count_loyalty_penalty = yes
-		}
-	}
+	immediate = { owner = { refresh_subject_count_loyalty_penalty = yes } }
 }
 
 # triggered by on_specialist_subject_conversion_finished
@@ -137,20 +107,7 @@ agreement_event = {
 	trigger = { has_agreement_flag = convert_from_specialist_mercatorum }
 	immediate = {
 		target = { save_event_target_as = former_specialist_mercatorum }
-		owner = {
-			every_owned_planet = {
-				limit = { has_modifier = specialist_mercatorum_branch_office }
-				remove_modifier = specialist_mercatorum_branch_office
-			}
-			every_subject = {
-				limit = { NOT = { is_country = event_target:former_specialist_mercatorum } }
-				every_owned_planet = {
-					limit = { has_modifier = specialist_mercatorum_branch_office }
-					remove_modifier = specialist_mercatorum_branch_office
-				}
-			}
-			refresh_subject_count_loyalty_penalty = yes
-		}
+		owner = { refresh_subject_count_loyalty_penalty = yes }
 	}
 }
 
@@ -173,50 +130,6 @@ country_event = {
 			}
 			refresh_subject_count_loyalty_penalty = yes
 		}
-	}
-}
-
-# triggered by on_branch_office_established
-# root = planet, branch office location
-# from = country, branch office owner
-planet_event = {
-	id = specialist_mercatorum.8
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = { has_owner = yes }
-	trigger = {
-		NOT = { has_modifier = specialist_mercatorum_branch_office }
-		exists = from
-		from = {
-			is_specialist_subject_type = { TYPE = mercatorum }
-			OR = {
-				has_overlord = prev.owner
-				prev.owner = {
-					is_subject = yes
-					has_overlord = prev.overlord
-				}
-			}
-		}
-	}
-	immediate = {
-		add_modifier = {
-			modifier = specialist_mercatorum_branch_office
-			clear_on_owner_change = yes
-		}
-	}
-}
-
-# triggered by on_branch_office_closed
-# root = planet, branch office location
-# from = country, branch office owner
-planet_event = {
-	id = specialist_mercatorum.9
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = { has_owner = yes }
-	trigger = { has_modifier = specialist_mercatorum_branch_office }
-	immediate = {
-		remove_modifier = specialist_mercatorum_branch_office
 	}
 }
 
@@ -830,121 +743,6 @@ situation_event = {
 		situation_event = {
 			id = specialist_mercatorum.12
 			days = 1
-		}
-	}
-}
-
-# triggered on_becoming_subject
-# root = country, subject
-# from = country, overlord
-country_event = {
-	id = specialist_mercatorum.17
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		exists = from
-		from = { has_specialist_subject_type = { TYPE = mercatorum } }
-	}
-	immediate = {
-		from = {
-			random_agreement = {
-				limit = { has_active_specialization = specialist_mercatorum }
-				target = { save_event_target_as = mercatorum_subject }
-			}
-		}
-		every_owned_planet = {
-			limit = {
-				has_branch_office = yes
-				branch_office_owner = { is_country = event_target:mercatorum_subject }
-				NOT = { has_modifier = specialist_mercatorum_branch_office }
-			}
-			add_modifier = {
-				modifier = specialist_mercatorum_branch_office
-				clear_on_owner_change = yes
-			}
-		}
-	}
-}
-
-# triggered by on_planet_transfer
-# root = planet
-# from = country, new owner
-# fromfrom = country, former owner (if any)
-planet_event = {
-	id = specialist_mercatorum.18
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		has_branch_office = yes
-		exists = from
-		from = {
-			OR = {
-				has_specialist_subject_type = { TYPE = mercatorum }
-				AND = {
-					has_any_overlord = yes
-					overlord = { has_specialist_subject_type = { TYPE = mercatorum } }
-				}
-			}
-		}
-	}
-	immediate = {
-		from = {
-			if = {
-				limit = { has_specialist_subject_type = { TYPE = mercatorum } }
-				random_agreement = {
-					limit = { has_active_specialization = specialist_mercatorum }
-					target = { save_event_target_as = mercatorum_subject }
-				}
-			}
-			else_if = {
-				limit = {
-					has_any_overlord = yes
-					overlord = { has_specialist_subject_type = { TYPE = mercatorum } }
-				}
-				overlord = {
-					random_agreement = {
-						limit = { has_active_specialization = specialist_mercatorum }
-						target = { save_event_target_as = mercatorum_subject }
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				branch_office_owner = { is_country = event_target:mercatorum_subject }
-				NOT = { has_modifier = specialist_mercatorum_branch_office }
-			}
-			add_modifier = {
-				modifier = specialist_mercatorum_branch_office
-				clear_on_owner_change = yes
-			}
-		}
-	}
-}
-
-# triggered by on_becoming_independent
-# root = country, former subject
-# from = country, former overlord
-country_event = {
-	id = specialist_mercatorum.19
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		exists = from
-		from = { NOT = { has_specialist_subject_type = { TYPE = mercatorum } } }
-	}
-	immediate = {
-		from = {
-			every_owned_planet = {
-				limit = { has_modifier = specialist_mercatorum_branch_office }
-				remove_modifier = specialist_mercatorum_branch_office
-			}
-			every_subject = {
-				every_owned_planet = {
-					limit = { has_modifier = specialist_mercatorum_branch_office }
-					remove_modifier = specialist_mercatorum_branch_office
-				}
-			}
 		}
 	}
 }
@@ -1820,6 +1618,7 @@ country_event = {
 	desc = specialist_mercatorum.2120.desc
 }
 
+# explicitly fired by origin.5705
 country_event = { # Learn more about Mercatora
 	id = specialist_mercatorum.5709
 	title = TRANSMISSION

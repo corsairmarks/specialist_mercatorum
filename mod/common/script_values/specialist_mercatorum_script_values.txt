@@ -52,6 +52,34 @@ mercatorum_specialist_monthly_resource_subsidy = {
 	multiply = $PERCENTAGE$
 }
 
+# this = country (specialist_mercarotum)
+mercatorum_specialist_branch_office_count = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_galaxy_planet # sorry in advance!
+		parameters = {
+			limit = {
+				is_colony = yes
+				has_branch_office = yes
+				branch_office_owner = { is_country = prevprev }
+				owner = {
+					OR = {
+						AND = {
+							is_overlord = yes
+							has_subject = prevprev
+						}
+						AND = {
+							is_subject = yes
+							has_overlord = prevprev.overlord
+						}
+					}
+				}
+			}
+		}
+		mode = add
+	}
+}
+
 # this = country (with should have variable dividend_percentage set)
 # event_target:specialist_mercatorum_agreement = agreement, specialist_mercatorum
 # $RESOURCE$ = string, the resource for dividends

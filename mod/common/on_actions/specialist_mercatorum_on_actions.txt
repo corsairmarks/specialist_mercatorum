@@ -16,25 +16,6 @@ on_country_destroyed = {
 	}
 }
 
-# fired when an empire becomes a subject
-# root = country, subject
-# from = country, overlord
-on_becoming_subject = {
-	events = {
-		specialist_mercatorum.17
-	}
-}
-
-# fired when a subject country becomes independent
-# note: this is a custom on_action, so it may not fire for all uses of set_subject_of = { who = none }
-# this = country, former subject
-# from = country, former overlord
-on_becoming_independent = {
-	events = {
-		specialist_mercatorum.19
-	}
-}
-
 # fired when a subject has started converting to a specialist type
 # this = agreement
 # owner = country, overlord
@@ -67,34 +48,6 @@ on_specialist_subject_conversion_aborted = {
 	events = {
 		specialist_mercatorum.3
 		specialist_mercatorum.4
-	}
-}
-
-# fired when a branch office is established
-# this = planet, branch office location
-# from = country, branch office owner
-on_branch_office_established = {
-	events = {
-		specialist_mercatorum.8
-	}
-}
-
-# fired when a branch office is closed
-# this = planet, branch office location
-# from = country, branch office owner
-on_branch_office_closed = {
-	events = {
-		specialist_mercatorum.9
-	}
-}
-
-# fired whenever a new owner is set for a planet, be it after a war or through a trade
-# this = planet
-# from = country, new owner
-# fromfrom = country, former owner (if any)
-on_planet_transfer = {
-	events = {
-		specialist_mercatorum.18
 	}
 }
 
