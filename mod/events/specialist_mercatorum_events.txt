@@ -28,6 +28,20 @@ country_event = {
 	}
 }
 
+# triggered by on_agreement_change_accepted
+agreement_event = {
+	id = specialist_mercatorum.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_active_specialization = specialist_mercatorum
+		NOT = { exists = event_target:agreement_specialist_mercatorum@owner }
+	}
+	immediate = {
+		save_global_event_target_as = agreement_specialist_mercatorum@owner
+	}
+}
+
 # mercatorum specialist subjects must be megacorps - change it back and refund the unity
 # triggered by on_post_government_changed
 # root = country
