@@ -43,7 +43,7 @@ preset_mercatorum = {
 			}
 			{
 				key = resource_subsidies_commercial
-				value = resource_subsidies_commercial_15
+				value = resource_subsidies_commercial_30
 			}
 			{
 				key = resource_subsidies_infrastructure
@@ -51,7 +51,7 @@ preset_mercatorum = {
 			}
 			{
 				key = specialist_mercatorum_commission
-				value = specialist_mercatorum_commission_10
+				value = specialist_mercatorum_commission_15
 			}
 			{
 				key = protectorate

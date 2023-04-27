@@ -281,11 +281,11 @@ preset_mercatorum_mean_01 = {
 			}
 			{
 				key = resource_subsidies_commercial
-				value = resource_subsidies_commercial_30
+				value = resource_subsidies_commercial_45
 			}
 			{
 				key = resource_subsidies_infrastructure
-				value = resource_subsidies_infrastructure_15
+				value = resource_subsidies_infrastructure_30
 			}
 			{
 				key = specialist_mercatorum_commission
@@ -402,11 +402,11 @@ preset_mercatorum_mean_02 = {
 			}
 			{
 				key = resource_subsidies_commercial
-				value = resource_subsidies_commercial_45
+				value = resource_subsidies_commercial_60
 			}
 			{
 				key = resource_subsidies_infrastructure
-				value = resource_subsidies_infrastructure_0
+				value = resource_subsidies_infrastructure_15
 			}
 			{
 				key = specialist_mercatorum_commission
@@ -533,7 +533,7 @@ preset_mercatorum_mean_03 = {
 			}
 			{
 				key = resource_subsidies_commercial
-				value = resource_subsidies_commercial_60
+				value = resource_subsidies_commercial_70
 			}
 			{
 				key = resource_subsidies_infrastructure
