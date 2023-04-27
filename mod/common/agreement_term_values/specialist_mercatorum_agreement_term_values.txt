@@ -31,7 +31,7 @@ specialist_mercatorum = {
 	activate_effect = {
 		convert_to_specialist = specialist_mercatorum
 		hidden_effect = {
-			save_global_event_target_as = agreement_specialist_mercatorum@owner
+			target = { save_global_event_target_as = specialist_mercatorum_for_overlord@prev.owner }
 			owner = {
 				if = {
 					limit = { NOT = { is_variable_set = num_specialist_mercatorum } }
@@ -51,8 +51,8 @@ specialist_mercatorum = {
 	deactivate_effect = {
 		hidden_effect = {
 			if = {
-				limit = { exists = event_target:agreement_specialist_mercatorum@owner }
-				clear_global_event_target = agreement_specialist_mercatorum@owner
+				limit = { exists = event_target:specialist_mercatorum_for_overlord@owner }
+				clear_global_event_target = specialist_mercatorum_for_overlord@owner
 			}
 			owner = {
 				if = {
@@ -115,12 +115,12 @@ resource_subsidies_commercial_15 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|overlord|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|overlord|
 		}
@@ -128,12 +128,12 @@ resource_subsidies_commercial_15 = {
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|this|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|this|
 		}
@@ -154,12 +154,12 @@ resource_subsidies_commercial_30 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.30|SCOPE|overlord|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|overlord|
 		}
@@ -167,12 +167,12 @@ resource_subsidies_commercial_30 = {
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.30|SCOPE|this|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|this|
 		}
@@ -193,12 +193,12 @@ resource_subsidies_commercial_45 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.45|SCOPE|overlord|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|overlord|
 		}
@@ -206,12 +206,12 @@ resource_subsidies_commercial_45 = {
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.45|SCOPE|this|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|this|
 		}
@@ -232,12 +232,12 @@ resource_subsidies_commercial_60 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.60|SCOPE|overlord|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|overlord|
 		}
@@ -245,12 +245,12 @@ resource_subsidies_commercial_60 = {
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.60|SCOPE|this|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|this|
 		}
@@ -271,12 +271,12 @@ resource_subsidies_commercial_75 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.75|SCOPE|overlord|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|overlord|
 		}
@@ -284,12 +284,12 @@ resource_subsidies_commercial_75 = {
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			energy = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.75|SCOPE|this|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			consumer_goods = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|this|
 		}
@@ -324,17 +324,17 @@ resource_subsidies_infrastructure_15 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.15|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.15|SCOPE|overlord|
 		}
@@ -342,17 +342,17 @@ resource_subsidies_infrastructure_15 = {
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.15|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.15|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.15|SCOPE|this|
 		}
@@ -373,17 +373,17 @@ resource_subsidies_infrastructure_30 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.30|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.30|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.30|SCOPE|overlord|
 		}
@@ -391,17 +391,17 @@ resource_subsidies_infrastructure_30 = {
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.30|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.30|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.30|SCOPE|this|
 		}
@@ -422,17 +422,17 @@ resource_subsidies_infrastructure_45 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.45|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.45|SCOPE|overlord|
 		}
@@ -440,17 +440,17 @@ resource_subsidies_infrastructure_45 = {
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.45|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.45|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.45|SCOPE|this|
 		}
@@ -471,17 +471,17 @@ resource_subsidies_infrastructure_60 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.60|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.60|SCOPE|overlord|
 		}
@@ -489,17 +489,17 @@ resource_subsidies_infrastructure_60 = {
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.60|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.60|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.60|SCOPE|this|
 		}
@@ -520,17 +520,17 @@ resource_subsidies_infrastructure_75 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.75|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|overlord|
 		}
 		produces = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@overlord }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@overlord }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.75|SCOPE|overlord|
 		}
@@ -538,17 +538,17 @@ resource_subsidies_infrastructure_75 = {
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			minerals = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.75|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			food = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.75|SCOPE|this|
 		}
 		upkeep = {
-			trigger = { exists = event_target:agreement_specialist_mercatorum@this }
+			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
 			alloys = 1
 			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.75|SCOPE|this|
 		}

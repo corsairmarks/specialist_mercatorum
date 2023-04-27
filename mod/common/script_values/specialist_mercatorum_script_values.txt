@@ -36,14 +36,14 @@ mercatorum_specialist_deficit_bailout_amount = {
 # $PERCENTAGE$% of the mercatorum's $RESOURCE$ monthly revenue
 # $RESOURCE$ = string, the resource to generate a subsidy
 # $PERCENTAGE$ = float, the percentage of subject revenue
-# $SCOPE$ = string, the scope to use when searching for the global event_target:agreement_specialist_mercatorum@$SCOPE$ (the event_target was set using the overlord's ID)
+# $SCOPE$ = string, the scope to use when searching for the global event_target:specialist_mercatorum_for_overlord@$SCOPE$ (the event_target was set using the overlord's ID)
 # this = country
 # value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|overlord|
 mercatorum_specialist_monthly_resource_subsidy = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_revenue_compare
-		trigger_scope = event_target:agreement_specialist_mercatorum@$SCOPE$.target
+		trigger_scope = event_target:specialist_mercatorum_for_overlord@$SCOPE$
 		parameters = {
 			resource = $RESOURCE$
 		}
