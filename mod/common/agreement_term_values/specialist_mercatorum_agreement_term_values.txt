@@ -41,7 +41,6 @@ specialist_mercatorum = {
 		}
 	}
 	target_modifier = {
-		envoys_add = value:sm_count_subjects_of_overlord
 	}
 	subject_resources = {
 		category = planet_branch_offices

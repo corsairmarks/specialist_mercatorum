@@ -129,13 +129,3 @@ sm_bailout_scaling_factor_negative = {
 	base = 0
 	subtract = value:bailout_scaling_factor
 }
-
-# this = country, subject
-sm_count_subjects_of_overlord = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = count_subject
-		trigger_scope = overlord
-		mode = add
-	}
-}
