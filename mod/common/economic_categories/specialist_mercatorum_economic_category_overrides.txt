@@ -1,0 +1,36 @@
+# Modified: add triggered_cost_modifier for mercatora
+planet_branch_offices = {
+	parent = planets
+	generate_mult_modifiers = {
+		cost
+	}
+	generate_add_modifiers = {
+		produces
+	}
+	modifier_category = planet
+	triggered_cost_modifier = {
+		key = planet_branch_offices_mercatorum
+		use_parent_icon = yes
+		trigger = {
+			is_scope_type = planet
+			exists = from
+			from = { is_specialist_subject_type = { TYPE = mercatorum } }
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_overlord = yes
+						has_subject = from
+					}
+					AND = {
+						is_subject = yes
+						has_overlord = from.overlord
+					}
+				}
+			}
+		}
+		modifier_types = {
+			add
+		}
+	}
+}

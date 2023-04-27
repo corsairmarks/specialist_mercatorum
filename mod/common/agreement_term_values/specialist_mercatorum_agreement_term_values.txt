@@ -41,6 +41,8 @@ specialist_mercatorum = {
 		}
 	}
 	target_modifier = {
+		planet_branch_offices_mercatorum_influence_cost_add = -50 # negative of the value defined for branch_office_resources on country_type = default
+		planet_branch_offices_mercatorum_unity_cost_add = 250 # 5 * influence cost definded in branch_office_resources on country_type = default
 	}
 	subject_resources = {
 		category = planet_branch_offices
