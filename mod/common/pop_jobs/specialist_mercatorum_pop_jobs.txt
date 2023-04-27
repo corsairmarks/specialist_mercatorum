@@ -183,11 +183,24 @@ mercatorum_manager = {
 		upkeep = {
 			consumer_goods = 2
 		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { is_overlord = yes }
+			}
+			unity = 4
+		}
 	}
 
 	overlord_resources = {
 		category = planet_overlord_managers
 		produces = {
+			trigger = {
+				OR = {
+					NOT = { exists = owner }
+					owner = { is_subject = yes }
+				}
+			}
 			unity = 4
 		}
 	}
