@@ -30,13 +30,45 @@ specialist_mercatorum = {
 	}
 	activate_effect = {
 		convert_to_specialist = specialist_mercatorum
-		hidden_effect = { save_global_event_target_as = agreement_specialist_mercatorum@owner }
+		hidden_effect = {
+			save_global_event_target_as = agreement_specialist_mercatorum@owner
+			owner = {
+				if = {
+					limit = { NOT = { is_variable_set = num_specialist_mercatorum } }
+					set_variable = {
+						which = num_specialist_mercatorum
+						value = 0
+					}
+				}
+				change_variable = {
+					which = num_specialist_mercatorum
+					value = 1
+				}
+				refresh_subject_count_loyalty_penalty = yes
+			}
+		}
 	}
 	deactivate_effect = {
 		hidden_effect = {
 			if = {
 				limit = { exists = event_target:agreement_specialist_mercatorum@owner }
 				clear_global_event_target = agreement_specialist_mercatorum@owner
+			}
+			owner = {
+				if = {
+					limit = {
+						is_variable_set = num_specialist_mercatorum
+						check_variable = {
+							which = num_specialist_mercatorum
+							value > 0
+						}
+					}
+					change_variable = {
+						which = num_specialist_mercatorum
+						value = -1
+					}
+				}
+				refresh_subject_count_loyalty_penalty = yes
 			}
 		}
 	}
