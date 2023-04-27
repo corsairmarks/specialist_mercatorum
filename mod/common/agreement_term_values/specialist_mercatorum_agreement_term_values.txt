@@ -95,15 +95,19 @@ resource_subsidies_commercial_null = {
 
 resource_subsidies_commercial_0 = {
 	term = resource_subsidies_commercial
+	ai_acceptance = {
+		overlord = -200
+		subject = 0
+	}
 	potential = { agreement_preset = preset_mercatorum }
 }
 
 resource_subsidies_commercial_15 = {
 	term = resource_subsidies_commercial
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -100
+		subject = -50
+	}
 	loyalty_change = -5
 	target_modifier = {
 		monthly_loyalty = -0.5
@@ -139,10 +143,10 @@ resource_subsidies_commercial_15 = {
 
 resource_subsidies_commercial_30 = {
 	term = resource_subsidies_commercial
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = 0
+		subject = -100
+	}
 	loyalty_change = -10
 	target_modifier = {
 		monthly_loyalty = -1
@@ -178,10 +182,10 @@ resource_subsidies_commercial_30 = {
 
 resource_subsidies_commercial_45 = {
 	term = resource_subsidies_commercial
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = 50
+		subject = -150
+	}
 	loyalty_change = -15
 	target_modifier = {
 		monthly_loyalty = -1.5
@@ -217,10 +221,10 @@ resource_subsidies_commercial_45 = {
 
 resource_subsidies_commercial_60 = {
 	term = resource_subsidies_commercial
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = 100
+		subject = -200
+	}
 	loyalty_change = -20
 	target_modifier = {
 		monthly_loyalty = -2
@@ -256,10 +260,10 @@ resource_subsidies_commercial_60 = {
 
 resource_subsidies_commercial_75 = {
 	term = resource_subsidies_commercial
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = 150
+		subject = -300
+	}
 	loyalty_change = -25
 	target_modifier = {
 		monthly_loyalty = -2.5
@@ -300,15 +304,19 @@ resource_subsidies_infrastructure_null = {
 
 resource_subsidies_infrastructure_0 = {
 	term = resource_subsidies_infrastructure
+	ai_acceptance = {
+		overlord = 0
+		subject = -200
+	}
 	potential = { agreement_preset = preset_mercatorum }
 }
 
 resource_subsidies_infrastructure_15 = {
 	term = resource_subsidies_infrastructure
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -50
+		subject = -100
+	}
 	loyalty_change = 5
 	target_modifier = {
 		monthly_loyalty = 0.5
@@ -354,10 +362,10 @@ resource_subsidies_infrastructure_15 = {
 
 resource_subsidies_infrastructure_30 = {
 	term = resource_subsidies_infrastructure
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -100
+		subject = 0
+	}
 	loyalty_change = 10
 	target_modifier = {
 		monthly_loyalty = 1
@@ -403,10 +411,10 @@ resource_subsidies_infrastructure_30 = {
 
 resource_subsidies_infrastructure_45 = {
 	term = resource_subsidies_infrastructure
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -150
+		subject = 50
+	}
 	loyalty_change = 15
 	target_modifier = {
 		monthly_loyalty = 1.5
@@ -452,10 +460,10 @@ resource_subsidies_infrastructure_45 = {
 
 resource_subsidies_infrastructure_60 = {
 	term = resource_subsidies_infrastructure
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -200
+		subject = 100
+	}
 	loyalty_change = 20
 	target_modifier = {
 		monthly_loyalty = 2
@@ -501,10 +509,10 @@ resource_subsidies_infrastructure_60 = {
 
 resource_subsidies_infrastructure_75 = {
 	term = resource_subsidies_infrastructure
-	# ai_acceptance = {
-	# 	overlord = 90
-	# 	subject = -150
-	# }
+	ai_acceptance = {
+		overlord = -300
+		subject = 150
+	}
 	loyalty_change = 25
 	target_modifier = {
 		monthly_loyalty = 2.5
