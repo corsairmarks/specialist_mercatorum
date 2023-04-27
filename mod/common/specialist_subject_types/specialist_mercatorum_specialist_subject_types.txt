@@ -29,6 +29,7 @@ specialist_mercatorum = {
 				target = this
 			}
 		}
+		owner = { refresh_subject_count_loyalty_penalty = yes }
 	}
 	levels = {
 		# Level 1
