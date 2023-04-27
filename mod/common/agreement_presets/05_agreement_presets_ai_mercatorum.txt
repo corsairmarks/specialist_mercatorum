@@ -533,7 +533,7 @@ preset_mercatorum_mean_03 = {
 			}
 			{
 				key = resource_subsidies_commercial
-				value = resource_subsidies_commercial_70
+				value = resource_subsidies_commercial_75
 			}
 			{
 				key = resource_subsidies_infrastructure
