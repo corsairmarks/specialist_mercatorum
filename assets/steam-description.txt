@@ -28,19 +28,19 @@ This mod can be safely added to your savegame after the game has started. Becaus
 [h2]Known Issues[/h2]
 Overriding many types of game objects causes the game to log errors noting each override. Expect to see thirteen lines in the error.log file like these:
 [code]
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_form_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 4
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_break_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 199
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_release_subject exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 271
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: action_ask_to_be_released_subject exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 294
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: has_specialist_subject_leader_trait exists, using: common/scripted_triggers/10_specialist_mercatorum_scripted_trigger_overrides.txt line: 3
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: refresh_subject_count_loyalty_penalty exists, using: common/scripted_effects/specialist_mercatorum_overlord_scripted_effect_overrides.txt line: 2
-[22:42:20][game_singleobjdb.h:165]: Obj w/key: country_defaulted_effect exists, using: common/scripted_effects/specialist_mercatorum_scripted_effect_overrides.txt line: 6
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: wg_independence exists, using: common/war_goals/specialist_mercatorum_war_goal_overrides.txt line: 2
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_can_be_integrated exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 33
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_can_not_do_diplomacy exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 87
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: subject_cannot_expand exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 134
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_basic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 196
-[22:42:26][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_advanced exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 267
+[00:12:20][game_singleobjdb.h:165]: Obj w/key: action_form_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 4
+[00:12:20][game_singleobjdb.h:165]: Obj w/key: action_break_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 199
+[00:12:20][game_singleobjdb.h:165]: Obj w/key: has_specialist_subject_leader_trait exists, using: common/scripted_triggers/10_specialist_mercatorum_scripted_trigger_overrides.txt line: 3
+[00:12:20][game_singleobjdb.h:165]: Obj w/key: refresh_subject_count_loyalty_penalty exists, using: common/scripted_effects/specialist_mercatorum_overlord_scripted_effect_overrides.txt line: 2
+[00:12:20][game_singleobjdb.h:165]: Obj w/key: country_defaulted_effect exists, using: common/scripted_effects/specialist_mercatorum_scripted_effect_overrides.txt line: 6
+[00:12:23][eventmanager.cpp:369]: an event with id [origin.5705] exists! file: events/origin_events_3.txt line: 1651
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_can_be_integrated exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 37
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_can_not_do_diplomacy exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 91
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_cannot_expand exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 138
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_basic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 200
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_advanced exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 259
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_research exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 311
+[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_strategic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 380
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2962066593]Change Notes[/url]
