@@ -123,45 +123,64 @@ try_convert_to_mercatorum_megacorp = {
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
 		if = {
 			limit = { has_ethic = ethic_fanatic_authoritarian }
-			ordered_pop_faction = {
-				limit = { NOT = { is_pop_faction_type = totalitarian } }
-				order_by = trigger:num_pops
-				position = 0
-				switch = {
-					trigger = is_pop_faction_type
-					prosperity = { prev = { shift_ethic = ethic_pacifist } }
-					imperialist = { prev = { shift_ethic = ethic_militarist } }
-					isolationist = { prev = { shift_ethic = ethic_xenophobe } }
-					supremacist = { prev = { shift_ethic = ethic_xenophobe } }
-					technologist = { prev = { shift_ethic = ethic_materialist } }
-					traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
-					xenoist = { prev = { shift_ethic = ethic_xenophile } }
-					default = { prev = { shift_ethic = ethic_xenophile } }
+			if = {
+				limit = { any_pop_faction = { NOT = { is_pop_faction_type = totalitarian } } }
+				ordered_pop_faction = {
+					limit = { NOT = { is_pop_faction_type = totalitarian } }
+					order_by = trigger:num_pops
+					position = 0
+					switch = {
+						trigger = is_pop_faction_type
+						prosperity = { prev = { shift_ethic = ethic_pacifist } }
+						imperialist = { prev = { shift_ethic = ethic_militarist } }
+						isolationist = { prev = { shift_ethic = ethic_xenophobe } }
+						supremacist = { prev = { shift_ethic = ethic_xenophobe } }
+						technologist = { prev = { shift_ethic = ethic_materialist } }
+						traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
+						xenoist = { prev = { shift_ethic = ethic_xenophile } }
+						default = { prev = { shift_ethic = ethic_xenophile } }
+					}
 				}
+			}
+			else = {
+				shift_ethic = ethic_xenophile
 			}
 		}
 		else_if = {
 			limit = { has_ethic = ethic_fanatic_egalitarian }
-			ordered_pop_faction = {
+			if = {
 				limit = {
-					NOR = {
-						is_pop_faction_type = progressive
-						is_pop_faction_type = manifesti
+					any_pop_faction = {
+						NOR = {
+							is_pop_faction_type = progressive
+							is_pop_faction_type = manifesti
+						}
 					}
 				}
-				order_by = trigger:num_pops
-				position = 0
-				switch = {
-					trigger = is_pop_faction_type
-					prosperity = { prev = { shift_ethic = ethic_pacifist } }
-					imperialist = { prev = { shift_ethic = ethic_militarist } }
-					isolationist = { prev = { shift_ethic = ethic_xenophobe } }
-					supremacist = { prev = { shift_ethic = ethic_xenophobe } }
-					technologist = { prev = { shift_ethic = ethic_materialist } }
-					traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
-					xenoist = { prev = { shift_ethic = ethic_xenophile } }
-					default = { prev = { shift_ethic = ethic_xenophile } }
+				ordered_pop_faction = {
+					limit = {
+						NOR = {
+							is_pop_faction_type = progressive
+							is_pop_faction_type = manifesti
+						}
+					}
+					order_by = trigger:num_pops
+					position = 0
+					switch = {
+						trigger = is_pop_faction_type
+						prosperity = { prev = { shift_ethic = ethic_pacifist } }
+						imperialist = { prev = { shift_ethic = ethic_militarist } }
+						isolationist = { prev = { shift_ethic = ethic_xenophobe } }
+						supremacist = { prev = { shift_ethic = ethic_xenophobe } }
+						technologist = { prev = { shift_ethic = ethic_materialist } }
+						traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
+						xenoist = { prev = { shift_ethic = ethic_xenophile } }
+						default = { prev = { shift_ethic = ethic_xenophile } }
+					}
 				}
+			}
+			else = {
+				shift_ethic = ethic_xenophile
 			}
 		}
 		change_government = {
