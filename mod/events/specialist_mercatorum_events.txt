@@ -41,6 +41,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		log = "specialist_mercatorum.3 fired on [GetDate]"
 		no_scope = {
 			every_agreement = {
 				agreement_event = {
@@ -1023,14 +1024,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1145,14 +1148,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1233,14 +1238,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1329,14 +1336,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1425,14 +1434,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1498,14 +1509,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
@@ -1661,14 +1674,16 @@ country_event = {
 		trigger = {
 			hidden_trigger = {
 				is_subject = yes
-				OR = {
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_null
-					}
-					has_term_value = {
-						term = specialist_mercatorum_commission
-						value = specialist_mercatorum_commission_0
+				event_target:specialist_mercatorum_agreement = {
+					OR = {
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_null
+						}
+						has_term_value = {
+							term = specialist_mercatorum_commission
+							value = specialist_mercatorum_commission_0
+						}
 					}
 				}
 			}
