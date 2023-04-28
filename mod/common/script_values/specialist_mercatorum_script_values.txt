@@ -33,6 +33,52 @@ mercatorum_specialist_deficit_bailout_amount = {
 	min = 100
 }
 
+# this = agreement, preset_mercatorum
+mercatorum_specialist_commission_percentage = {
+	base = 0
+	modifier = {
+		has_term_value = {
+			term = specialist_mercatorum_commission
+			value = specialist_mercatorum_commission_5
+		}
+		set = 0.05
+	}
+	modifier = {
+		has_term_value = {
+			term = specialist_mercatorum_commission
+			value = specialist_mercatorum_commission_10
+		}
+		set = 0.1
+	}
+	modifier = {
+		has_term_value = {
+			term = specialist_mercatorum_commission
+			value = specialist_mercatorum_commission_15
+		}
+		set = 0.15
+	}
+	modifier = {
+		has_term_value = {
+			term = specialist_mercatorum_commission
+			value = specialist_mercatorum_commission_20
+		}
+		set = 0.2
+	}
+	modifier = {
+		has_term_value = {
+			term = specialist_mercatorum_commission
+			value = specialist_mercatorum_commission_25
+		}
+		set = 0.25
+	}
+}
+
+# this = agreement, preset_mercatorum
+mercatorum_specialist_commission_percentage_overlord = {
+	base = 1
+	subtract = value:mercatorum_specialist_commission_percentage
+}
+
 # the amount of the mercatorum's $RESOURCE$ monthly revenue to pay as a tax/subsidy
 # $RESOURCE$ = string, the resource for which to generate a subsidy
 # $TERM$ = string, the agreement term to use to find the subsidy percentage

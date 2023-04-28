@@ -400,80 +400,11 @@ bail_out_mercatorum_subject = {
 set_dividend_percentage = {
 	optimize_memory
 	event_target:specialist_mercatorum_agreement = {
-		if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_0
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0
-			}
-		}
-		else_if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_5
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_10
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0.1
-			}
-		}
-		else_if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_15
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0.15
-			}
-		}
-		else_if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_20
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0.2
-			}
-		}
-		else_if = {
-			limit = {
-				has_term_value = {
-					term = specialist_mercatorum_commission
-					value = specialist_mercatorum_commission_25
-				}
-			}
-			set_variable = {
-				which = mercatorum_commission_percentage
-				value = 0.25
-			}
+		set_variable = {
+			which = mercatorum_commission_percentage
+			value = value:mercatorum_specialist_commission_percentage
 		}
 	}
-
 	if = {
 		limit = { is_overlord = yes }
 		set_variable = {
