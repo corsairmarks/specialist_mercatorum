@@ -61,7 +61,7 @@ Overriding many types of game objects causes the game to log errors noting each 
 * 1.1.0 Imperial Vassals can choose to begin the game as a Mercatorum
     * Only one Imperial Vassal can choose to become a Mercatorum
     * Fix the title of the Overlord Special Dividends event which incorrectly referred to the Overlord itself
-    * Refactor economic subsidies for Mercatora so that they do not break normal Basic and Advanced subsidies for other subjects - however, you will need to renegotiate the agreement with your Mercatorum to re-establish commercial or infrastructure taxes/subsidies (they are no longer resource sliders and appear near the bottom of agreement terms)
+    * Refactor economic subsidies for Mercatora so that they do not break Basic and Advanced subsidies for other subjects - however, you will need to renegotiate the agreement with your Mercatorum to re-establish commercial or infrastructure taxes/subsidies (they are no longer resource sliders and appear near the bottom of agreement terms)
     * Significantly simplify event code for enforcing the limit of one Mercatorum subject
     * Mercatorum HQ buildings (both branch office and holding) give +1 envoys to the building owner (the Mercatorum or Overlord respectively)
     * Mercatora now have a narrower range of Research and Strategic taxes/subsidies
