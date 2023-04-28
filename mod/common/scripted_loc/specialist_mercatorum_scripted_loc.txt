@@ -63,3 +63,55 @@ defined_text = {
 	}
 	default = RESOURCES
 }
+
+# this = agreement
+defined_text = {
+	name = GetMercatorumCommissionPercentage
+	text = {
+		trigger = {
+			has_term_value = {
+				term = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_5
+			}
+		}
+		localization_key = specialist_mercatorum_commission_5
+	}
+	text = {
+		trigger = {
+			has_term_value = {
+				term = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_10
+			}
+		}
+		localization_key = specialist_mercatorum_commission_10
+	}
+	text = {
+		trigger = {
+			has_term_value = {
+				term = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_15
+			}
+		}
+		localization_key = specialist_mercatorum_commission_15
+	}
+	text = {
+		trigger = {
+			has_term_value = {
+				term = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_20
+			}
+		}
+		localization_key = specialist_mercatorum_commission_20
+	}
+	text = {
+		trigger = {
+			has_term_value = {
+				term = specialist_mercatorum_commission
+				value = specialist_mercatorum_commission_25
+			}
+		}
+		localization_key = specialist_mercatorum_commission_25
+	}
+	
+	default = specialist_mercatorum_commission_0
+}

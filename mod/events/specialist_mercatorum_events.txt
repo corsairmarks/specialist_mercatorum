@@ -976,11 +976,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1004,9 +1022,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1077,11 +1102,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1101,9 +1144,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1140,11 +1190,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1164,9 +1232,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1207,11 +1282,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1235,9 +1328,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1278,11 +1378,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1306,9 +1424,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1338,11 +1463,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1354,9 +1497,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
@@ -1386,11 +1536,29 @@ country_event = {
 		name = EXCELLENT
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value > 0
+				OR = {
+					is_overlord = yes
+					event_target:specialist_mercatorum_agreement = {
+						NOR = {
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_null
+							}
+							has_term_value = {
+								term = specialist_mercatorum_commission
+								value = specialist_mercatorum_commission_0
+							}
+						}
+					}
 				}
 			}
+		}
+		if = {
+			limit = { is_overlord = yes }
+			custom_tooltip = specialist_mercatorum.2000.a.overlord.tooltip
+		}
+		else = {
+			custom_tooltip = specialist_mercatorum.2000.a.subject.tooltip
 		}
 		add_resource = {
 			energy = 1
@@ -1492,9 +1660,16 @@ country_event = {
 		custom_tooltip = specialist_mercatorum.2000.b.none
 		trigger = {
 			hidden_trigger = {
-				check_variable = {
-					which = dividend_percentage
-					value <= 0
+				is_subject = yes
+				OR = {
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_null
+					}
+					has_term_value = {
+						term = specialist_mercatorum_commission
+						value = specialist_mercatorum_commission_0
+					}
 				}
 			}
 		}
