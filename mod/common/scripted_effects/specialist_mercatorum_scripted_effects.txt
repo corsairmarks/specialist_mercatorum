@@ -559,6 +559,7 @@ origin_imperial_fiefdom_mercatorum_specialization_effect = {
 			set_agreement_preset = { preset = preset_mercatorum }
 			set_agreement_terms = { subject_expand = subject_can_expand_with_tithe }
 		}
+		try_convert_to_mercatorum_megacorp = yes # convert to megacorp early
 		every_owned_leader = {
 			limit = { leader_class = governor }
 			add_skill = 2
