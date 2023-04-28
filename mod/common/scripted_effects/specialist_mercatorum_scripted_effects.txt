@@ -639,12 +639,16 @@ origin_imperial_fiefdom_mercatorum_specialization_effect = {
 				owner = prev.overlord
 			}
 		}
-		overlord.capital_scope = {
-			establish_branch_office = prev
-			add_holding = {
-				holding = building_mercatorum_national_headquarters
-				owner = branch_office_owner
+		overlord = {
+			capital_scope = {
+				establish_branch_office = prev
+				add_holding = {
+					holding = building_mercatorum_national_headquarters
+					owner = branch_office_owner
+				}
 			}
+			# on_built does not fire when adding a building via add_holding; add the correct country modifier
+			add_modifier = { modifier = specialist_mercatorum_national_headquarters }
 		}
 	}
 }
