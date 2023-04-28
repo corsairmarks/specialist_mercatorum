@@ -41,7 +41,17 @@ building_mercatorum_national_headquarters = {
 	destroy_trigger = {
 		OR = {
 			has_branch_office = no
-			branch_office_owner = { NOT = { is_specialist_subject_type = { TYPE = mercatorum } } }
+			branch_office_owner = {
+				NOT = {
+					any_agreement = {
+						target = { is_country = prevprev }
+						OR = {
+							agreement_preset = preset_mercatorum
+							has_active_specialization = specialist_mercatorum
+						}
+					}
+				}
+			}
 			NOT = { exists = owner }
 			owner = {
 				NOR = {
@@ -151,7 +161,17 @@ holding_mercatorum_corporate_headquarters = {
 	destroy_trigger = {
 		OR = {
 			NOT = { exists = owner }
-			owner = { NOT = { is_specialist_subject_type = { TYPE = mercatorum } } }
+			owner = {
+				NOT = {
+					any_agreement = {
+						target = { is_country = prevprev }
+						OR = {
+							agreement_preset = preset_mercatorum
+							has_active_specialization = specialist_mercatorum
+						}
+					}
+				}
+			}
 		}
 	}
 	resources = {
