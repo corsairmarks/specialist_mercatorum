@@ -1,5 +1,56 @@
 namespace = specialist_mercatorum
 
+# triggered by on_agreement_change_accepted and explicitly by specialist_mercatorum.3
+agreement_event = {
+	id = specialist_mercatorum.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			agreement_preset = preset_mercatorum # selected to be a mercatorum, but might not have fully converted yet
+			has_active_specialization = specialist_mercatorum
+		}
+	}
+	immediate = {
+		set_mercatorum_specialist_resource_subsidy_amount = { TERM = resource_subsidies_commercial RESOURCE = energy }
+		set_mercatorum_specialist_resource_subsidy_amount = { TERM = resource_subsidies_commercial RESOURCE = consumer_goods }
+		set_mercatorum_specialist_resource_subsidy_amount = { TERM = resource_subsidies_infrastructure RESOURCE = minerals }
+		set_mercatorum_specialist_resource_subsidy_amount = { TERM = resource_subsidies_infrastructure RESOURCE = food }
+		set_mercatorum_specialist_resource_subsidy_amount = { TERM = resource_subsidies_infrastructure RESOURCE = alloys }
+	}
+}
+
+# triggered by on_monthly_pulse
+event = {
+	id = specialist_mercatorum.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:global_event_country = {
+			country_event = {
+				id = specialist_mercatorum.3
+				days = 29
+			}
+		}
+	}
+}
+
+# triggered explicitly by specialist_mercatorum.3
+country_event = {
+	id = specialist_mercatorum.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		no_scope = {
+			every_agreement = {
+				agreement_event = {
+					id = specialist_mercatorum.1
+				}
+			}
+		}
+	}
+}
+
 # triggered by on_country_destroyed
 # root = country, destroyed
 # from = country, destroyer (optional)

@@ -99,6 +99,16 @@ resource_subsidies_commercial_0 = {
 		overlord = -200
 		subject = 0
 	}
+	subject_resources = {
+		category = subject_tax
+		upkeep = { energy = 0 }
+		upkeep = { consumer_goods = 0 }
+	}
+	overlord_resources = {
+		category = subject_tax
+		produces = { energy = 0 }
+		produces = { consumer_goods = 0 }
+	}
 	potential = { agreement_preset = preset_mercatorum }
 }
 
@@ -115,25 +125,27 @@ resource_subsidies_commercial_15 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|energy|PERCENTAGE|0.15|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.15|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	overlord_resources = {
 		category = subject_tax
 		produces = {
-			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.15|SCOPE|this|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		produces = {
-			trigger = { exists = event_target:specialist_mercatorum_for_overlord@this }
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.15|SCOPE|this|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -152,24 +164,27 @@ resource_subsidies_commercial_30 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|energy|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
-	# TODO: I could have en event to fire on the 30th to calculate subject tax/sub and store it in variables on the overlord
 	overlord_resources = {
 		category = subject_tax
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_overlord|RESOURCE|energy|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_overlord|RESOURCE|consumer_goods|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -188,23 +203,27 @@ resource_subsidies_commercial_45 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|energy|PERCENTAGE|0.45|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.45|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	overlord_resources = {
 		category = subject_tax
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.45|SCOPE|this|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.45|SCOPE|this|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -223,23 +242,27 @@ resource_subsidies_commercial_60 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|energy|PERCENTAGE|0.60|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.60|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	overlord_resources = {
 		category = subject_tax
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.60|SCOPE|this|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.60|SCOPE|this|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -258,23 +281,27 @@ resource_subsidies_commercial_75 = {
 	subject_resources = {
 		category = subject_tax
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|energy|PERCENTAGE|0.75|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.75|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	overlord_resources = {
 		category = subject_tax
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_energy }
 			energy = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|energy|PERCENTAGE|0.75|SCOPE|this|
+			multiplier = resource_subsidies_commercial_energy
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_commercial_consumer_goods }
 			consumer_goods = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|consumer_goods|PERCENTAGE|0.75|SCOPE|this|
+			multiplier = resource_subsidies_commercial_consumer_goods
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -290,6 +317,18 @@ resource_subsidies_infrastructure_0 = {
 	ai_acceptance = {
 		overlord = 0
 		subject = -200
+	}
+	subject_resources = {
+		category = overlord_subsidy
+		produces = { minerals = 0 }
+		produces = { food = 0 }
+		produces = { alloys = 0 }
+	}
+	overlord_resources = {
+		category = overlord_subsidy
+		upkeep = { minerals = 0 }
+		upkeep = { food = 0 }
+		upkeep = { alloys = 0 }
 	}
 	potential = { agreement_preset = preset_mercatorum }
 }
@@ -307,31 +346,37 @@ resource_subsidies_infrastructure_15 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|minerals|PERCENTAGE|0.15|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.15|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|alloys|PERCENTAGE|0.15|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.15|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.15|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.15|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -350,31 +395,37 @@ resource_subsidies_infrastructure_30 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|minerals|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|alloys|PERCENTAGE|0.30|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.30|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.30|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.30|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -393,31 +444,37 @@ resource_subsidies_infrastructure_45 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|minerals|PERCENTAGE|0.45|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.45|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|alloys|PERCENTAGE|0.45|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.45|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.45|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.45|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -436,31 +493,37 @@ resource_subsidies_infrastructure_60 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|minerals|PERCENTAGE|0.60|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.60|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|alloys|PERCENTAGE|0.60|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.60|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.60|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.60|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }
@@ -479,31 +542,37 @@ resource_subsidies_infrastructure_75 = {
 	subject_resources = {
 		category = overlord_subsidy
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|minerals|PERCENTAGE|0.75|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|consumer_goods|PERCENTAGE|0.75|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		produces = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy_subject|RESOURCE|alloys|PERCENTAGE|0.75|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	overlord_resources = {
 		category = overlord_subsidy
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_minerals }
 			minerals = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|minerals|PERCENTAGE|0.75|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_minerals
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_food }
 			food = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|food|PERCENTAGE|0.75|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_food
 		}
 		upkeep = {
+			trigger = { is_variable_set = resource_subsidies_infrastructure_alloys }
 			alloys = 1
-			multiplier = value:mercatorum_specialist_monthly_resource_subsidy|RESOURCE|alloys|PERCENTAGE|0.75|SCOPE|this|
+			multiplier = resource_subsidies_infrastructure_alloys
 		}
 	}
 	potential = { agreement_preset = preset_mercatorum }

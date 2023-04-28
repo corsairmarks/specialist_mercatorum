@@ -648,3 +648,52 @@ origin_imperial_fiefdom_mercatorum_specialization_effect = {
 		}
 	}
 }
+
+# calculate the monthly resource tax/subsidy for a specific $RESOURCE$ using the percentage for the corresponding agreement $TERM$
+# and store it in a variable named $TERM$_$RESOURCE$ on both the owner (overlord) and target (subject)
+# this = agreement, preset_mercatorum
+# $RESOURCE$ = the resource 
+# $TERM$ = string, the agreement term (whose term values are named with the same prefix)
+set_mercatorum_specialist_resource_subsidy_amount = {
+	if = {
+		limit = {
+			NOT = {
+				has_term_value = {
+					term = $TERM$
+					value = $TERM$_null
+				}
+			}
+		}
+		set_variable = {
+			which = $TERM$_$RESOURCE$
+			value = value:mercatorum_specialist_resource_subsidy_amount|RESOURCE|$RESOURCE$|TERM|$TERM$|
+		}
+		owner = {
+			set_variable = {
+				which = $TERM$_$RESOURCE$
+				value = prev.$TERM$_$RESOURCE$
+			}
+		}
+		target = {
+			set_variable = {
+				which = $TERM$_$RESOURCE$
+				value = prev.$TERM$_$RESOURCE$
+			}
+		}
+		clear_variable = $TERM$_$RESOURCE$
+	}
+	else = {
+		owner = {
+			if = {
+				limit = { is_variable_set = $TERM$_$RESOURCE$ }
+				clear_variable = $TERM$_$RESOURCE$
+			}
+		}
+		target = {
+			if = {
+				limit = { is_variable_set = $TERM$_$RESOURCE$ }
+				clear_variable = $TERM$_$RESOURCE$
+			}
+		}
+	}
+}
