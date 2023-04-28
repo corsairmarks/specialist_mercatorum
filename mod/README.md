@@ -65,6 +65,10 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Significantly simplify event code for enforcing the limit of one Mercatorum subject
     * Mercatorum HQ buildings (both branch office and holding) give +1 envoys to the building owner (the Mercatorum or Overlord respectively)
     * Mercatora now have a narrower range of Research and Strategic taxes/subsidies
+* 1.1.1 Fix a few bugs with Imperial Fiefdom
+    * Choosing the be a Mercatorum converts you _instantly_ to a MegaCorp (instead of at the end of the conversion period, which is when it applies to regular subjects)
+    * Ensure the the branch office on your Overlord's capital is owned by your empire
+    * Mercatorum National/Corporate HQ buildings can exist for Mercatora which have not finished conversion, which enables Imperial Fiefdoms to start with the intended free branch office building and your overlord with the corresponding holding
 
 ## Source Code
 
