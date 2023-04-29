@@ -79,20 +79,6 @@ country_event = {
 	}
 }
 
-# triggered by on_agreement_change_accepted
-agreement_event = {
-	id = specialist_mercatorum.8
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		has_active_specialization = specialist_mercatorum
-		NOT = { exists = event_target:specialist_mercatorum_for_overlord@owner }
-	}
-	immediate = {
-		target = { save_global_event_target_as = specialist_mercatorum_for_overlord@prev.owner }
-	}
-}
-
 # mercatorum specialist subjects must be megacorps - change it back and refund the unity
 # triggered by on_post_government_changed
 # root = country
@@ -142,9 +128,7 @@ country_event = {
 	option = {
 		name = UNFORTUNATE
 	}
-	after = {
-		clear_variable = government_change_cost
-	}
+	after = { hidden_effect = { clear_variable = government_change_cost } }
 }
 
 # triggered explicitly by specialist_mercatorum.16

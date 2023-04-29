@@ -39,11 +39,3 @@ on_post_government_changed = {
 		specialist_mercatorum.10
 	}
 }
-
-# fired when a change to an existing subject agreement has been accepted
-# this = agreement
-on_agreement_change_accepted = {
-	events = {
-		specialist_mercatorum.8
-	}
-}
