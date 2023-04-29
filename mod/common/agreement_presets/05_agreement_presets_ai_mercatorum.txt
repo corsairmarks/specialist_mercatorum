@@ -492,16 +492,6 @@ preset_mercatorum_mean_03 = {
 	specialist_type = specialist_mercatorum
 	hidden = yes
 	term_data = {
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.45
-			}
-			{
-				key = resource_subsidies_advanced
-				value = 0.45
-			}
-		}
 		discrete_terms = {
 			{
 				key = specialist_type
