@@ -22,26 +22,13 @@ This mod can be safely added to your savegame after the game has started. Becaus
 
 [h3]Recommended Companion Mods[/h3]
 [list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683]Vassals Expanded and Reworked - FunEFork[/url] adds new subject terms (including singler resource subsidy sliders) as well as new non-specialist subjects
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2968616122]Specialist Subject: Mercatorum - Expanded and Reworked[/url] ptaches compatibility between this mod and Vassals Expanded and Reworked
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] adds commercial districts to ecumenopolis planets, to be further boosted by your Mercatorum subject
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] enhances existing trade districts and colony designations - more jobs for more trade
 [/list]
 [h2]Known Issues[/h2]
-Overriding many types of game objects causes the game to log errors noting each override. Expect to see thirteen lines in the error.log file like these:
-[code]
-[00:12:20][game_singleobjdb.h:165]: Obj w/key: action_form_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 4
-[00:12:20][game_singleobjdb.h:165]: Obj w/key: action_break_commercial_pact exists, using: common/diplomatic_actions/specialist_mercatorum_diplomatic_actions.txt line: 199
-[00:12:20][game_singleobjdb.h:165]: Obj w/key: has_specialist_subject_leader_trait exists, using: common/scripted_triggers/10_specialist_mercatorum_scripted_trigger_overrides.txt line: 3
-[00:12:20][game_singleobjdb.h:165]: Obj w/key: refresh_subject_count_loyalty_penalty exists, using: common/scripted_effects/specialist_mercatorum_overlord_scripted_effect_overrides.txt line: 2
-[00:12:20][game_singleobjdb.h:165]: Obj w/key: country_defaulted_effect exists, using: common/scripted_effects/specialist_mercatorum_scripted_effect_overrides.txt line: 6
-[00:12:23][eventmanager.cpp:369]: an event with id [origin.5705] exists! file: events/origin_events_3.txt line: 1651
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_can_be_integrated exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 37
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_can_not_do_diplomacy exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 91
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: subject_cannot_expand exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 138
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_basic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 200
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_advanced exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 259
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_research exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 311
-[00:12:25][game_singleobjdb.h:165]: Obj w/key: resource_subsidies_strategic exists, using: common/agreement_term_values/specialist_mercatorum_agreement_term_value_overrides.txt line: 380
-[/code]
+Overriding many types of game objects causes the game to log errors noting each override. Expect to see thirteen lines in the error.log file, primarily relating to agreement term value and agreement terms.
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2962066593]Change Notes[/url]
 
