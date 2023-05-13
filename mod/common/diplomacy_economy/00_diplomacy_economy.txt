@@ -214,6 +214,57 @@ per_relation = {
 	}
 
 	# Not modified
+	migration_pact = {
+		trigger = {
+			exists = ruler
+			ruler = { has_trait = leader_trait_legendary_scientific_diplomacy }
+			has_migration_access = from
+		}
+		resources = {
+			category = diplomatic_networking
+			produces = {
+				society_research = @scientific_diplomacy_1_amt
+				engineering_research = @scientific_diplomacy_1_amt
+				physics_research = @scientific_diplomacy_1_amt
+			}
+		}
+	}
+
+	# Not modified
+	migration_pact = {
+		trigger = {
+			exists = ruler
+			ruler = { has_trait = leader_trait_legendary_scientific_diplomacy_2 }
+			has_migration_access = from
+		}
+		resources = {
+			category = diplomatic_networking
+			produces = {
+				society_research = @scientific_diplomacy_2_amt
+				engineering_research = @scientific_diplomacy_2_amt
+				physics_research = @scientific_diplomacy_2_amt
+			}
+		}
+	}
+
+	# Not modified
+	migration_pact = {
+		trigger = {
+			exists = ruler
+			ruler = { has_trait = leader_trait_legendary_scientific_diplomacy_3 }
+			has_migration_access = from
+		}
+		resources = {
+			category = diplomatic_networking
+			produces = {
+				society_research = @scientific_diplomacy_3_amt
+				engineering_research = @scientific_diplomacy_3_amt
+				physics_research = @scientific_diplomacy_3_amt
+			}
+		}
+	}
+
+	# Not modified
 	societal_enlightenment = {
 		trigger = { from = { is_under_societal_enlightenment = root } }
 		resources = {
