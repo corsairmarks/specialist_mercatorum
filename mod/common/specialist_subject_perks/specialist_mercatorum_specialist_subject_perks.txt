@@ -120,7 +120,7 @@ mercatorum_2_penalties = {
 mercatorum_2_leaders = {
 	icon = "GFX_specialist_perk_mercatorum_2_leaders"
 	subject_modifier = {
-		governor_skill_levels = 2
+		governor_exp_gain = 0.2
 	}
 	activate_effect = {
 		target = {
