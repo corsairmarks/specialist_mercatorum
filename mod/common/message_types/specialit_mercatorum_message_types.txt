@@ -2,26 +2,26 @@ message_type = {
 	key = "SUBJECT_LEVEL_UP_specialist_mercatorum"
 	icon = "GFX_message_mercatorum_level_up"
 	icon_frame = 1
-
 	sound = "discovery"
 	ping = "mixed_notification_green"
+	category = diplomacy
 }
 
 message_type = {
 	key = "WE_LEVEL_UP_specialist_mercatorum"
 	icon = "GFX_message_mercatorum_level_up"
 	icon_frame = 1
-
 	sound = "discovery"
 	ping = "mixed_notification_green"
+	category = diplomacy
 }
 
 message_type = {
 	key = "MERCATORUM_SUBJECT_BAILOUT"
 	icon = "GFX_message_mercatorum_subject_bailout"
 	icon_frame = 1
-
 	name = "MERCATORUM_SUBJECT_BAILOUT_TITLE"
 	sound = "notification"
 	ping = "ping_notification_green"
+	category = diplomacy
 }
