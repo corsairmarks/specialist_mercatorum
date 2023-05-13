@@ -11,7 +11,7 @@ Also included are features similar to the other specialist subject types: specia
 Beyond the new specialist subject type, there are also three new hyper relay network edicts: Networked Trade Routes (trade value), Networked Customs Patrols (trade protection range), and Networked Customs Checkpoints (trade protection). These are available to any non-gestalt empire with the appropriate technologies.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 
 Adding the Mercatorum specialist subject type required modifying a few built-in game objects in order to support them as a new specialist, and some to support their unique functionality. The most notable overwrites are a few diplomatic actions (Propose Commercial Pact, Break Commercial Pact, Release Subject, Request Independence), some subject agreement term values (Integration Permitted, Limited Diplomacy, Expansion Prohibited, Basic Resource Subsidies, Advanced Resource Subsidies), and the diplomatic economy file (to make Commercial Pacts free between Mercatorum subjects and their overlord and fellow subjects). Also included is a scripted trigger related to specialist leader traits, two scripted effects related to Divided Patronage and economic default, and the Independence war goal.
 

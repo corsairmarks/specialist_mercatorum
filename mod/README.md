@@ -14,7 +14,7 @@ Beyond the new specialist subject type, there are also three new hyper relay net
 
 ## Compatibility
 
-Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 
 Adding the Mercatorum specialist subject type required modifying a few built-in game objects in order to support them as a new specialist, and some to support their unique functionality. The most notable overwrites are a few diplomatic actions (Propose Commercial Pact, Break Commercial Pact, Release Subject, Request Independence), some subject agreement term values (Integration Permitted, Limited Diplomacy, Expansion Prohibited, Basic Resource Subsidies, Advanced Resource Subsidies), and the diplomatic economy file (to make Commercial Pacts free between Mercatorum subjects and their overlord and fellow subjects). Also included is a scripted trigger related to specialist leader traits, two scripted effects related to Divided Patronage and economic default, and the Independence war goal.
 
@@ -71,6 +71,11 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Choosing the be a Mercatorum converts you _instantly_ to a MegaCorp (instead of at the end of the conversion period, which is when it applies to regular subjects)
     * Ensure the the branch office on your Overlord's capital is owned by your empire
     * Mercatorum National/Corporate HQ buildings can exist for Mercatora which have not finished conversion, which enables Imperial Fiefdoms to start with the intended free branch office building and your overlord with the corresponding holding
+* 2.0.0 Update for Stellaris version 3.8 "Gemini"
+    * Integrate underlying game changes
+    * Convert leader traits to use the new icon system
+    * Mercatora gain additional commercial pact efficiency
+    * Fix a bug where resolving a Mercatorum subject's deficit in non-basic resources improperly removed resources from the subject
 
 ## Source Code
 
