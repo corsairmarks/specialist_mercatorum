@@ -399,10 +399,54 @@ bail_out_mercatorum_subject = {
 		# remove the free resources granted by the situation being aborted
 		# (these are intended to be the bonus resources if the country defaults)
 		# see common/situations/02_deficit_situations.txt
-		owner = {
-			add_resource = {
-				$RESOURCE$ = @bailout_basic_base_amount
-				mult = value:sm_bailout_scaling_factor_negative
+		if = {
+			limit = {
+				is_situation_type = situation_energy_deficit
+				is_situation_type = situation_mineral_deficit
+				AND = {
+					is_situation_type = situation_food_deficit
+					owner = { country_uses_food = yes }
+				}
+			}
+			owner = {
+				add_resource = {
+					$RESOURCE$ = @bailout_basic_base_amount
+					mult = value:sm_bailout_scaling_factor_negative
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_situation_type = situation_consumer_goods_deficit
+				owner = { country_uses_consumer_goods = yes }
+			}
+			owner = {
+				add_resource = {
+					consumer_goods = @bailout_consumer_goods_base_amount
+					mult = value:sm_bailout_scaling_factor_negative
+				}
+			}
+		}
+		else_if = {
+			limit = { is_situation_type = situation_alloys_deficit }
+			owner = {
+				add_resource = {
+					alloys = @bailout_alloys_base_amount
+					mult = value:sm_bailout_scaling_factor_negative
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_situation_type = situation_rare_crystals_deficit
+				is_situation_type = situation_volatile_motes_deficit
+				is_situation_type = situation_exotic_gases_deficit
+			}
+			owner = {
+				add_resource = {
+					$RESOURCE$ = @bailout_basic_base_amount
+					mult = value:sm_bailout_scaling_factor_negative
+				}
 			}
 		}
 	}
