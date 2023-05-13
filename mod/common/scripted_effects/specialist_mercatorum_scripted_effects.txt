@@ -36,24 +36,27 @@ set_civic_flag_if_present = {
 }
 
 # this = country
-# $FLAG$ = the flag that controls whether the specified civic is added
+# $FLAG$ = the flag that controls whether the specified civic is added (removed if present)
 # $CIVIC$ = the civic to add if the given country flag is present
 # variable num_civics_to_add = the civic will only be added if this variable is > 0; decrememnted if the civic is added
 add_civic_if_flag_present = {
 	optimize_memory
 	if = {
-		limit = {
-			check_variable = {
-				which = num_civics_to_add
-				value > 0
+		limit = { has_country_flag = $FLAG$ }
+		if = {
+			limit = {
+				check_variable = {
+					which = num_civics_to_add
+					value > 0
+				}
 			}
-			has_country_flag = $FLAG$
+			force_add_civic = $CIVIC$
+			subtract_variable = {
+				which = num_civics_to_add
+				value = 1
+			}
 		}
-		force_add_civic = $CIVIC$
-		subtract_variable = {
-			which = num_civics_to_add
-			value = 1
-		}
+		remove_country_flag = $FLAG$
 	}
 }
 
@@ -88,16 +91,13 @@ try_convert_to_mercatorum_megacorp = {
 				is_criminal_syndicate = yes
 			}
 		}
-		set_variable = {
-			which = num_civics_to_add
-			value = 1 # not 2, because the subject is always assigned civic_free_traders
+		export_trigger_value_to_variable = {
+			trigger = has_total_civic_points
+			variable = num_civics_to_add
 		}
-		if = {
-			limit = { has_technology = tech_galactic_administration }
-			change_variable = {
-				which = num_civics_to_add
-				value = 1
-			}
+		change_variable = {
+			which = num_civics_to_add
+			value = -1 # because the subject is always assigned civic_free_traders
 		}
 		# flag for civics that have a (near-)direct corporate equivalent
 		set_civic_flag_if_present = { CIVIC = civic_crafters }
@@ -119,6 +119,9 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_exalted_priesthood }
 		set_civic_flag_if_present = { CIVIC = civic_ascensionists }
 		set_civic_flag_if_present = { CIVIC = civic_feudal_realm }
+		set_civic_flag_if_present = { CIVIC = civic_crusader_spirit }
+		set_civic_flag_if_present = { CIVIC = civic_heroic_tales }
+		set_civic_flag_if_present = { CIVIC = civic_memory_vault_corporate }
 		set_civic_flag_if_present = { CIVIC = civic_criminal_heritage }
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
 		if = {
@@ -266,6 +269,18 @@ try_convert_to_mercatorum_megacorp = {
 			FLAG = civic_feudal_realm
 			CIVIC = civic_franchising
 		}
+		add_civic_if_flag_present = {
+			FLAG = civic_crusader_spirit
+			CIVIC = civic_crusader_spirit_corporate
+		}
+		add_civic_if_flag_present = {
+			FLAG = civic_heroic_tales
+			CIVIC = civic_task_delegation_corporate
+		}
+		add_civic_if_flag_present = {
+			FLAG = civic_memory_vault
+			CIVIC = civic_memory_vault_corporate
+		}
 		if = {
 			limit = { has_country_flag = civic_criminal_heritage }
 			every_galaxy_planet = {
@@ -278,26 +293,6 @@ try_convert_to_mercatorum_megacorp = {
 			}
 			remove_country_flag = civic_criminal_heritage
 		}
-		# cleanup all possible flags from above
-		remove_country_flag = civic_crafters
-		remove_country_flag = civic_anglers
-		remove_country_flag = civic_pleasure_seekers
-		remove_country_flag = civic_slaver_guilds
-		remove_country_flag = civic_death_cult
-		remove_country_flag = civic_relentless_industrialists
-		remove_country_flag = civic_catalytic_processing
-		remove_country_flag = civic_scavengers
-		remove_country_flag = civic_toxic_baths
-		remove_country_flag = civic_reanimated_armies
-		remove_country_flag = civic_cutthroat_politics
-		remove_country_flag = civic_diplomatic_corps
-		remove_country_flag = civic_idealistic_foundation
-		remove_country_flag = civic_beacon_of_liberty
-		remove_country_flag = civic_citizen_service
-		remove_country_flag = civic_warrior_culture
-		remove_country_flag = civic_exalted_priesthood
-		remove_country_flag = civic_ascensionists
-		remove_country_flag = civic_feudal_realm
 		# backup civics in case points remain unspent - no more than 2 can ever be added, so a minimum of two fallbacks are needed
 		# (repeats are ok because they would have transferred above if the non-corporate "equivalent" was present)
 		if = {
@@ -306,6 +301,7 @@ try_convert_to_mercatorum_megacorp = {
 		}
 		add_civic_if_not_present = { CIVIC = civic_public_relations_specialists }
 		add_civic_if_not_present = { CIVIC = civic_trading_posts }
+		add_civic_if_not_present = { CIVIC = civic_media_conglomerate }
 		clear_variable = num_civics_to_add
 	}
 }
