@@ -2,9 +2,9 @@
 add_mercatorum_leader_trait = {
 	optimize_memory
 	random_list = {
-		1 = { add_trait = leader_trait_mercatorum_trader }
-		1 = { add_trait = leader_trait_mercatorum_economist }
-		1 = { add_trait = leader_trait_mercatorum_industrialist }
+		1 = { add_trait_no_notify = leader_trait_mercatorum_trader }
+		1 = { add_trait_no_notify = leader_trait_mercatorum_economist }
+		1 = { add_trait_no_notify = leader_trait_mercatorum_industrialist }
 	}
 }
 
@@ -581,7 +581,7 @@ origin_imperial_fiefdom_mercatorum_specialization_effect = {
 		try_convert_to_mercatorum_megacorp = yes # convert to megacorp early
 		every_owned_leader = {
 			limit = { leader_class = governor }
-			add_skill = 2
+			add_skill_without_trait_selection = 2
 			add_mercatorum_leader_trait = yes
 		}
 		capital_scope = {

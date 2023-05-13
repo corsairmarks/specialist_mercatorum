@@ -1,39 +1,54 @@
 leader_trait_mercatorum_trader = { # leader_trait_financial
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_mercatorum_trader.dds"
+	inline_script = {
+		script = trait/icon_specialist
+		CLASS = governor
+		ICON = "GFX_leader_trait_financial"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		starbase_trade_collection_range_add = 1
 		starbase_trade_protection_range_add = 1
 		starbase_trade_protection_add = 5 # local protection unfortunately does not get applied from a leader
 	}
-	leader_trait = { governor }
 	leader_class = { governor }
 	initial = no
 	randomized = no
 }
 
-leader_trait_mercatorum_economist = { # leader_trait_nuumismatic_priest
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_mercatorum_economist.dds"
+leader_trait_mercatorum_economist = {
+	inline_script = {
+		script = trait/icon_specialist
+		CLASS = governor
+		ICON = "GFX_leader_trait_nuumismatic_priest"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		pop_job_trade_mult = 0.25
 		pop_lifestyle_trade_mult = 0.25
 	}
-	leader_trait = { governor }
 	leader_class = { governor }
 	initial = no
 	randomized = no
 }
 
-leader_trait_mercatorum_industrialist = { # trait_natural_machinist
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_mercatorum_industrialist.dds"
+leader_trait_mercatorum_industrialist = {
+	inline_script = {
+		script = trait/icon_specialist
+		CLASS = governor
+		ICON = "GFX_leader_trait_industrial_focus"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		planet_jobs_energy_produces_mult = 0.2
 		planet_jobs_consumer_goods_produces_mult = 0.2
 		trade_value_mult = 0.05
 	}
-	leader_trait = { governor }
 	leader_class = { governor }
 	initial = no
 	randomized = no
