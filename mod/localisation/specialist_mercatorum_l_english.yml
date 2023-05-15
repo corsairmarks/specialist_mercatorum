@@ -146,7 +146,7 @@
  mercatorum_3_penalties: "$specialist_mercatorum$ Penalties III"
  mercatorum_3_econ_tech: "$specialist_mercatorum$ Economic Tech III"
  mercatorum_3_econ_tech_desc: "§EAdd to Researchable Technologies:§!\n$t$£society£ $tech_galactic_markets$\n$t$£engineering£ $tech_strike_craft_3$"
- mercatorum_3_market_fees: "$BRANCH_OFFICE$ Special Trade Status"
+ mercatorum_3_market_fees: "$specialist_mercatorum$ Special Trade Status"
  mercatorum_3_market_fees_desc: "Well-entrenched $specialist_mercatorum$ subjects leverage their economic clout to reduce administrative fees in Galactic Market for themselves and their overlord."
  leader_trait_mercatorum_trader: "$specialist_mercatorum$ Interstellar Trader"
  leader_trait_mercatorum_trader_desc: "No matter how or where trade goods are produced, they only have value when safely shipped. Interstellar Traders organize our merchant stellar into mutually-defensive convoys and spur them to venture further."

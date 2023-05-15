@@ -212,6 +212,6 @@ mercatorum_3_market_fees = {
 		country_trade_fee = -0.05
 	}
 	desc = {
-		description = mercatorum_1_branch_office_bonuses_desc
+		description = mercatorum_3_market_fees_desc
 	}
 }
