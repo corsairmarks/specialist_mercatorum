@@ -81,7 +81,7 @@ mercatorum_1_branch_office_bonuses = {
 }
 
 mercatorum_1_econ_tech = {
-	icon = "GFX_specialist_perk_mercatorum_1_mercatorum_econ_tech"
+	icon = "GFX_specialist_perk_mercatorum_1_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = space_trading }
@@ -152,7 +152,7 @@ mercatorum_2_traits = {
 }
 
 mercatorum_2_econ_tech = {
-	icon = "GFX_specialist_perk_mercatorum_2_mercatorum_econ_tech"
+	icon = "GFX_specialist_perk_mercatorum_2_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = interstellar_economics }
@@ -175,10 +175,6 @@ mercatorum_3_modifier = {
 		starbase_trade_collection_range_add = 2
 		starbase_trade_protection_range_add = 2
 		max_trade_piracy_add = -5
-		country_trade_fee = -0.05
-	}
-	overlord_modifier = {
-		country_trade_fee = -0.05
 	}
 }
 
@@ -195,7 +191,7 @@ mercatorum_3_penalties = {
 }
 
 mercatorum_3_econ_tech = {
-	icon = "GFX_specialist_perk_mercatorum_3_mercatorum_econ_tech"
+	icon = "GFX_specialist_perk_mercatorum_3_econ_tech"
 	activate_effect = {
 		target = {
 			append_technology = { TECH = galactic_markets }
@@ -204,5 +200,18 @@ mercatorum_3_econ_tech = {
 	}
 	desc = {
 		description = mercatorum_3_econ_tech_desc
+	}
+}
+
+mercatorum_3_market_fees = {
+	icon = "GFX_specialist_perk_mercatorum_3_market_fees"
+	subject_modifier = {
+		country_trade_fee = -0.05
+	}
+	overlord_modifier = {
+		country_trade_fee = -0.05
+	}
+	desc = {
+		description = mercatorum_1_branch_office_bonuses_desc
 	}
 }

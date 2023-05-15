@@ -62,6 +62,7 @@ specialist_mercatorum = {
 				mercatorum_3_modifier
 				mercatorum_3_penalties
 				mercatorum_3_econ_tech
+				mercatorum_3_market_fees
 			}
 		}
 	}

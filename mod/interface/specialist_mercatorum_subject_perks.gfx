@@ -20,18 +20,18 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_specialist_perk_mercatorum_1_mercatorum_econ_tech"
-		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_1_mercatorum_econ_tech.dds"
+		name = "GFX_specialist_perk_mercatorum_1_econ_tech"
+		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_1_econ_tech.dds"
 	}
 
 	spriteType = {
-		name = "GFX_specialist_perk_mercatorum_2_mercatorum_econ_tech"
-		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_2_mercatorum_econ_tech.dds"
+		name = "GFX_specialist_perk_mercatorum_2_econ_tech"
+		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_2_econ_tech.dds"
 	}
 
 	spriteType = {
-		name = "GFX_specialist_perk_mercatorum_3_mercatorum_econ_tech"
-		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_3_mercatorum_econ_tech.dds"
+		name = "GFX_specialist_perk_mercatorum_3_econ_tech"
+		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_3_econ_tech.dds"
 	}
 
 	spriteType = {
@@ -42,5 +42,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_specialist_perk_mercatorum_2_leaders"
 		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_2_leaders.dds"
+	}
+
+	spriteType = {
+		name = "GFX_specialist_perk_mercatorum_3_market_fees"
+		textureFile = "gfx/interface/subjugation/specialist_perks/mercatorum_3_market_fees.dds"
 	}
 }
