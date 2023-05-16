@@ -125,65 +125,135 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_criminal_heritage }
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
 		if = {
-			limit = { has_ethic = ethic_fanatic_authoritarian }
-			if = {
-				limit = { any_pop_faction = { NOT = { is_pop_faction_type = totalitarian } } }
-				ordered_pop_faction = {
-					limit = { NOT = { is_pop_faction_type = totalitarian } }
-					order_by = trigger:num_pops
-					position = 0
-					switch = {
-						trigger = is_pop_faction_type
-						prosperity = { prev = { shift_ethic = ethic_pacifist } }
-						imperialist = { prev = { shift_ethic = ethic_militarist } }
-						isolationist = { prev = { shift_ethic = ethic_xenophobe } }
-						supremacist = { prev = { shift_ethic = ethic_xenophobe } }
-						technologist = { prev = { shift_ethic = ethic_materialist } }
-						traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
-						xenoist = { prev = { shift_ethic = ethic_xenophile } }
-						default = { prev = { shift_ethic = ethic_xenophile } }
-					}
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
 				}
 			}
-			else = {
-				shift_ethic = ethic_xenophile
+			if = {
+				limit = { has_ethic = ethic_fanatic_authoritarian }
+				country_remove_ethic = ethic_fanatic_authoritarian
+				country_add_ethic = ethic_authoritarian
 			}
-		}
-		else_if = {
-			limit = { has_ethic = ethic_fanatic_egalitarian }
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_egalitarian }
+				country_remove_ethic = ethic_fanatic_egalitarian
+				country_add_ethic = ethic_egalitarian
+			}
 			if = {
 				limit = {
 					any_pop_faction = {
 						NOR = {
-							is_pop_faction_type = progressive
-							is_pop_faction_type = manifesti
+							has_ethic = ethic_authoritarian
+							has_ethic = ethic_egalitarian
 						}
 					}
 				}
 				ordered_pop_faction = {
 					limit = {
 						NOR = {
-							is_pop_faction_type = progressive
-							is_pop_faction_type = manifesti
+							has_ethic = ethic_authoritarian
+							has_ethic = ethic_egalitarian
 						}
 					}
-					order_by = trigger:num_pops
+					order_by = trigger:support
 					position = 0
 					switch = {
-						trigger = is_pop_faction_type
-						prosperity = { prev = { shift_ethic = ethic_pacifist } }
-						imperialist = { prev = { shift_ethic = ethic_militarist } }
-						isolationist = { prev = { shift_ethic = ethic_xenophobe } }
-						supremacist = { prev = { shift_ethic = ethic_xenophobe } }
-						technologist = { prev = { shift_ethic = ethic_materialist } }
-						traditionalist = { prev = { shift_ethic = ethic_spiritualist } }
-						xenoist = { prev = { shift_ethic = ethic_xenophile } }
-						default = { prev = { shift_ethic = ethic_xenophile } }
+						trigger = has_ethic
+						ethic_pacifist = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = pacifist
+									OPPOSING_ETHIC = militarist
+								}
+							}
+						}
+						ethic_militarist = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = militarist
+									OPPOSING_ETHIC = pacifist
+								}
+							}
+						}
+						ethic_xenophobe = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = xenophobe
+									OPPOSING_ETHIC = xenophile
+								}
+							}
+						}
+						ethic_xenophile = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = xenophile
+									OPPOSING_ETHIC = xenophobe
+								}
+							}
+						}
+						ethic_materialist = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = materialist
+									OPPOSING_ETHIC = spiritualist
+								}
+							}
+						}
+						ethic_spiritualist = {
+							prev = {
+								try_country_add_ethic = {
+									ETHIC = spiritualist
+									OPPOSING_ETHIC = materialist
+								}
+							}
+						}
+						default = {
+							log = "\\[This.GetRealName] has non-authoritarian/non-egalitarian factions, but none are using the built-in ethics; falling back an arbitrary order for a replacement ethic"
+						}
 					}
 				}
 			}
 			else = {
-				shift_ethic = ethic_xenophile
+				log = "could not a find a pop_faction using one of the built-in non-authoritarian/non-egalitarian ethics for \\[This.GetRealName]; falling back an arbitrary order for a replacement ethic"
+			}
+			if = {
+				limit = { has_country_flag = try_country_add_ethic_success }
+				remove_country_flag = try_country_add_ethic_success
+			}
+			else = {
+				try_country_add_ethic = {
+					ETHIC = xenophile
+					OPPOSING_ETHIC = xenophobe
+				}
+				try_country_add_ethic = {
+					ETHIC = materialist
+					OPPOSING_ETHIC = spiritualist
+				}
+				try_country_add_ethic = {
+					ETHIC = spiritualist
+					OPPOSING_ETHIC = materialist
+				}
+				try_country_add_ethic = {
+					ETHIC = militarist
+					OPPOSING_ETHIC = pacifist
+				}
+				try_country_add_ethic = {
+					ETHIC = xenophobe
+					OPPOSING_ETHIC = xenophile
+				}
+				try_country_add_ethic = {
+					ETHIC = pacifist
+					OPPOSING_ETHIC = militarist
+				}
+				if = {
+					limit = { has_country_flag = try_country_add_ethic_success }
+					remove_country_flag = try_country_add_ethic_success
+				}
+				else = {
+					log_error = "\\[This.GetRealName] could not add any of the built-in ethics as a replacement for fanatic authoritarianism/fanatic egalitarianism"
+				}
 			}
 		}
 		change_government = {
@@ -606,8 +676,9 @@ sm_swap_corporate_holdings = {
 	}
 }
 
-# this = country, player with origin_imperial_vassal 
+# this = country, player with origin_imperial_vassal
 origin_imperial_fiefdom_mercatorum_specialization_effect = {
+	optimize_memory
 	custom_tooltip = origin.5705.g.specialist_mercatorum.tooltip
 	hidden_effect = {
 		random_agreement = {
@@ -647,9 +718,10 @@ origin_imperial_fiefdom_mercatorum_specialization_effect = {
 # calculate the monthly resource tax/subsidy for a specific $RESOURCE$ using the percentage for the corresponding agreement $TERM$
 # and store it in a variable named $TERM$_$RESOURCE$ on both the owner (overlord) and target (subject)
 # this = agreement, preset_mercatorum
-# $RESOURCE$ = the resource 
+# $RESOURCE$ = the resource
 # $TERM$ = string, the agreement term (whose term values are named with the same prefix)
 set_mercatorum_specialist_resource_subsidy_amount = {
+	optimize_memory
 	if = {
 		limit = {
 			NOT = {
@@ -689,6 +761,30 @@ set_mercatorum_specialist_resource_subsidy_amount = {
 				limit = { is_variable_set = $TERM$_$RESOURCE$ }
 				clear_variable = $TERM$_$RESOURCE$
 			}
+		}
+	}
+}
+
+# this = country
+# $ETHIC$ = ethic (no ethic_ prefix)
+# $OPPOSING_ETHIC$ = ethic (no ethic_ prefix)
+try_country_add_ethic = {
+	optimize_memory
+	if = {
+		limit = { NOT = { has_country_flag = try_country_add_ethic_success } }
+		if = {
+			limit = { has_ethic = ethic_$ETHIC$ }
+			country_remove_ethic = ethic_$ETHIC$
+			country_add_ethic = ethic_fanatic_$ETHIC$
+			set_country_flag = try_country_add_ethic_success
+		}
+		else_if = {
+			limit = {
+				is_$OPPOSING_ETHIC$ = no
+				NOT = { has_ethic = ethic_$ETHIC$ }
+			}
+			country_add_ethic = ethic_$ETHIC$
+			set_country_flag = try_country_add_ethic_success
 		}
 	}
 }
