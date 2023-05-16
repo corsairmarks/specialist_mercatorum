@@ -76,6 +76,8 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Convert leader traits to use the new icon system
     * Mercatora gain additional commercial pact efficiency
     * Fix a bug where resolving a Mercatorum subject's deficit in non-basic resources improperly removed resources from the subject
+* 2.0.1 Fix bug where freshly-converted Mercatorum subjects did not properly switch ethics away from fanatic authoritarian/fanatic egalitarian
+    * Special thanks to [Kepos](https://steamcommunity.com/profiles/76561197978088722) and [KahirDragoon](https://steamcommunity.com/profiles/76561198115235485) for the bug reports
 
 ## Source Code
 
