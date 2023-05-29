@@ -20,6 +20,15 @@ Adding the Mercatorum specialist subject type required modifying a few built-in 
 
 What this means for you, the player, is that this mod may conflict with other mods that make changes to diplomatic actions, subject agreement term values, of the diplomatic economy file. This mod has built-in compatibility for [Civic: Organic Zealots](https://steamcommunity.com/sharedfiles/filedetails/?id=2920668465) - both mods affect overlapping diplomatic actions and the Independence war goal.
 
+This mod has built in compatibility with these Ethics and Civics mods, for purposes of converting an empire to a Mercatorum only:
+
+* [Ethics & Civics: Bug Branch](https://steamcommunity.com/sharedfiles/filedetails/?id=2517213262)
+* [Ethics and Civics Classic](https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147)
+* [Ethics and Civics Alternative - Redux](https://steamcommunity.com/sharedfiles/filedetails/?id=2387799348)
+* [Ethics and Civics Alternative - FunEFork](https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581)
+
+Other mods that alter the requirements for the built-in Corporate authority (`auth_corporate`) may not be compatible with this mod. Countries converted to a Mercatorum will not begin with any Corporate civics added by the above mods (unless they were already a MegaCorp) but may reform into them.
+
 ### When to Install
 
 This mod can be safely added to your savegame after the game has started. Because it adds gameplay objects (most notably things related to the Mercatorum subject specialization), it should not be removed during a game.
@@ -78,6 +87,12 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Fix a bug where resolving a Mercatorum subject's deficit in non-basic resources improperly removed resources from the subject
 * 2.0.1 Fix bug where freshly-converted Mercatorum subjects did not properly switch ethics away from fanatic authoritarian/fanatic egalitarian
     * Special thanks to [Kepos](https://steamcommunity.com/profiles/76561197978088722) and [KahirDragoon](https://steamcommunity.com/profiles/76561198115235485) for the bug reports
+* 2.1.0 Add built-in support for several flavors of Ethics & Civics (Bug Branch, Classic, Redux, FunEFork)
+    * Countries on certain steps of Origin: Under One Rule may not be converted to a Mercatorum (the Legendary Leader has too much political influence, plus it's not allowed by the Corporate authority in the base game)
+    * Bug Branch does not require MegaCorps to be Competitive, so no additional ethics changes are made
+    * Swap Socialist countries to the corresponding Capitalist ethic when converted to a Mercatorum
+    * Countries that are not Capitalists shift one step towards Capitalism when converted to a Mercatorum
+    * Swap Xenophobic countries to the corresponding Xenophilic ethic when converted to a Mercatorum (FunEFork only)
 
 ## Source Code
 

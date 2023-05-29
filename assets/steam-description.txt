@@ -16,6 +16,13 @@ Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 Adding the Mercatorum specialist subject type required modifying a few built-in game objects in order to support them as a new specialist, and some to support their unique functionality. The most notable overwrites are a few diplomatic actions (Propose Commercial Pact, Break Commercial Pact, Release Subject, Request Independence), some subject agreement term values (Integration Permitted, Limited Diplomacy, Expansion Prohibited, Basic Resource Subsidies, Advanced Resource Subsidies), and the diplomatic economy file (to make Commercial Pacts free between Mercatorum subjects and their overlord and fellow subjects). Also included is a scripted trigger related to specialist leader traits, two scripted effects related to Divided Patronage and economic default, and the Independence war goal.
 
 What this means for you, the player, is that this mod may conflict with other mods that make changes to diplomatic actions, subject agreement term values, of the diplomatic economy file. This mod has built-in compatibility for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2920668465]Civic: Organic Zealots[/url] - both mods affect overlapping diplomatic actions and the Independence war goal.
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2387799348]Ethics and Civics Alternative - Redux[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]Ethics and Civics Alternative - FunEFork[/url]
+[/list]
+Other mods that alter the requirements for the built-in Corporate authority (`auth_corporate`) may not be compatible with this mod. Countries converted to a Mercatorum will not begin with any Corporate civics added by the above mods (unless they were already a MegaCorp) but may reform into them.
 
 [h3]When to Install[/h3]
 This mod can be safely added to your savegame after the game has started. Because it adds gameplay objects (most notably things related to the Mercatorum subject specialization), it should not be removed during a game.
