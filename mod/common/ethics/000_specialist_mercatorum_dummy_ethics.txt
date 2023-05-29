@@ -3,8 +3,8 @@
 ethic_fanatic_capitalism = {
 	playable = { always = no }
 	cost = 2
-	category = "soc"
-	category_value = 4
+	category = "hive"
+	category_value = 13
 	category_opposite = yes
 	use_for_pops = no
 	regular_variant = ethic_capitalism
@@ -16,8 +16,8 @@ ethic_fanatic_capitalism = {
 ethic_capitalism = {
 	playable = { always = no }
 	cost = 1
-	category = "soc"
-	category_value = 3
+	category = "hive"
+	category_value = 14
 	category_opposite = yes
 	use_for_pops = no
 	fanatic_variant = ethic_fanatic_capitalism
@@ -29,8 +29,8 @@ ethic_capitalism = {
 ethic_fanatic_socialism = {
 	playable = { always = no }
 	cost = 2
-	category = "soc"
-	category_value = 0
+	category = "hive"
+	category_value = 15
 	category_opposite = yes
 	use_for_pops = no
 	regular_variant = ethic_socialism
@@ -42,8 +42,8 @@ ethic_fanatic_socialism = {
 ethic_socialism = {
 	playable = { always = no }
 	cost = 1
-	category = "soc"
-	category_value = 1
+	category = "hive"
+	category_value = 16
 	category_opposite = yes
 	use_for_pops = no
 	fanatic_variant = ethic_fanatic_socialism
@@ -55,8 +55,8 @@ ethic_socialism = {
 ethic_focused = {
 	playable = { always = no }
 	cost = 3
-	category = "foc"
-	category_value = 0
+	category = "hive"
+	category_value = 17
 	use_for_pops = no
 	random_weight = { base = 0 }
 }
