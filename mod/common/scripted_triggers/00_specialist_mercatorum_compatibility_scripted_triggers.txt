@@ -7,11 +7,46 @@ has_civic_organic_zealots_active = {
 	always = no
 }
 
+# supports features from Ethics and Civics Classic https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147
+# this = any
+has_ethics_and_civics_classic_active = {
+	optimize_memory
+	# E&C Classic does not use a trigger but sets this unique flag
+	has_global_flag = ethic_civic_classic_active
+}
+
+# supports features from Ethics and Civics Alternative - Redux https://steamcommunity.com/sharedfiles/filedetails/?id=2387799348
+has_ethics_and_civics_redux_active = {
+	optimize_memory
+	# E&C Redux does not use a trigger but sets this unique flag
+	has_global_flag = cultural_overhaul_redux_active
+}
+
+# supports features from Ethics and Civics Alternative - FunEFork https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581
+has_ecaf_overhaul = {
+	optimize_memory
+	always = no
+}
+
 ### Civic: Organic Zealots ###
 
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_homicidal_non_gestalt = {
+	optimize_memory
+	always = no
+}
+
+### Ethics and Civics Classic/Ethics and Civics Alternative - Redux/Ethics and Civics Alternative - FunEFork ###
+
+# this = country
+is_capitalism = {
+	optimize_memory
+	always = no
+}
+
+# this = country
+is_socialism = {
 	optimize_memory
 	always = no
 }

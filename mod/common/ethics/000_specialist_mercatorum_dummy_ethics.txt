@@ -1,0 +1,62 @@
+# Irony this is a placeholder file please ignore it
+
+ethic_fanatic_capitalism = {
+	playable = no
+	cost = 2
+	# category = "soc"
+	# category_value = 4
+	category_opposite = yes
+	use_for_pops = no
+	regular_variant = ethic_capitalism
+	tags = { }
+	country_modifier = { }
+	random_weight = { base = 0 }
+}
+
+ethic_capitalism = {
+	playable = no
+	cost = 1
+	# category = "soc"
+	# category_value = 3
+	category_opposite = yes
+	use_for_pops = no
+	fanatic_variant = ethic_fanatic_capitalism
+	tags = { }
+	country_modifier = { }
+	random_weight = { base = 0 }
+}
+
+ethic_fanatic_socialism = {
+	playable = no
+	cost = 2
+	# category = "soc"
+	# category_value = 0
+	category_opposite = yes
+	use_for_pops = no
+	regular_variant = ethic_socialism
+	tags = { }
+	country_modifier = { }
+	random_weight = { base = 0 }
+}
+
+ethic_socialism = {
+	playable = no
+	cost = 1
+	# category = "soc"
+	# category_value = 1
+	category_opposite = yes
+	use_for_pops = no
+	fanatic_variant = ethic_fanatic_socialism
+	tags = { }
+	country_modifier = { }
+	random_weight = { base = 0 }
+}
+
+ethic_focused = {
+	playable = no
+	cost = 3
+	# category = "foc"
+	# category_value = 0
+	use_for_pops = no
+	random_weight = { base = 0 }
+}

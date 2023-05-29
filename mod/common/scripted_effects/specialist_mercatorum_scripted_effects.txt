@@ -124,6 +124,60 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_memory_vault_corporate }
 		set_civic_flag_if_present = { CIVIC = civic_criminal_heritage }
 		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
+
+		if = {
+			limit = {
+				OR = {
+					has_ethics_and_civics_classic_active = yes
+					has_ethics_and_civics_redux_active = yes
+					has_ecaf_overhaul = yes
+				}
+			}
+			# swap socialism for the opposite capitalism
+			if = {
+				limit = { is_socialism = yes }
+				if = {
+					limit = { has_ethic = ethic_fanatic_socialism }
+					country_remove_ethic = ethic_fanatic_socialism
+					country_add_ethic = ethic_fanatic_capitalism
+				}
+				else_if = {
+					limit = { has_ethic = ethic_socialism }
+					country_remove_ethic = ethic_socialism
+					country_add_ethic = ethic_capitalism
+				}
+			}
+			# not capitalism, so need to shift to it
+			else_if = {
+				limit = {
+					OR = {
+						is_capitalism = no
+						AND = {
+							has_ethics_and_civics_redux_active = yes
+							NOT = { has_ethic = ethic_focused }
+						}
+					}
+				}
+				shift_ethic = ethic_capitalism
+			}
+			# swap xenophobia for the opposite xenophilia
+			if = {
+				limit = {
+					has_ecaf_overhaul = yes
+					is_xenophobe = yes
+				}
+				if = {
+					limit = { has_ethic = ethic_fanatic_xenophobe }
+					country_remove_ethic = ethic_fanatic_xenophobe
+					country_add_ethic = ethic_fanatic_xenophile
+				}
+				else_if = {
+					limit = { has_ethic = ethic_xenophobe }
+					country_remove_ethic = ethic_xenophobe
+					country_add_ethic = ethic_xenophile
+				}
+			}
+		}
 		if = {
 			limit = {
 				OR = {
