@@ -106,6 +106,13 @@ preset_mercatorum = {
 			has_civic = civic_inwards_perfection
 			from = { has_civic = civic_inwards_perfection }
 		}
+		custom_tooltip = {
+			fail_text = origin_legendary_leader_no_gov_change
+			NOR = {
+				has_origin = origin_legendary_leader_dictatorial
+				has_origin = origin_legendary_leader_imperial
+			}
+		}
 		OR = {
 			AND = {
 				is_subject = yes
