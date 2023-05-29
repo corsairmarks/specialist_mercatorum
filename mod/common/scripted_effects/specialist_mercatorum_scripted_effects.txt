@@ -123,8 +123,8 @@ try_convert_to_mercatorum_megacorp = {
 		set_civic_flag_if_present = { CIVIC = civic_heroic_tales }
 		set_civic_flag_if_present = { CIVIC = civic_memory_vault_corporate }
 		set_civic_flag_if_present = { CIVIC = civic_criminal_heritage }
-		# shift ethics as required for a megacorp - not fanatic authoritarian or fanatic egalitarian
-
+		# shift ethics as required for a megacorp
+		# special handling for Ethics and Civics variants
 		if = {
 			limit = {
 				OR = {
@@ -178,6 +178,7 @@ try_convert_to_mercatorum_megacorp = {
 				}
 			}
 		}
+		# not fanatic authoritarian or fanatic egalitarian
 		if = {
 			limit = {
 				OR = {
