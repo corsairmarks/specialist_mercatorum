@@ -526,11 +526,13 @@ bail_out_mercatorum_subject = {
 		# see common/situations/02_deficit_situations.txt
 		if = {
 			limit = {
-				is_situation_type = situation_energy_deficit
-				is_situation_type = situation_mineral_deficit
-				AND = {
-					is_situation_type = situation_food_deficit
-					owner = { country_uses_food = yes }
+				OR = {
+					is_situation_type = situation_energy_deficit
+					is_situation_type = situation_mineral_deficit
+					AND = {
+						is_situation_type = situation_food_deficit
+						owner = { country_uses_food = yes }
+					}
 				}
 			}
 			owner = {
@@ -563,9 +565,11 @@ bail_out_mercatorum_subject = {
 		}
 		else_if = {
 			limit = {
-				is_situation_type = situation_rare_crystals_deficit
-				is_situation_type = situation_volatile_motes_deficit
-				is_situation_type = situation_exotic_gases_deficit
+				OR = {
+					is_situation_type = situation_rare_crystals_deficit
+					is_situation_type = situation_volatile_motes_deficit
+					is_situation_type = situation_exotic_gases_deficit
+				}
 			}
 			owner = {
 				add_resource = {
