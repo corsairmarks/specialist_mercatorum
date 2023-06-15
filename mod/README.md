@@ -93,6 +93,7 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Swap Socialist countries to the corresponding Capitalist ethic when converted to a Mercatorum
     * Countries that are not Capitalists shift one step towards Capitalism when converted to a Mercatorum
     * Swap Xenophobic countries to the corresponding Xenophilic ethic when converted to a Mercatorum (FunEFork only)
+* 2.1.1 Fix a subtle bug when resolving a Mercatorum subject's deficit situations
 
 ## Source Code
 
