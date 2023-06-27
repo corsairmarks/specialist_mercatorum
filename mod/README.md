@@ -35,8 +35,8 @@ This mod can be safely added to your savegame after the game has started. Becaus
 
 ### Recommended Companion Mods
 
-* [Vassals Expanded and Reworked - FunEFork](https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683) adds new subject terms (including singler resource subsidy sliders) as well as new non-specialist subjects
-* [Specialist Subject: Mercatorum - Expanded and Reworked](https://steamcommunity.com/sharedfiles/filedetails/?id=2968616122) ptaches compatibility between this mod and Vassals Expanded and Reworked
+* [Vassals Expanded and Reworked - FunEFork](https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683) adds new subject terms (including single resource subsidy sliders) as well as new non-specialist subjects
+* [Specialist Subject: Mercatorum - Expanded and Reworked](https://steamcommunity.com/sharedfiles/filedetails/?id=2968616122) patches compatibility between this mod and Vassals Expanded and Reworked
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) adds commercial districts to ecumenopolis planets, to be further boosted by your Mercatorum subject
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) enhances existing trade districts and colony designations - more jobs for more trade
 
