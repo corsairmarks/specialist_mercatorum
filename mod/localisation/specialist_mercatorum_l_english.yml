@@ -129,7 +129,7 @@
  mercatorum_1_penalties: "$specialist_mercatorum$ Penalties I"
  mercatorum_1_overlord_modifier: "$specialist_mercatorum$ Advisory"
  mercatorum_1_overlord_dividends: "$specialist_mercatorum$ Special Dividends"
- mercatorum_1_overlord_dividends_desc: "$specialist_mercatorum$ megacorporations are chartered by their overlord who is also the majority shareholder. Periodic special dividends are paid to their overlord based on the $specialist_mercatorum$'s economy."
+ mercatorum_1_overlord_dividends_desc: "$specialist_mercatorum$ megacorporations are chartered by their overlord who is also the majority shareholder. Periodic special dividends are paid to the Overlord based on the $specialist_mercatorum$'s economy (resources are not deducted from the $specialist_mercatorum$). The $specialist_mercatorum$ retains a percentage of the resources as a commission, controlled by the agreement term §YSpecial Dividend Commission Percentage§!."
  mercatorum_1_neighbor_bonuses: "$specialist_mercatorum_neighbor$"
  mercatorum_1_neighbor_bonuses_desc: "$bulwark_1_neighbor_bonuses_desc$"
  mercatorum_1_econ_tech: "$specialist_mercatorum$ Economic Tech I"
